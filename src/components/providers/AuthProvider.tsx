@@ -1,39 +1,74 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
 
+import { createContext, useContext, ReactNode } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 import { User } from "@/types/user/index";
 
+import {
+  loginWithCredentials,
+  getCurrentUser,
+  userDoesLogout,
+} from "@/lib/api/auth/user";
+
 type AuthContextType = {
-  user: User | null;
-  login: (token: string) => void;
-  logout: () => void;
+  user: User | null | undefined;
   isAuthenticated: boolean;
+  login: (credentials: { email: string; password: string }) => Promise<void>;
+  logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  const queryClient = useQueryClient();
 
-  const login = (token: string) => {
-    localStorage.setItem("token", token);
-    // use mocked user
-    setUser({
-      id: 1,
-      name: "Damian",
-      email: "damian@gmail.com",
-      role: "admin",
-    });
+  const { data: user, isLoading } = useQuery({
+    queryKey: ["me"],
+    queryFn: getCurrentUser,
+    retry: false,
+  });
+
+  const {
+    mutateAsync: loginMutate,
+    isError: isErrorLogin,
+    isSuccess: isSuccessLogin,
+    error: errorLogin,
+  } = useMutation({
+    mutationFn: loginWithCredentials,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
+  });
+
+  const login = async (credentials: { email: string; password: string }) => {
+    await loginMutate(credentials);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    setUser(null);
+  const {
+    mutateAsync: logoutMutate,
+    isError: isErrorLogout,
+    isSuccess: isSuccessLogout,
+    error: errorLogout,
+  } = useMutation({
+    mutationFn: userDoesLogout,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
+  });
+
+  const logout = async () => {
+    await logoutMutate();
   };
 
-  const isAuthenticated = !!user;
+  if (isLoading) return null; // loading state while fetching user data
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isAuthenticated }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        login,
+        logout,
+        isAuthenticated: !!user,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
