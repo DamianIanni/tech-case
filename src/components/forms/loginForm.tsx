@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -12,6 +14,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { AlertMessage } from "../feedback/AlertMessage";
+
+import { useRouter } from "next/navigation";
 
 import {
   Form,
@@ -30,6 +34,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const { login, isLoginPending, isErrorLogin } = useAuth();
+  const router = useRouter();
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -44,9 +49,17 @@ export function LoginForm({
     data: ["Check your email", "Check your password"],
   };
 
+  function navigateToDashboard() {
+    router.push("/dashboard");
+    console.log("in navigation procces");
+  }
+
   async function onSubmit(values: LoginSchemaType) {
-    await login(values);
-    console.log(values);
+    const succes = await login(values);
+    console.log(succes);
+    if (!succes) return;
+    navigateToDashboard();
+    // router.refresh();
   }
 
   return (

@@ -2,8 +2,14 @@ import axios from "axios";
 import { User } from "@/types/user";
 
 export async function getCurrentUser(): Promise<User | null> {
-  const res = await axios.get("/api/me", { withCredentials: true });
-  return res.data;
+  try {
+    const res = await axios.get("/api/me", { withCredentials: true });
+    console.log("User data from /api/me:", res.data);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching current user:", err);
+    return null;
+  }
 }
 
 export async function loginWithCredentials(credentials: {

@@ -7,12 +7,17 @@ export function requireAuth(user: any, pathname: string, req: NextRequest) {
   const isPublic = PUBLIC_PATHS.includes(pathname);
 
   if (!user && !isPublic) {
+    console.log("User is not authenticated and trying to access a");
+
     return redirectTo("/login", req);
   }
 
   if (user && pathname === "/login") {
+    console.log("User is authenticated and trying to access the login page");
+
     return redirectTo("/dashboard", req);
   }
+  console.log("User is authenticated and trying to access a protected path");
 
   return null;
 }

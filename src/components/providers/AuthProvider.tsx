@@ -15,10 +15,11 @@ import {
 type AuthContextType = {
   user: User | null | undefined;
   isAuthenticated: boolean;
-  login: (credentials: { email: string; password: string }) => Promise<void>;
+  login: (credentials: { email: string; password: string }) => Promise<boolean>;
   logout: () => Promise<void>;
   isLoginPending: boolean;
   isErrorLogin: boolean;
+  isSuccessLogin: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -43,9 +44,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
   });
 
-  const login = async (credentials: { email: string; password: string }) => {
-    await loginMutate(credentials);
-    console.log("wdym");
+  const login = async (credentials: {
+    email: string;
+    password: string;
+  }): Promise<boolean> => {
+    try {
+      await loginMutate(credentials);
+      console.log("wdym");
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   };
 
   const {
@@ -73,6 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isAuthenticated: !!user,
         isLoginPending,
         isErrorLogin,
+        isSuccessLogin,
       }}
     >
       {children}
