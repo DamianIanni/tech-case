@@ -17,6 +17,8 @@ type AuthContextType = {
   isAuthenticated: boolean;
   login: (credentials: { email: string; password: string }) => Promise<void>;
   logout: () => Promise<void>;
+  isLoginPending: boolean;
+  isErrorLogin: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -35,6 +37,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isError: isErrorLogin,
     isSuccess: isSuccessLogin,
     error: errorLogin,
+    isPending: isLoginPending,
   } = useMutation({
     mutationFn: loginWithCredentials,
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
@@ -42,6 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (credentials: { email: string; password: string }) => {
     await loginMutate(credentials);
+    console.log("wdym");
   };
 
   const {
@@ -67,6 +71,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         login,
         logout,
         isAuthenticated: !!user,
+        isLoginPending,
+        isErrorLogin,
       }}
     >
       {children}

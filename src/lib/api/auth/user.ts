@@ -10,7 +10,12 @@ export async function loginWithCredentials(credentials: {
   email: string;
   password: string;
 }): Promise<void> {
-  await axios.post("/api/login", credentials, { withCredentials: true });
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  const res = await axios.post("/api/login", credentials, {
+    withCredentials: true,
+  });
+  console.log(res);
 }
 
 export async function userDoesLogout(): Promise<void> {
