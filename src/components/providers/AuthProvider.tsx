@@ -16,6 +16,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = (token: string) => {
     localStorage.setItem("token", token);
+    // use mocked user
     setUser({
       id: 1,
       name: "Damian",
