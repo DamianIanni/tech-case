@@ -7,19 +7,13 @@ import { cn } from "@/lib/utils";
 import { memberSchema, MemberFormValues } from "@/lib/schemas/memberSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { SelectField } from "./fields/selectField";
 
 import { useRouter } from "next/navigation";
 
 import { Form } from "@/components/ui/form";
 import { TextField } from "./fields/textField";
 
-const selectOptionList = [
-  { label: "Manager", value: "manager" },
-  { label: "Employee", value: "employee" },
-];
-
-export function MemberForm({
+export function CenterForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
@@ -28,7 +22,6 @@ export function MemberForm({
     resolver: zodResolver(memberSchema),
     defaultValues: {
       firstName: "",
-      email: "",
     },
   });
 
@@ -45,10 +38,10 @@ export function MemberForm({
       {...props}
     >
       <h2 className="text-2xl font-semibold tracking-tight mb-2">
-        Add new team member
+        Add new center
       </h2>
       <p className="text-muted-foreground mb-6 text-sm">
-        Fill out the form below to invite a new member.
+        Fill out the form below to add a new center.
       </p>
       <Form {...form}>
         <form
@@ -59,22 +52,13 @@ export function MemberForm({
             <TextField control={form.control} name="firstName" label="Name" />
             <TextField
               control={form.control}
-              name="email"
-              label="Email"
-              type="email"
+              name="firstName"
+              label="Address"
             />
-            <div className="md:col-span-2">
-              <SelectField
-                control={form.control}
-                name="role"
-                label="Role"
-                options={selectOptionList}
-              />
-            </div>
           </div>
 
           <div className="flex justify-end">
-            <Button type="submit">Invite</Button>
+            <Button type="submit">Add</Button>
           </div>
         </form>
       </Form>

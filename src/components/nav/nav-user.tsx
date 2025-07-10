@@ -9,7 +9,7 @@ import {
   // Sparkles,
   Settings,
 } from "lucide-react";
-
+import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -26,6 +26,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { Button } from "../ui/button";
+import { useAuth } from "../providers/AuthProvider";
 
 export function NavUser({
   user,
@@ -37,6 +39,17 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
+  const { logout } = useAuth();
+  const router = useRouter();
+
+  function handleLogout() {
+    try {
+      logout();
+      router.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <SidebarMenu>
@@ -77,25 +90,39 @@ export function NavUser({
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
+            <DropdownMenuGroup className="gap-4">
+              <Button
+                variant={"ghost"}
+                className="hover:cursor-pointer hover:bg-cover w-full flex justify-start"
+              >
                 <Settings />
                 Account
-              </DropdownMenuItem>
-              <DropdownMenuItem>
+              </Button>
+              <Button
+                variant={"ghost"}
+                className="hover:cursor-pointer hover:bg-cover w-full flex justify-start"
+              >
                 <CreditCard />
                 Billing
-              </DropdownMenuItem>
-              <DropdownMenuItem>
+              </Button>
+              <Button
+                variant={"ghost"}
+                className="hover:cursor-pointer hover:bg-cover w-full flex justify-start"
+              >
                 <Bell />
                 Notifications
-              </DropdownMenuItem>
+              </Button>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+
+            <Button
+              variant={"ghost"}
+              onClick={() => handleLogout()}
+              className="hover:cursor-pointer hover:bg-cover w-full flex justify-start"
+            >
               <LogOut />
               Log out
-            </DropdownMenuItem>
+            </Button>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

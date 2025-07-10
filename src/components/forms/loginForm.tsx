@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { TextField } from "./fields/textField";
 
 import { useAuth } from "../providers/AuthProvider";
 
@@ -110,22 +111,11 @@ export function LoginForm({
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="grid gap-6"
               >
-                <FormField
+                <TextField
                   control={form.control}
+                  type="email"
                   name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          {...field}
-                          disabled={isLoginPending}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  label="Email"
                 />
                 <FormField
                   control={form.control}

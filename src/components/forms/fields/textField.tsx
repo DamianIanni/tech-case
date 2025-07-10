@@ -38,6 +38,7 @@ export function TextField<FormValues extends FieldValues>(
           <FormLabel>{label}</FormLabel>
           <FormControl>
             <Input
+              className="bg-white"
               type={type}
               // placeholder={placeholder}
               disabled={disabled}

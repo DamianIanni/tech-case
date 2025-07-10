@@ -18,7 +18,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-
+import { redirect } from "next/navigation";
 export function TeamSwitcher({
   teams,
 }: {
@@ -30,9 +30,14 @@ export function TeamSwitcher({
 }) {
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
+  // const router = useRouter()
 
   if (!activeTeam) {
     return null;
+  }
+
+  function handleAddCenter() {
+    redirect("/dashboard/centers/newCenter");
   }
 
   return (
@@ -61,7 +66,7 @@ export function TeamSwitcher({
             sideOffset={4}
           >
             <DropdownMenuLabel className="text-muted-foreground text-xs">
-              Clinics
+              Centers
             </DropdownMenuLabel>
             {teams.map((team, index) => (
               <DropdownMenuItem
@@ -77,10 +82,13 @@ export function TeamSwitcher({
               </DropdownMenuItem>
             ))}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="gap-2 p-2">
-              <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
-                <Plus className="size-4" />
-              </div>
+            <DropdownMenuItem className="gap-2 p-2 ">
+              <button
+                onClick={handleAddCenter}
+                className="flex size-6 items-center justify-center rounded-md border bg-transparent hover:cursor-pointer"
+              >
+                <Plus className="size-4 hover:bg-blue-600" />
+              </button>
               <div className="text-muted-foreground font-medium">
                 Add center
               </div>

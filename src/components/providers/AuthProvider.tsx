@@ -20,6 +20,7 @@ type AuthContextType = {
   isLoginPending: boolean;
   isErrorLogin: boolean;
   isSuccessLogin: boolean;
+  isSuccessLogout: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -69,6 +70,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   });
 
   const logout = async () => {
+    console.log("logout");
+
     await logoutMutate();
   };
 
@@ -84,6 +87,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         isLoginPending,
         isErrorLogin,
         isSuccessLogin,
+        isSuccessLogout,
       }}
     >
       {children}
