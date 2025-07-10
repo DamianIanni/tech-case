@@ -1,21 +1,10 @@
 "use client";
 
 import * as React from "react";
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { Bot, LucideHospital, HousePlus, BookUser } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
-import { NavProjects } from "@/components/nav/nav-projects";
+// import { NavProjects } from "@/components/nav/nav-projects";
 import { NavUser } from "@/components/nav/nav-user";
 import { TeamSwitcher } from "@/components/nav/team-switcher";
 import {
@@ -35,123 +24,45 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "Amager Hospital",
+      logo: LucideHospital,
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Copenhagen Clinic",
+      logo: HousePlus,
     },
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
+      title: "Team",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Add new member",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Members",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Patients",
       url: "#",
-      icon: BookOpen,
+      icon: BookUser,
+      isActive: true,
       items: [
         {
-          title: "Introduction",
+          title: "Add new patient",
           url: "#",
         },
         {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
+          title: "Patients",
+          url: "/dashboard/patients",
         },
       ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 };
@@ -164,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
