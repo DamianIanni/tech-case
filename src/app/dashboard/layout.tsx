@@ -40,7 +40,9 @@ export default async function DashboardLayout({
             </Breadcrumb>
           </div>
         </header>
-        <main className="flex-grow p-4 bg-amber-100">{children}</main>
+        <main className="flex flex-grow p-2 items-center justify-center ">
+          {children}
+        </main>
       </div>
     </SidebarProvider>
   );

@@ -40,7 +40,7 @@ const data = {
       items: [
         {
           title: "Add new member",
-          url: "#",
+          url: "/dashboard/team/newMember",
         },
         {
           title: "Members",
@@ -50,13 +50,13 @@ const data = {
     },
     {
       title: "Patients",
-      url: "#",
+      url: "/dashboard/patients",
       icon: BookUser,
       isActive: true,
       items: [
         {
           title: "Add new patient",
-          url: "#",
+          url: "/dashboard/patients/new",
         },
         {
           title: "Patients",
