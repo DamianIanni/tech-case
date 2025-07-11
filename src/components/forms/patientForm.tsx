@@ -7,24 +7,10 @@ import { Button } from "@/components/ui/button";
 import { patientSchema, PatientFormValues } from "@/lib/schemas/patientSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
+import { useCreatePatient, useUpdatePatient } from "@/hooks/patient/usePatient";
 import Calendar22 from "../calendars/calendar-22";
 
-import { AlertMessage } from "../feedback/AlertMessage";
-
-import { useRouter } from "next/navigation";
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  // FormDescription,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-import { ButtonLoading } from "../ui/ButtonLoading";
+import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { TextField } from "./fields/textField";
 
@@ -32,7 +18,7 @@ export function PatientForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const router = useRouter();
+  const createPatient = useCreatePatient();
   const form = useForm<PatientFormValues>({
     resolver: zodResolver(patientSchema),
     defaultValues: {
@@ -45,6 +31,12 @@ export function PatientForm({
   });
 
   async function onSubmit(values: PatientFormValues) {
+    createPatient.mutate({
+      ...values,
+      sessions: [],
+      treatment: "",
+      sessionsCompleted: 0,
+    });
     console.log(values);
   }
 
@@ -106,7 +98,9 @@ export function PatientForm({
           </div>
 
           <div className="flex justify-end">
-            <Button type="submit">Create</Button>
+            <Button className="hover:cursor-pointer" type="submit">
+              Create
+            </Button>
           </div>
         </form>
       </Form>

@@ -1,7 +1,7 @@
 export type User = {
   id: number;
-  name: string;
-  surname: string;
+  firstName: string;
+  lastName: string;
   email: string;
   role: "admin" | "employee" | "manager";
   organization: string;
