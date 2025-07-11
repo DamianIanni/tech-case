@@ -2,7 +2,6 @@
 
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
-import { mockPatients } from "@/mocks/patients/patientsMock";
 import { managerPatientsColumns } from "@/app/tables/patients/managerColumns";
 import { adminPatientsColumns } from "@/app/tables/patients/adminColumns";
 import { employeePatientsColumns } from "@/app/tables/patients/employeeColumns";
@@ -32,7 +31,7 @@ export default async function PatientsPage() {
   return (
     <DashboardPageWrapper>
       {user ? (
-        <DataTable columns={whichColumns()} data={mockPatients} />
+        <DataTable columns={whichColumns()} data={patients} />
       ) : (
         // <DataTable columns={adminPatientsColumns} data={mockPatients} />
         <h1>loading</h1>

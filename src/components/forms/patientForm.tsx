@@ -3,56 +3,68 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-// import { loginSchema, LoginSchemaType } from "@/lib/schemas/authSchema";
 import { patientSchema, PatientFormValues } from "@/lib/schemas/patientSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useCreatePatient, useUpdatePatient } from "@/hooks/patient/usePatient";
 import Calendar22 from "../calendars/calendar-22";
-
+import { Patient } from "@/types/patient";
+import { useRouter } from "next/navigation";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { TextField } from "./fields/textField";
 
-export function PatientForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+type PatientFormProps = {
+  mode?: "create" | "edit";
+  data?: Partial<Patient>;
+};
+
+export function PatientForm(props: PatientFormProps): React.ReactElement {
+  const { mode, data } = props;
   const createPatient = useCreatePatient();
+  const updatePatient = useUpdatePatient();
+  const router = useRouter();
   const form = useForm<PatientFormValues>({
     resolver: zodResolver(patientSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      dob: "",
+      firstName: data?.firstName || "",
+      lastName: data?.lastName || "",
+      email: data?.email || "",
+      phoneNumber: data?.phoneNumber || "",
+      treatment: data?.treatment || "",
+      dob: data?.dob || "",
     },
   });
 
   async function onSubmit(values: PatientFormValues) {
-    createPatient.mutate({
-      ...values,
-      sessions: [],
-      treatment: "",
-      sessionsCompleted: 0,
-    });
+    if (mode === "edit" && data?.id) {
+      updatePatient.mutate({
+        id: data.id,
+        updated: { ...values },
+      });
+    } else {
+      createPatient.mutate({
+        ...values,
+        sessions: [],
+        sessionsCompleted: 0,
+      });
+    }
+    router.replace("/dashboard/patients");
     console.log(values);
   }
 
   return (
     <div
-      className={cn(
-        "w-full max-w-2xl h-full flex flex-col rounded-xl p-6 ",
-        className
-      )}
+      className={cn("w-full max-w-2xl h-full flex flex-col rounded-xl p-6 ")}
       {...props}
     >
       <h2 className="text-2xl font-semibold tracking-tight mb-2">
-        Add new patient
+        {mode === "edit" ? "Edit patient" : "Add new patient"}
       </h2>
       <p className="text-muted-foreground text-sm mb-6">
-        Fill out the form below to register a new patient.
+        {mode === "edit"
+          ? "Update the patient's information below."
+          : "Fill out the form below to register a new patient."}
       </p>
       <Form {...form}>
         <form
@@ -76,6 +88,7 @@ export function PatientForm({
                 />
               </div>
             </div>
+
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <TextField
@@ -93,13 +106,21 @@ export function PatientForm({
                 />
               </div>
             </div>
-
-            <Calendar22 control={form.control} />
+            <div className="flex-1">
+              <TextField
+                control={form.control}
+                name="treatment"
+                label="Treatment"
+              />
+            </div>
+            <div className="flex w-sm">
+              <Calendar22 control={form.control} />
+            </div>
           </div>
 
           <div className="flex justify-end">
             <Button className="hover:cursor-pointer" type="submit">
-              Create
+              {mode === "edit" ? "Save changes" : "Create"}
             </Button>
           </div>
         </form>

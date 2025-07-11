@@ -2,13 +2,12 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { User } from "@/types/user";
-import { Button } from "@/components/ui/button";
-import { Info, Trash2 } from "lucide-react";
+import Actions from "@/components/tables/actions";
 
 export const adminTeamColumns: ColumnDef<User>[] = [
   {
     header: "Full name",
-    accessorFn: (row) => `${row.name} ${row.surname}`,
+    accessorFn: (row) => `${row.firstName} ${row.lastName}`,
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue() as string}</span>
     ),
@@ -19,26 +18,10 @@ export const adminTeamColumns: ColumnDef<User>[] = [
   { accessorKey: "organization", header: "Organization" },
   {
     id: "actions",
-    header: () => <div className="text-right min-w-[100px]">Actions</div>,
+    header: () => <div className="text-right min-w-[100px]"></div>,
     cell: ({ row }) => {
-      const user = row.original;
-      return (
-        <div className="flex justify-end gap-6 min-w-[100px]">
-          <Button variant="outline" size="sm">
-            <Info />
-          </Button>
-          <Button
-            variant="destructive"
-            size="sm"
-            onClick={() => {
-              // TODO: Implement delete action
-              console.log("Delete patient", user.id);
-            }}
-          >
-            <Trash2 />
-          </Button>
-        </div>
-      );
+      const member = row.original;
+      return <Actions id={member.id} route="team" />;
     },
     size: 100,
     minSize: 100,

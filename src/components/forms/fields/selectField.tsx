@@ -53,7 +53,10 @@ export function SelectField<FormValues extends FieldValues>({
           >
             <FormControl>
               <SelectTrigger>
-                <SelectValue placeholder={placeholder} />
+                <SelectValue placeholder={placeholder}>
+                  {options.find((opt) => opt.value === field.value)?.label ||
+                    ""}
+                </SelectValue>
               </SelectTrigger>
             </FormControl>
             <SelectContent>

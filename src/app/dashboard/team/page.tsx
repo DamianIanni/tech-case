@@ -7,13 +7,14 @@ import { adminTeamColumns } from "@/app/tables/users/adminColumns";
 import { employeeTeamColumns } from "@/app/tables/users/employeeColumns";
 import { getUserFromCookies } from "@/lib/api/auth/user";
 
-import { mockUsers } from "@/mocks/users/userMock";
+import { getUsers } from "@/app/api/nonSimulatedAPI/userMethods";
 
 export default async function PatientsPage() {
   // const user = token ? verifyJWT(token) : null;
 
   const user = await getUserFromCookies();
   console.log("user", user);
+  const users = await getUsers();
 
   // const user = JSON.parse(cookiesStore.get("user")?.value)
   function whichColumns() {
@@ -30,7 +31,7 @@ export default async function PatientsPage() {
   return (
     <DashboardPageWrapper>
       {user ? (
-        <DataTable columns={whichColumns()} data={mockUsers} />
+        <DataTable columns={whichColumns()} data={users} />
       ) : (
         // <DataTable columns={employeeTeamColumns} data={mockUsers} />
         <h1>loading</h1>

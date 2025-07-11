@@ -3,10 +3,15 @@
 import { useMutation } from "@tanstack/react-query";
 import { ToastFeedback } from "@/components/feedback/toastFeedback";
 import { User } from "@/types/user";
+import {
+  createUser,
+  updateUser,
+  deleteUser,
+} from "@/app/api/nonSimulatedAPI/userMethods";
 
-export function useCreatePatient() {
+export function useCreateMember() {
   return useMutation({
-    mutationFn: inviteTeamMember,
+    mutationFn: createUser,
     onSuccess: (data: Partial<User>) => {
       ToastFeedback({
         type: "success",
@@ -27,7 +32,7 @@ export function useCreatePatient() {
 export function useUpdateTeamMember() {
   return useMutation({
     mutationFn: ({ id, updated }: { id: number; updated: Partial<User> }) =>
-      updateteamMember(id, updated),
+      updateUser(id, updated),
     onSuccess: (data: Partial<User>) => {
       ToastFeedback({
         type: "success",
@@ -47,7 +52,7 @@ export function useUpdateTeamMember() {
 
 export function useDeleteTeamMember() {
   return useMutation({
-    mutationFn: (id: number) => deleteTeamMember(id),
+    mutationFn: (id: number) => deleteUser(id),
     onSuccess: () => {
       ToastFeedback({
         type: "info",

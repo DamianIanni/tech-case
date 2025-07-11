@@ -8,9 +8,9 @@ import { memberSchema, MemberFormValues } from "@/lib/schemas/memberSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { SelectField } from "./fields/selectField";
-
+import { User } from "@/types/user";
 import { useRouter } from "next/navigation";
-
+import { useCreateMember, useUpdateTeamMember } from "@/hooks/team/useTeam";
 import { Form } from "@/components/ui/form";
 import { TextField } from "./fields/textField";
 
@@ -19,36 +19,66 @@ const selectOptionList = [
   { label: "Employee", value: "employee" },
 ];
 
-export function MemberForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+type MemberFormProps = {
+  mode?: "create" | "edit";
+  data?: Partial<User>;
+};
+
+export function MemberForm(props: MemberFormProps): React.ReactElement {
+  const { mode, data } = props;
   const router = useRouter();
+  const createMember = useCreateMember();
+  const updatePatient = useUpdateTeamMember();
   const form = useForm<MemberFormValues>({
     resolver: zodResolver(memberSchema),
     defaultValues: {
-      firstName: "",
       email: "",
+      role:
+        (data?.role as "manager" | "employee" | "admin" | undefined) ||
+        "manager",
     },
   });
 
+  // useEffect(() => {
+  //   if (mode === "edit" && data) {
+  //     form.reset({
+  //       email: data.email || "",
+  //       role: (data.role as "manager" | "employee") || "manager",
+  //     });
+  //   }
+  // }, [data, mode, form]);
+
   async function onSubmit(values: MemberFormValues) {
+    if (mode === "edit" && data?.id) {
+      updatePatient.mutate({
+        id: data.id,
+        updated: { ...values },
+      });
+    } else {
+      createMember.mutate({
+        ...values,
+
+        firstName: "",
+        lastName: "",
+        organization: "",
+      });
+    }
+    router.replace("/dashboard/team");
     console.log(values);
   }
 
   return (
     <div
-      className={cn(
-        "w-full max-w-2xl h-full flex flex-col rounded-xl p-6 ",
-        className
-      )}
+      className={cn("w-full max-w-2xl h-full flex flex-col rounded-xl p-6 ")}
       {...props}
     >
       <h2 className="text-2xl font-semibold tracking-tight mb-2">
-        Add new team member
+        {mode === "edit" ? "Edit team member" : "Add new team member"}
       </h2>
       <p className="text-muted-foreground mb-6 text-sm">
-        Fill out the form below to invite a new member.
+        {mode === "edit"
+          ? "Update memeber's information below."
+          : "Fill out the form below to invite a new member."}
       </p>
       <Form {...form}>
         <form
@@ -56,13 +86,14 @@ export function MemberForm({
           className={cn("flex h-[calc(90%)] flex-col justify-between gap-6")}
         >
           <div className="grid h-min-full grid-cols-1 gap-4 md:grid-cols-2">
-            <TextField control={form.control} name="firstName" label="Name" />
-            <TextField
-              control={form.control}
-              name="email"
-              label="Email"
-              type="email"
-            />
+            {mode === "create" && (
+              <TextField
+                control={form.control}
+                name="email"
+                label="Email"
+                type="email"
+              />
+            )}
             <div className="md:col-span-2">
               <SelectField
                 control={form.control}
@@ -74,7 +105,9 @@ export function MemberForm({
           </div>
 
           <div className="flex justify-end">
-            <Button type="submit">Invite</Button>
+            <Button type="submit">
+              {mode === "edit" ? "Save changes" : "Invite"}
+            </Button>
           </div>
         </form>
       </Form>

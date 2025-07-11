@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "firstName": "Alice",
+    "lastName": "Smith",
+    "email": "admin@aisel.com",
+    "password": "admin123",
+    "role": "Admin",
+    "organization": "Amager Hospital"
+  },
+  {
+    "id": 2,
+    "firstName": "Damian",
+    "lastName": "Ianni",
+    "email": "employee@aisel.com",
+    "password": "employee123",
+    "role": "Employee",
+    "organization": "Amager Hospital"
+  },
+  {
+    "id": 3,
+    "firstName": "Pauline",
+    "lastName": "Kleinfeldt",
+    "email": "manager@aisel.com",
+    "password": "manager123",
+    "role": "Manager",
+    "organization": "Amager Hospital"
+  },
+  {
+    "id": 4,
+    "firstName": "Alejandro",
+    "lastName": "Fantino",
+    "email": "fantino@personal.com",
+    "password": "fantino",
+    "role": "Manager",
+    "organization": "Kastrup Clinic"
+  }
+]

@@ -3,9 +3,8 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Patient } from "@/types/patient";
-import { Button } from "@/components/ui/button";
-import { Info, Trash2 } from "lucide-react";
-import Link from "next/link";
+
+import Actions from "@/components/tables/actions";
 
 export const adminPatientsColumns: ColumnDef<Patient>[] = [
   {
@@ -30,28 +29,12 @@ export const adminPatientsColumns: ColumnDef<Patient>[] = [
   },
   {
     id: "actions",
-    header: () => <div className="text-right min-w-[100px]">Actions</div>,
+    header: () => <div className="text-right min-w-[100px]"></div>,
     cell: ({ row }) => {
       const patient = row.original;
+      const id = patient.id;
 
-      return (
-        <div className="flex justify-end gap-6 min-w-[100px]">
-          <Link href={`/dashboard/patients/${patient.id}`}>
-            <Button variant="outline" size="sm">
-              <Info className="h-4 w-4" />
-            </Button>
-          </Link>
-          <Button
-            variant="destructive"
-            size="sm"
-            onClick={() => {
-              console.log("Delete patient", patient.id);
-            }}
-          >
-            <Trash2 className="h-4 w-4" />
-          </Button>
-        </div>
-      );
+      return <Actions id={id} route="patients" />;
     },
     size: 100,
     minSize: 100,

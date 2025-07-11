@@ -36,7 +36,7 @@ export function useUpdatePatient() {
     onSuccess: (data: Partial<Patient>) => {
       ToastFeedback({
         type: "success",
-        title: "Patient created",
+        title: "Patient updated",
         description: `Patient ${data.firstName} updated successfully.`,
       });
     },
