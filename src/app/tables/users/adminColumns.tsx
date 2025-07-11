@@ -21,7 +21,8 @@ export const adminTeamColumns: ColumnDef<User>[] = [
     header: () => <div className="text-right min-w-[100px]"></div>,
     cell: ({ row }) => {
       const member = row.original;
-      return <Actions id={member.id} route="team" />;
+
+      return <Actions data={member} route="team" />;
     },
     size: 100,
     minSize: 100,

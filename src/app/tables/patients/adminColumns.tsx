@@ -32,9 +32,8 @@ export const adminPatientsColumns: ColumnDef<Patient>[] = [
     header: () => <div className="text-right min-w-[100px]"></div>,
     cell: ({ row }) => {
       const patient = row.original;
-      const id = patient.id;
 
-      return <Actions id={id} route="patients" />;
+      return <Actions data={patient} route="patients" />;
     },
     size: 100,
     minSize: 100,

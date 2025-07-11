@@ -34,8 +34,8 @@ export const managerPatientsColumns: ColumnDef<Patient>[] = [
     header: () => <div className="text-right min-w-[100px]"></div>,
     cell: ({ row }) => {
       const patient = row.original;
-      const id = patient.id;
-      return <Actions route="patients" id={id} />;
+
+      return <Actions data={patient} route="patients" />;
     },
     size: 100,
     minSize: 100,

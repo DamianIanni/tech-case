@@ -3,7 +3,7 @@ import { Center } from "@/types/center";
 import { getUserFromCookies } from "@/lib/api/auth/user";
 import { readCenters, writeCenters } from "@/lib/data/store";
 
-const WAIT = 1500;
+const WAIT = 200;
 function wait(ms: number) {
   return new Promise((res) => setTimeout(res, ms));
 }

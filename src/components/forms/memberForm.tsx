@@ -13,6 +13,8 @@ import { useRouter } from "next/navigation";
 import { useCreateMember, useUpdateTeamMember } from "@/hooks/team/useTeam";
 import { Form } from "@/components/ui/form";
 import { TextField } from "./fields/textField";
+import { OverlayLoader } from "../loaders/loader";
+import { ROUTES } from "@/constants/routes";
 
 const selectOptionList = [
   { label: "Manager", value: "manager" },
@@ -39,14 +41,7 @@ export function MemberForm(props: MemberFormProps): React.ReactElement {
     },
   });
 
-  // useEffect(() => {
-  //   if (mode === "edit" && data) {
-  //     form.reset({
-  //       email: data.email || "",
-  //       role: (data.role as "manager" | "employee") || "manager",
-  //     });
-  //   }
-  // }, [data, mode, form]);
+  const isSubmitting = form.formState.isSubmitting;
 
   async function onSubmit(values: MemberFormValues) {
     if (mode === "edit" && data?.id) {
@@ -63,13 +58,15 @@ export function MemberForm(props: MemberFormProps): React.ReactElement {
         organization: "",
       });
     }
-    router.replace("/dashboard/team");
+    router.replace(ROUTES.team);
     console.log(values);
   }
 
   return (
     <div
-      className={cn("w-full max-w-2xl h-full flex flex-col rounded-xl p-6 ")}
+      className={cn(
+        "w-full max-w-2xl h-full flex flex-col rounded-xl p-6 relative"
+      )}
       {...props}
     >
       <h2 className="text-2xl font-semibold tracking-tight mb-2">
@@ -86,14 +83,13 @@ export function MemberForm(props: MemberFormProps): React.ReactElement {
           className={cn("flex h-[calc(90%)] flex-col justify-between gap-6")}
         >
           <div className="grid h-min-full grid-cols-1 gap-4 md:grid-cols-2">
-            {mode === "create" && (
-              <TextField
-                control={form.control}
-                name="email"
-                label="Email"
-                type="email"
-              />
-            )}
+            <TextField
+              control={form.control}
+              name="email"
+              label="Email"
+              type="email"
+            />
+
             <div className="md:col-span-2">
               <SelectField
                 control={form.control}
@@ -111,6 +107,7 @@ export function MemberForm(props: MemberFormProps): React.ReactElement {
           </div>
         </form>
       </Form>
+      {isSubmitting && <OverlayLoader />}
     </div>
   );
 }

@@ -24,7 +24,7 @@ export function useCreateCenter() {
   });
 }
 
-export function useDeletePatient() {
+export function useDeleteCenter() {
   return useMutation({
     mutationFn: (id: number) => deleteCenter(id),
     onSuccess: () => {

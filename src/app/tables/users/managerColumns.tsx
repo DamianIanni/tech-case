@@ -21,7 +21,7 @@ export const managerTeamColumns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       const member = row.original;
 
-      return <Actions id={member.id} route="team" />;
+      return <Actions data={member} route="team" />;
     },
     size: 100,
     minSize: 100,

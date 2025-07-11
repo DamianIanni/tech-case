@@ -55,7 +55,7 @@ export function useDeletePatient() {
     mutationFn: (id: number) => deletePatient(id),
     onSuccess: () => {
       ToastFeedback({
-        type: "success",
+        type: "info",
         title: "Patient Deleted",
         description: `Patient deleted successfully.`,
       });

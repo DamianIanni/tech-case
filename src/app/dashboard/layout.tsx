@@ -28,7 +28,7 @@ export default async function DashboardLayout({
       <div className="pl-[--sidebar-width] flex min-h-screen w-full flex-col bg-muted">
         <header className="flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-10">
           <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1 hover:bg-amber-300" />
+            <SidebarTrigger className="-ml-1 cursor-pointer" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">

@@ -34,7 +34,7 @@ export default async function PatientsPage() {
         <DataTable columns={whichColumns()} data={patients} />
       ) : (
         // <DataTable columns={adminPatientsColumns} data={mockPatients} />
-        <h1>loading</h1>
+        <h1>loading..</h1>
       )}
     </DashboardPageWrapper>
   );

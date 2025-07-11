@@ -37,7 +37,9 @@ export function DataTable<TData, TValue>({
   const table = useReactTable({
     data,
     columns,
-    state: { sorting },
+    state: {
+      sorting,
+    },
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -46,8 +48,8 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="w-full overflow-x-auto rounded-xl border bg-white shadow">
-      <div className="p-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+    <div className="w-full h-full flex flex-col overflow-x-auto rounded-xl bg-white">
+      <div className="px-1 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <Input
           placeholder="Filter..."
           value={table.getState().columnFilters[0]?.value || ""}
@@ -64,12 +66,12 @@ export function DataTable<TData, TValue>({
       <Table className="w-full min-w-[700px]">
         <TableHeader>
           {table.getHeaderGroups().map((hg) => (
-            <TableRow key={hg.id} className="bg-muted/40">
+            <TableRow key={hg.id} className="bg-muted">
               {hg.headers.map((header) => (
                 <TableHead
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
-                  className="cursor-pointer select-none min-w-[100px]"
+                  className="min-w-[100px]"
                 >
                   {flexRender(
                     header.column.columnDef.header,
@@ -84,7 +86,7 @@ export function DataTable<TData, TValue>({
         <TableBody>
           {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} className="even:bg-muted/50">
+              <TableRow key={row.id} className="even:bg-muted/40">
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id} className="min-w-[120px]">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -105,13 +107,14 @@ export function DataTable<TData, TValue>({
         </TableBody>
       </Table>
 
-      <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between p-4">
+      <div className="mt-auto flex flex-col gap-2 md:flex-row md:items-center md:justify-between py-4">
         <div className="text-sm text-muted-foreground">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
         <div className="flex gap-2">
           <Button
+            className="hover:cursor-pointer"
             size="sm"
             variant="outline"
             onClick={() => table.previousPage()}
@@ -120,6 +123,7 @@ export function DataTable<TData, TValue>({
             Previous
           </Button>
           <Button
+            className="hover:cursor-pointer"
             size="sm"
             variant="outline"
             onClick={() => table.nextPage()}

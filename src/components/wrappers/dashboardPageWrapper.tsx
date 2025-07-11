@@ -9,7 +9,7 @@ export default function DashboardPageWrapper(
 ): ReactNode {
   const { children } = props;
   return (
-    <div className="flex flex-grow h-full flex-col items-center px-2 py-8 md:px-4">
+    <div className="flex flex-grow h-full flex-col items-center px-2 py-4 md:px-4">
       {children}
     </div>
   );

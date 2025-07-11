@@ -17,7 +17,7 @@ export function ToastFeedback({
   description,
   type = "info",
 }: AppToastOptions) {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+  // const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
   const iconMap = {
     success: <CheckCircle className="text-green-600" />,
@@ -50,7 +50,7 @@ export function ToastFeedback({
       </div>
     ),
     {
-      position: isMobile ? "bottom-center" : "bottom-right",
+      position: "bottom-center",
     }
   );
 }

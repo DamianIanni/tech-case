@@ -1,44 +1,71 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { Info, Trash2, Edit2 } from "lucide-react";
+import { Info, Edit2 } from "lucide-react";
 import Link from "next/link";
+import { useDeleteTeamMember } from "@/hooks/team/useTeam";
+import { useDeletePatient } from "@/hooks/patient/usePatient";
+import { ActionDialog } from "@/components/feedback/actionDialog";
+import { User } from "@/types/user";
+import { Patient } from "@/types/patient";
+import { ROUTES } from "@/constants/routes";
 
 type ActionsProps = {
-  id: number;
+  data: Partial<User | Patient>;
   route: string;
 };
 
 export default function Actions(props: ActionsProps): React.ReactElement {
-  const { id, route } = props;
-  console.log("id", id);
+  const { data, route } = props;
+  const deleteMember = useDeleteTeamMember();
+  const deletePatient = useDeletePatient();
 
-  const ROUTE =
-    route === "patients" ? `/dashboard/patients/` : `/dashboard/team/`;
+  function handleDeleteAction() {
+    if (route === "patients") {
+      if (typeof data?.id === "number") {
+        deletePatient.mutate(data.id);
+      } else {
+        console.error("Patient id is undefined or not a number");
+      }
+      return;
+    }
+    if (typeof data.id === "number") {
+      deleteMember.mutate(data.id);
+      console.log("Deleted", data.id);
+    } else {
+      console.error("Member id is undefined or not a number");
+    }
+  }
+
+  const ROUTE = route === "patients" ? ROUTES.patients : ROUTES.team;
+
+  const TITLE = route === "patients" ? "Patient" : "Team member";
 
   return (
     <div className="flex justify-end gap-2 min-w-[100px]">
-      <Link href={`${ROUTE}${id}`}>
+      <Link href={`${ROUTE}${data.id}`}>
         <Button variant="outline" size="sm" className="hover:cursor-pointer">
           <Info className="h-4 w-4" />
         </Button>
       </Link>
 
       {route !== "team" && (
-        <Link href={`${ROUTE}${id}/edit`}>
+        <Link href={`${ROUTE}${data.id}/edit`}>
           <Button variant="outline" size="sm" className="hover:cursor-pointer">
             <Edit2 className="h-4 w-4" />
           </Button>
         </Link>
       )}
-      <Button
-        // variant="destructive"
-        className="hover:cursor-pointer hover:bg-red-500"
-        size="sm"
-        onClick={() => {
-          console.log("Delete patient", id);
+      <ActionDialog
+        title={`Delete ${TITLE}`}
+        description={`Are you sure you want to delete ${data.firstName} ${data.lastName}?\n This action cannot be undone.`}
+        triggerLabel="Delete"
+        confirmLabel="Delete"
+        cancelLabel="Cancel"
+        onConfirm={() => {
+          handleDeleteAction();
         }}
-      >
-        <Trash2 className="h-4 w-4" />
-      </Button>
+      />
     </div>
   );
 }

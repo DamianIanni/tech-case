@@ -4,7 +4,7 @@ import { Patient } from "@/types/patient";
 import { getUserFromCookies } from "@/lib/api/auth/user";
 import { readPatients, writePatients } from "@/lib/data/store";
 
-const WAIT = 1500;
+const WAIT = 200;
 function wait(ms: number) {
   return new Promise((res) => setTimeout(res, ms));
 }
@@ -57,7 +57,6 @@ export async function createPatient(
   const newEntry: Patient = {
     ...newPatient,
     id,
-    treatment: "treatment",
     sessionsCompleted: 3,
     sessions: [
       {
