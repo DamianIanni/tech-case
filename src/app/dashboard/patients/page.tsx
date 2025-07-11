@@ -1,4 +1,39 @@
-// /app/dashboard/patients/page.tsx
-export default function PatientsPage() {
-  return <div>Here are the patients</div>;
+"use server";
+
+import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
+import { DataTable } from "@/components/tables/dataTable";
+import { mockPatients } from "@/mocks/patients/patientsMock";
+import { managerPatientsColumns } from "@/app/tables/patients/managerColumns";
+import { adminPatientsColumns } from "@/app/tables/patients/adminColumns";
+import { employeePatientsColumns } from "@/app/tables/patients/employeeColumns";
+import { getUserFromCookies } from "@/lib/api/auth/user";
+
+export default async function PatientsPage() {
+  // const user = token ? verifyJWT(token) : null;
+
+  const user = await getUserFromCookies();
+  console.log("user", user);
+
+  // const user = JSON.parse(cookiesStore.get("user")?.value)
+  function whichColumns() {
+    switch (user?.role) {
+      case "admin":
+        return adminPatientsColumns;
+      case "manager":
+        return managerPatientsColumns;
+      default:
+        return employeePatientsColumns;
+    }
+  }
+
+  return (
+    <DashboardPageWrapper>
+      {user ? (
+        <DataTable columns={whichColumns()} data={mockPatients} />
+      ) : (
+        // <DataTable columns={adminPatientsColumns} data={mockPatients} />
+        <h1>loading</h1>
+      )}
+    </DashboardPageWrapper>
+  );
 }

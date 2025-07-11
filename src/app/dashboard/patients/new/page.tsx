@@ -1,9 +1,10 @@
 import { EntityForm } from "@/components/forms/entityForm";
+import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 
 export default function NewPatientPage() {
   return (
-    <div className="flex flex-grow h-full flex-col items-center px-2 py-8 md:px-4">
+    <DashboardPageWrapper>
       <EntityForm formType="patient" />
-    </div>
+    </DashboardPageWrapper>
   );
 }

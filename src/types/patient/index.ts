@@ -1,3 +1,8 @@
+export type Session = {
+  date: string;
+  notes: string;
+};
+
 export type Patient = {
   id: number;
   firstName: string;
@@ -7,8 +12,5 @@ export type Patient = {
   dob: string; // ISO date
   treatment: string;
   sessionsCompleted: number;
-  sessions: {
-    date: string; // ISO date
-    notes: string;
-  };
+  sessions: Session[];
 };

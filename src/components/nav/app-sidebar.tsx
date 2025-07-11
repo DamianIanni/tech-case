@@ -44,7 +44,7 @@ const data = {
         },
         {
           title: "Members",
-          url: "#",
+          url: "/dashboard/team",
         },
       ],
     },
@@ -69,7 +69,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" className="bg-red-500" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>

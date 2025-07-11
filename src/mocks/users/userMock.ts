@@ -5,7 +5,7 @@ export const mockUsers = [
     surname: "Smith",
     email: "admin@aisel.com",
     password: "admin123",
-    role: "admin",
+    role: "Admin",
     organization: "Amager Hospital",
   },
   {
@@ -14,7 +14,7 @@ export const mockUsers = [
     surname: "Ianni",
     email: "employee@aisel.com",
     password: "employee123",
-    role: "employee",
+    role: "Employee",
     organization: "Amager Hospital",
   },
   {
@@ -23,7 +23,7 @@ export const mockUsers = [
     surname: "Kleinfeldt",
     email: "manager@aisel.com",
     password: "manager123",
-    role: "manager",
+    role: "Manager",
     organization: "Amager Hospital",
   },
 ];
