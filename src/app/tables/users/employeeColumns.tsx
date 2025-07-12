@@ -6,11 +6,11 @@ import { User } from "@/types/user";
 export const employeeTeamColumns: ColumnDef<User>[] = [
   {
     header: "Full name",
-    accessorFn: (row) => `${row.name} ${row.surname}`,
+    accessorFn: (row) => `${row.firstName} ${row.lastName}`,
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue() as string}</span>
     ),
-    id: "fullName", // necesitas un id si no usás accessorKey
+    id: "fullName",
   },
   { accessorKey: "surname", header: "Surname" },
   { accessorKey: "email", header: "Email" },

@@ -2,7 +2,6 @@
 
 import { EntityForm } from "@/components/forms/entityForm";
 import { redirect } from "next/navigation";
-// import { getUserFromCookies } from "@/lib/api/auth/user";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
 export default async function LoginPage() {

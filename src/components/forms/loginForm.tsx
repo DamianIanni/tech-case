@@ -23,7 +23,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  // FormDescription,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
@@ -52,7 +51,6 @@ export function LoginForm({
 
   function navigateToDashboard() {
     router.replace("/dashboard");
-    console.log("in navigation procces");
   }
 
   async function onSubmit(values: LoginSchemaType) {

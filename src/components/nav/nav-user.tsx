@@ -1,12 +1,10 @@
 "use client";
 
 import {
-  // BadgeCheck,
   Bell,
   ChevronsUpDown,
   CreditCard,
   LogOut,
-  // Sparkles,
   Settings,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -15,7 +13,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  // DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -53,7 +50,6 @@ export function NavUser({
   }
 
   const FirstLett = `${user.name?.charAt(0)}${user.lastname?.charAt(0)}`;
-  console.log("FirstLett", FirstLett);
 
   return (
     <SidebarMenu>
@@ -85,7 +81,6 @@ export function NavUser({
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
-                  {/* <AvatarImage src={user.avatar} alt={user.name} /> */}
                   <AvatarFallback className="rounded-lg">
                     {FirstLett}
                   </AvatarFallback>

@@ -7,10 +7,9 @@ export async function loginWithCredentials(credentials: {
 }): Promise<void> {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   try {
-    const res = await axios.post("/api/login", credentials, {
+    await axios.post("/api/login", credentials, {
       withCredentials: true,
     });
-    console.log(res);
   } catch (error) {
     console.log("Login error", error);
     throw error;

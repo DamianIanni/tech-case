@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 
-//modularise these below
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

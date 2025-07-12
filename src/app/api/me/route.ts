@@ -1,7 +1,7 @@
 // /app/api/me/route.ts
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { verifyJWT } from "@/lib/apiUtils/jwtUtil";
+import { verifyJWT } from "@/lib/api/jwtUtil";
 
 export async function GET() {
   const cookieStore = await cookies();

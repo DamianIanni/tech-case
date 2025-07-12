@@ -17,8 +17,6 @@ export function ToastFeedback({
   description,
   type = "info",
 }: AppToastOptions) {
-  // const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-
   const iconMap = {
     success: <CheckCircle className="text-green-600" />,
     error: <XCircle className="text-red-600" />,

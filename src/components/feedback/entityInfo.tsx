@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { H3, Muted, Small } from "@/components/ui/typography";
-// import { cn } from "@/lib/utils";
 import { User } from "@/types/user";
 import { Patient } from "@/types/patient";
 import { useAuth } from "../providers/AuthProvider";

@@ -11,7 +11,6 @@ type Props = {
 
 export default async function UserInfoPage(props: Props) {
   const params = await props.params;
-  // const id = Number(params.id);
   const user: User | null = await getUserById(Number(params.id));
 
   return (

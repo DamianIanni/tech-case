@@ -1,4 +1,3 @@
-// components/tables/patients/columns-manager.ts
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { Patient } from "@/types/patient";
@@ -11,7 +10,7 @@ export const managerPatientsColumns: ColumnDef<Patient>[] = [
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue() as string}</span>
     ),
-    id: "fullName", // necesitas un id si no usás accessorKey
+    id: "fullName",
   },
   {
     accessorKey: "email",
@@ -25,10 +24,6 @@ export const managerPatientsColumns: ColumnDef<Patient>[] = [
     accessorKey: "treatment",
     header: "Treatment",
   },
-  // {
-  //   accessorKey: "sessionsCompleted",
-  //   header: "Sessions Done",
-  // },
   {
     id: "actions",
     header: () => <div className="text-right min-w-[100px]"></div>,

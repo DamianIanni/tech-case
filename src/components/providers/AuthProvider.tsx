@@ -8,7 +8,6 @@ import { User } from "@/types/user/index";
 
 import {
   loginWithCredentials,
-  // getCurrentUser,
   userDoesLogout,
 } from "@/lib/api/auth/userActions";
 import { getCurrentUser } from "@/lib/api/auth/userActions";
@@ -52,7 +51,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }): Promise<boolean> => {
     try {
       await loginMutate(credentials);
-      console.log("wdym");
       return true;
     } catch (error) {
       console.log(error);
@@ -71,8 +69,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   });
 
   const logout = async () => {
-    console.log("logout");
-
     await logoutMutate();
   };
 

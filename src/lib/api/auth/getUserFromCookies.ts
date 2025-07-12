@@ -1,6 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
-import { verifyJWT } from "@/lib/apiUtils/jwtUtil";
+import { verifyJWT } from "@/lib/api/jwtUtil";
 
 export async function getUserFromCookies() {
   try {

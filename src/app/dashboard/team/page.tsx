@@ -10,13 +10,9 @@ import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { getUsers } from "@/app/api/nonSimulatedAPI/userMethods";
 
 export default async function PatientsPage() {
-  // const user = token ? verifyJWT(token) : null;
-
   const user = await getUserFromCookies();
-  console.log("user", user);
   const users = await getUsers();
 
-  // const user = JSON.parse(cookiesStore.get("user")?.value)
   function whichColumns() {
     switch (user?.role) {
       case "admin":
@@ -33,7 +29,6 @@ export default async function PatientsPage() {
       {user ? (
         <DataTable columns={whichColumns()} data={users} />
       ) : (
-        // <DataTable columns={employeeTeamColumns} data={mockUsers} />
         <h1>loading</h1>
       )}
     </DashboardPageWrapper>

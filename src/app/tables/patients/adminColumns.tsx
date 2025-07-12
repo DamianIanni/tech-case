@@ -1,4 +1,3 @@
-// app/dashboard/patients/columns.ts
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
@@ -13,7 +12,7 @@ export const adminPatientsColumns: ColumnDef<Patient>[] = [
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue() as string}</span>
     ),
-    id: "fullName", // necesitas un id si no usás accessorKey
+    id: "fullName",
   },
   {
     accessorKey: "email",

@@ -59,7 +59,6 @@ export function MemberForm(props: MemberFormProps): React.ReactElement {
       });
     }
     router.replace(ROUTES.team);
-    console.log(values);
   }
 
   return (

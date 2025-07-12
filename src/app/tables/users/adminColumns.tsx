@@ -11,7 +11,7 @@ export const adminTeamColumns: ColumnDef<User>[] = [
     cell: ({ getValue }) => (
       <span className="font-medium">{getValue() as string}</span>
     ),
-    id: "fullName", // necesitas un id si no usás accessorKey
+    id: "fullName",
   },
   { accessorKey: "email", header: "Email" },
   { accessorKey: "role", header: "Role" },

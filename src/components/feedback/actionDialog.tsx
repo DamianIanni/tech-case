@@ -22,7 +22,7 @@ type ActionDialogProps = {
   triggerLabel?: string;
   confirmLabel?: string;
   cancelLabel?: string;
-  children?: React.ReactNode; // si querés pasar campos personalizados
+  children?: React.ReactNode;
 };
 
 export function ActionDialog(props: ActionDialogProps) {

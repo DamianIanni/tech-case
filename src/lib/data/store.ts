@@ -26,8 +26,6 @@ const FILE_PATH_CENTERS = path.join(
 );
 
 export async function readPatients() {
-  console.log(`Reading patients from ${FILE_PATH_PATIENT}`);
-
   const file = await fs.readFile(FILE_PATH_PATIENT, "utf-8");
   return JSON.parse(file);
 }

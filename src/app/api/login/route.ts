@@ -2,7 +2,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { readUsers } from "@/lib/data/store"; // CAMBIADO de readPatients a readUsers
-import { signJWT } from "@/lib/apiUtils/jwtUtil";
+import { signJWT } from "@/lib/api/jwtUtil";
 
 export async function POST(req: Request) {
   const { email, password } = await req.json();

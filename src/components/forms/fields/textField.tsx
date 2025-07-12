@@ -20,14 +20,7 @@ type GenericTextFieldProps<FormValues extends FieldValues> = {
 export function TextField<FormValues extends FieldValues>(
   props: GenericTextFieldProps<FormValues>
 ) {
-  const {
-    control,
-    name,
-    label,
-    type = "text",
-    disabled = false,
-    // placeholder,
-  } = props;
+  const { control, name, label, type = "text", disabled = false } = props;
 
   return (
     <FormField
@@ -40,7 +33,6 @@ export function TextField<FormValues extends FieldValues>(
             <Input
               className="bg-white"
               type={type}
-              // placeholder={placeholder}
               disabled={disabled}
               {...field}
             />
