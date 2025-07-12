@@ -51,7 +51,7 @@ export function LoginForm({
   };
 
   function navigateToDashboard() {
-    router.push("/dashboard");
+    router.replace("/dashboard");
     console.log("in navigation procces");
   }
 

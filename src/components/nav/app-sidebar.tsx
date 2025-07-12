@@ -4,7 +4,6 @@ import * as React from "react";
 import { Bot, LucideHospital, HousePlus, BookUser } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
-// import { NavProjects } from "@/components/nav/nav-projects";
 import { NavUser } from "@/components/nav/nav-user";
 import { TeamSwitcher } from "@/components/nav/team-switcher";
 import {
@@ -19,70 +18,63 @@ import { useAuth } from "../providers/AuthProvider";
 export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
   const { user } = useAuth();
 
-  console.log(user);
+  if (!user) return null;
 
-  const data = {
-    user: {
-      name: user?.firstName,
-      lastname: user?.lastName,
-      email: user?.email,
+  const navItems = [
+    ...(user.role !== "employee"
+      ? [
+          {
+            title: "Team",
+            url: "#",
+            icon: Bot,
+            items: [
+              {
+                title: "Members",
+                url: "/dashboard/team",
+              },
+            ],
+          },
+        ]
+      : []),
+    {
+      title: "Patients",
+      url: "/dashboard/patients",
+      icon: BookUser,
+      isActive: true,
+      items: [
+        {
+          title: "Patients",
+          url: "/dashboard/patients",
+        },
+        {
+          title: "Add new patient",
+          url: "/dashboard/patients/new",
+        },
+      ],
     },
-
-    teams: [
-      {
-        name: "Amager Hospital",
-        logo: LucideHospital,
-      },
-      {
-        name: "Copenhagen Clinic",
-        logo: HousePlus,
-      },
-    ],
-    navMain: [
-      {
-        title: "Team",
-        url: "#",
-        icon: Bot,
-        items: [
-          // {
-          //   title: "Add new member",
-          //   url: "/dashboard/team/newMember",
-          // },
-          {
-            title: "Members",
-            url: "/dashboard/team",
-          },
-        ],
-      },
-      {
-        title: "Patients",
-        url: "/dashboard/patients",
-        icon: BookUser,
-        isActive: true,
-        items: [
-          {
-            title: "Patients",
-            url: "/dashboard/patients",
-          },
-          {
-            title: "Add new patient",
-            url: "/dashboard/patients/new",
-          },
-        ],
-      },
-    ],
-  };
+  ];
 
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher
+          teams={[
+            { name: "Amager Hospital", logo: LucideHospital },
+            { name: "Copenhagen Clinic", logo: HousePlus },
+          ]}
+        />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={navItems} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser
+          user={{
+            name: user.firstName,
+            lastname: user.lastName,
+            email: user.email,
+          }}
+        />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

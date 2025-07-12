@@ -3,6 +3,8 @@
 import { User } from "@/types/user";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { readUsers, writeUsers } from "@/lib/data/store";
+// import { Redirect } from "next";
+import { redirect } from "next/dist/server/api-utils";
 
 const WAIT = 200;
 function wait(ms: number) {
@@ -17,14 +19,18 @@ export async function getUserById(id: number): Promise<User | null> {
 export async function getUsers(): Promise<User[]> {
   await wait(WAIT);
   const user = await getUserFromCookies();
-  if (!user || user.role !== "admin") throw new Error("Unauthorized");
+  if (!user || (user.role !== "admin" && user.role !== "manager")) {
+    // redirect("/login");
+    throw new Error("Unauthorized");
+  }
   return await readUsers();
 }
 
 export async function createUser(newUser: Omit<User, "id">): Promise<User> {
   await wait(WAIT);
   const user = await getUserFromCookies();
-  if (!user || user.role !== "admin") throw new Error("Unauthorized");
+  if (!user || (user.role !== "admin" && user.role !== "manager"))
+    throw new Error("Unauthorized");
 
   const users = await readUsers();
   const id = Date.now();

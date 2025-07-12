@@ -22,25 +22,30 @@ export async function getPatients(): Promise<Patient[]> {
 
   if (!user) throw new Error("Unauthorized");
 
-  if (user.role === "admin") {
-    return allPatients;
+  if (user.role === "employee") {
+    return allPatients.map(
+      ({ id, firstName, lastName, dob, email, phoneNumber }) => ({
+        id,
+        firstName,
+        lastName,
+        dob,
+        email,
+        phoneNumber,
+      })
+    );
   }
 
-  if (user.role === "manager") {
-    return allPatients.map(({ sessions, ...rest }) => ({
-      ...rest,
-      sessionsCompleted: sessions.length,
-      treatment: rest.treatment,
-    }));
-  }
+  // if (user.role === "admin") {
+  return allPatients;
+  // }
 
-  // employee
-  return allPatients.map(({ id, firstName, lastName, dob }) => ({
-    id,
-    firstName,
-    lastName,
-    dob,
-  }));
+  // if (user.role === "manager") {
+  //   return allPatients.map(({ sessions, ...rest }) => ({
+  //     ...rest,
+  //     sessionsCompleted: sessions.length,
+  //     treatment: rest.treatment,
+  //   }));
+  // }
 }
 
 export async function createPatient(
@@ -94,7 +99,7 @@ export async function updatePatient(
 export async function deletePatient(id: number): Promise<Patient> {
   await wait(WAIT);
   const user = await getUserFromCookies();
-  if (!user || user.role !== "admin") {
+  if (!user || (user.role !== "admin" && user.role !== "manager")) {
     throw new Error("Unauthorized");
   }
 

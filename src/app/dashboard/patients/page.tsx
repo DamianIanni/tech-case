@@ -12,7 +12,7 @@ export default async function PatientsPage() {
   // const user = token ? verifyJWT(token) : null;
 
   const user = await getUserFromCookies();
-  console.log("user", user);
+  console.log("user patiens list", user);
   const patients = await getPatients();
   console.log("patients", patients);
 

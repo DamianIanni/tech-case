@@ -6,7 +6,7 @@
     "email": "sophia.hill@example.com",
     "phoneNumber": "65561816555",
     "dob": "1993-04-21",
-    "treatment": "dasdHill ashioas564545456",
+    "treatment": "dasdHill ashioa",
     "sessionsCompleted": 3,
     "sessions": [
       {
@@ -20,34 +20,6 @@
       {
         "date": "2025-06-15",
         "notes": "Lower anxiety during social interactions reported. Homework compliance was good."
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "firstName": "Liam",
-    "lastName": "Cooper",
-    "email": "liam.cooper@example.com",
-    "phoneNumber": "+1-555-0002",
-    "dob": "1987-09-12",
-    "treatment": "Major Depressive Disorder - Psychodynamic Therapy",
-    "sessionsCompleted": 4,
-    "sessions": [
-      {
-        "date": "2025-05-10",
-        "notes": "Flat affect observed. Explored childhood relationships."
-      },
-      {
-        "date": "2025-05-17",
-        "notes": "Discussed themes of self-worth and emotional repression."
-      },
-      {
-        "date": "2025-05-24",
-        "notes": "Patient showed increased emotional expression."
-      },
-      {
-        "date": "2025-05-31",
-        "notes": "Mood slightly improved. Patient more engaged in session."
       }
     ]
   },
@@ -362,54 +334,6 @@
         "notes": "Added task batching and reward system."
       }
     ]
-  },
-  {
-    "firstName": "dsa",
-    "lastName": "dsas",
-    "email": "dasda@adas.com",
-    "phoneNumber": "a5454545454",
-    "treatment": "",
-    "dob": "2025-07-01T03:00:00.000Z",
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "notes"
-      }
-    ],
-    "sessionsCompleted": 3,
-    "id": 1752274171957
-  },
-  {
-    "firstName": "sadsa",
-    "lastName": "dsdasd",
-    "email": "adas@dasdas.com",
-    "phoneNumber": "dsadadasdas",
-    "treatment": "",
-    "dob": "2012-07-13T03:00:00.000Z",
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "notes"
-      }
-    ],
-    "sessionsCompleted": 3,
-    "id": 1752274249632
-  },
-  {
-    "firstName": "dasdasd",
-    "lastName": "dsadasd",
-    "email": "asdas@adas.com",
-    "phoneNumber": "sadasdasd",
-    "treatment": "",
-    "dob": "2025-07-04T03:00:00.000Z",
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "notes"
-      }
-    ],
-    "sessionsCompleted": 3,
-    "id": 1752274393515
   },
   {
     "firstName": "dasdas",

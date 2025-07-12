@@ -88,7 +88,7 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id} className="even:bg-muted/40">
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="min-w-[120px]">
+                  <TableCell key={cell.id} className="min-w-[120px] h-13">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </TableCell>
                 ))}

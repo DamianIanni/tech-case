@@ -9,6 +9,7 @@ import { ActionDialog } from "@/components/feedback/actionDialog";
 import { User } from "@/types/user";
 import { Patient } from "@/types/patient";
 import { ROUTES } from "@/constants/routes";
+import { useAuth } from "../providers/AuthProvider";
 
 type ActionsProps = {
   data: Partial<User | Patient>;
@@ -19,6 +20,7 @@ export default function Actions(props: ActionsProps): React.ReactElement {
   const { data, route } = props;
   const deleteMember = useDeleteTeamMember();
   const deletePatient = useDeletePatient();
+  const { user } = useAuth();
 
   function handleDeleteAction() {
     if (route === "patients") {
@@ -56,16 +58,18 @@ export default function Actions(props: ActionsProps): React.ReactElement {
           </Button>
         </Link>
       )}
-      <ActionDialog
-        title={`Delete ${TITLE}`}
-        description={`Are you sure you want to delete ${data.firstName} ${data.lastName}?\n This action cannot be undone.`}
-        triggerLabel="Delete"
-        confirmLabel="Delete"
-        cancelLabel="Cancel"
-        onConfirm={() => {
-          handleDeleteAction();
-        }}
-      />
+      {route === "team" && user?.role === "manager" ? null : (
+        <ActionDialog
+          title={`Delete ${TITLE}`}
+          description={`Are you sure you want to delete ${data.firstName} ${data.lastName}?\n This action cannot be undone.`}
+          triggerLabel="Delete"
+          confirmLabel="Delete"
+          cancelLabel="Cancel"
+          onConfirm={() => {
+            handleDeleteAction();
+          }}
+        />
+      )}
     </div>
   );
 }

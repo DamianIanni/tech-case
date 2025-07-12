@@ -5,7 +5,7 @@
     "lastName": "Smith",
     "email": "admin@aisel.com",
     "password": "admin123",
-    "role": "Admin",
+    "role": "admin",
     "organization": "Amager Hospital"
   },
   {
@@ -14,7 +14,7 @@
     "lastName": "Ianni",
     "email": "employee@aisel.com",
     "password": "employee123",
-    "role": "Employee",
+    "role": "employee",
     "organization": "Amager Hospital"
   },
   {
@@ -23,7 +23,7 @@
     "lastName": "Kleinfeldt",
     "email": "manager@aisel.com",
     "password": "manager123",
-    "role": "Manager",
+    "role": "manager",
     "organization": "Amager Hospital"
   },
   {
@@ -32,7 +32,7 @@
     "lastName": "Fantino",
     "email": "fantino@personal.com",
     "password": "fantino",
-    "role": "Manager",
+    "role": "manager",
     "organization": "Kastrup Clinic"
   }
 ]
