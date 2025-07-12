@@ -26,21 +26,15 @@ export default async function DashboardLayout({
     <SidebarProvider>
       <AppSidebar />
       <div className="pl-[--sidebar-width] flex min-h-screen w-full flex-col bg-muted">
-        <header className="flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-10">
-          <div className="flex items-center gap-2 px-4">
+        <header className=" flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-10">
+          <div className="flex items-center gap-2 px-2">
             <SidebarTrigger className="-ml-1 cursor-pointer" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    <PageHeader />
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+            {/* <Breadcrumb> */}
+            <PageHeader />
+            {/* </Breadcrumb> */}
           </div>
         </header>
-        <main className="flex flex-grow p-2 sm:p-4 md:p-6">
+        <main className="flex flex-grow p-2 ">
           <div className="w-full h-full rounded-xl bg-white">{children}</div>
         </main>
       </div>

@@ -9,14 +9,9 @@ import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { getPatients } from "@/app/api/nonSimulatedAPI/methods";
 
 export default async function PatientsPage() {
-  // const user = token ? verifyJWT(token) : null;
-
   const user = await getUserFromCookies();
-  console.log("user patiens list", user);
   const patients = await getPatients();
-  console.log("patients", patients);
 
-  // const user = JSON.parse(cookiesStore.get("user")?.value)
   function whichColumns() {
     switch (user?.role) {
       case "admin":

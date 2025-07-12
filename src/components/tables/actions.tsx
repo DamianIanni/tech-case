@@ -51,13 +51,15 @@ export default function Actions(props: ActionsProps): React.ReactElement {
       {!inInfo && (
         <GeneralTooltip message="View details">
           <Link href={detailRoute}>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:cursor-pointer  hover:bg-muted"
-            >
-              <Info className="h-4 w-4  hover:bg-muted" />
-            </Button>
+            <span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:cursor-pointer  hover:bg-muted"
+              >
+                <Info className="h-4 w-4  hover:bg-muted" />
+              </Button>
+            </span>
           </Link>
         </GeneralTooltip>
       )}
@@ -65,13 +67,15 @@ export default function Actions(props: ActionsProps): React.ReactElement {
       {route !== "team" && (
         <GeneralTooltip message="Edit">
           <Link href={editRoute}>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:cursor-pointer hover:bg-secondary"
-            >
-              <Edit2 className="h-4 w-4 hover:bg-secondary" />
-            </Button>
+            <span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hover:cursor-pointer hover:bg-secondary"
+              >
+                <Edit2 className="h-4 w-4 hover:bg-secondary" />
+              </Button>
+            </span>
           </Link>
         </GeneralTooltip>
       )}

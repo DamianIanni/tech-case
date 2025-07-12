@@ -13,7 +13,7 @@ export function GeneralTooltip(props: Props) {
   const { children, message } = props;
   return (
     <Tooltip>
-      <TooltipTrigger>{children}</TooltipTrigger>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
       <TooltipContent>
         <p>{message}</p>
       </TooltipContent>

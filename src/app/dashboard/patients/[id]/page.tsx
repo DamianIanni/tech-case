@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default async function PatientInfoPage(props: Props) {
-  const { params } = props;
+  const { params } = await props;
   const patient: Patient | null = await getPatientById(Number(params.id));
 
   return (

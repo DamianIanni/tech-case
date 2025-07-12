@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function EditMemberPage(props: Props) {
-  const { params } = await props;
+  const { params } = props;
   const id = Number(params.id);
   const member = await getUserById(id);
 
