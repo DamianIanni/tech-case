@@ -1,6 +1,6 @@
 "use server";
 import { Center } from "@/types/center";
-import { getUserFromCookies } from "@/lib/api/auth/user";
+import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { readCenters, writeCenters } from "@/lib/data/store";
 
 const WAIT = 200;

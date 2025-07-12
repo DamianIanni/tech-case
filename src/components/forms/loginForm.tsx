@@ -56,11 +56,12 @@ export function LoginForm({
   }
 
   async function onSubmit(values: LoginSchemaType) {
-    const succes = await login(values);
-    console.log(succes);
-    if (!succes) return;
-    navigateToDashboard();
-    // router.refresh();
+    const res = await login(values);
+    if (res) {
+      navigateToDashboard();
+    } else {
+      console.log("Login failed");
+    }
   }
 
   return (

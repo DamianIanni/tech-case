@@ -4,14 +4,14 @@ import { NextResponse } from "next/server";
 import { verifyJWT } from "@/lib/apiUtils/jwtUtil";
 
 export async function GET() {
-  const cookieStore = cookies();
-  const token = (await cookieStore).get("token")?.value;
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
 
   if (!token) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const payload = verifyJWT(token); // tu función que devuelve el usuario mock
+  const payload = await verifyJWT(token); // tu función que devuelve el usuario mock
   if (!payload) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }

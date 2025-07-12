@@ -15,7 +15,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
+  // DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -33,8 +33,9 @@ export function NavUser({
   user,
 }: {
   user: {
-    name: string;
-    email: string;
+    name: string | undefined;
+    lastname: string | undefined;
+    email: string | undefined;
     // avatar: string;
   };
 }) {
@@ -42,14 +43,17 @@ export function NavUser({
   const { logout } = useAuth();
   const router = useRouter();
 
-  function handleLogout() {
+  async function handleLogout() {
     try {
-      logout();
-      router.push("/login");
+      await logout();
+      router.replace("/login");
     } catch (error) {
       console.log(error);
     }
   }
+
+  const FirstLett = `${user.name?.charAt(0)}${user.lastname?.charAt(0)}`;
+  console.log("FirstLett", FirstLett);
 
   return (
     <SidebarMenu>
@@ -61,8 +65,9 @@ export function NavUser({
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Avatar className="h-8 w-8 rounded-lg">
-                {/* <AvatarImage src={user.avatar} alt={user.name} /> */}
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {FirstLett}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">{user.name}</span>
@@ -81,7 +86,9 @@ export function NavUser({
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
                   {/* <AvatarImage src={user.avatar} alt={user.name} /> */}
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">
+                    {FirstLett}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">{user.name}</span>

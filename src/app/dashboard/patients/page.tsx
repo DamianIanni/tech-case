@@ -5,7 +5,7 @@ import { DataTable } from "@/components/tables/dataTable";
 import { managerPatientsColumns } from "@/app/tables/patients/managerColumns";
 import { adminPatientsColumns } from "@/app/tables/patients/adminColumns";
 import { employeePatientsColumns } from "@/app/tables/patients/employeeColumns";
-import { getUserFromCookies } from "@/lib/api/auth/user";
+import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { getPatients } from "@/app/api/nonSimulatedAPI/methods";
 
 export default async function PatientsPage() {

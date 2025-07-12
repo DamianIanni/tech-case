@@ -17,15 +17,17 @@ import {
 import { useAuth } from "../providers/AuthProvider";
 
 export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
-  const userAuth = useAuth();
-  console.log(userAuth);
+  const { user } = useAuth();
+
+  console.log(user);
 
   const data = {
     user: {
-      name: `${userAuth.user?.firstName} ${userAuth.user?.lastName}`,
-      email: userAuth.user?.email,
-      // avatar: Bot,
+      name: user?.firstName,
+      lastname: user?.lastName,
+      email: user?.email,
     },
+
     teams: [
       {
         name: "Amager Hospital",

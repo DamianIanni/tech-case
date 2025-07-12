@@ -5,7 +5,7 @@ import { DataTable } from "@/components/tables/dataTable";
 import { managerTeamColumns } from "@/app/tables/users/managerColumns";
 import { adminTeamColumns } from "@/app/tables/users/adminColumns";
 import { employeeTeamColumns } from "@/app/tables/users/employeeColumns";
-import { getUserFromCookies } from "@/lib/api/auth/user";
+import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
 import { getUsers } from "@/app/api/nonSimulatedAPI/userMethods";
 

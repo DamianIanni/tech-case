@@ -1,7 +1,7 @@
 // src/lib/api/users.ts
 "use server";
 import { User } from "@/types/user";
-import { getUserFromCookies } from "@/lib/api/auth/user";
+import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { readUsers, writeUsers } from "@/lib/data/store";
 
 const WAIT = 200;

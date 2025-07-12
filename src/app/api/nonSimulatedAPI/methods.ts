@@ -1,7 +1,8 @@
 "use server";
 
 import { Patient } from "@/types/patient";
-import { getUserFromCookies } from "@/lib/api/auth/user";
+import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
+
 import { readPatients, writePatients } from "@/lib/data/store";
 
 const WAIT = 200;

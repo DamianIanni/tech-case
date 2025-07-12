@@ -8,9 +8,10 @@ import { User } from "@/types/user/index";
 
 import {
   loginWithCredentials,
-  getCurrentUser,
+  // getCurrentUser,
   userDoesLogout,
-} from "@/lib/api/auth/user";
+} from "@/lib/api/auth/userActions";
+import { getCurrentUser } from "@/lib/api/auth/userActions";
 
 type AuthContextType = {
   user: User | null | undefined;

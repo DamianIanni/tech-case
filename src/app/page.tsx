@@ -10,7 +10,7 @@ export default async function Home() {
     redirect("/login");
   }
 
-  const user = verifyJWT(token);
+  const user = await verifyJWT(token);
 
   if (!user) {
     redirect("/login");
