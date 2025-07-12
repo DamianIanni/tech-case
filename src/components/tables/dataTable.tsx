@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
                 <TableHead
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
-                  className="min-w-[100px]"
+                  className="min-w-[100px] font-semibold"
                 >
                   {flexRender(
                     header.column.columnDef.header,

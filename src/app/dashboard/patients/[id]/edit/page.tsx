@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default async function EditPatientPage(props: Props) {
-  const { params } = await props;
+  const { params } = props;
   const id = Number(params.id);
   const patient = await getPatientById(id);
 

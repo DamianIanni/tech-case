@@ -10,65 +10,84 @@ import { User } from "@/types/user";
 import { Patient } from "@/types/patient";
 import { ROUTES } from "@/constants/routes";
 import { useAuth } from "../providers/AuthProvider";
+import { GeneralTooltip } from "../feedback/generalTooltip";
+
+export type Route = "patients" | "team";
 
 type ActionsProps = {
   data: Partial<User | Patient>;
-  route: string;
+  route: Route;
+  inInfo?: boolean;
 };
 
 export default function Actions(props: ActionsProps): React.ReactElement {
-  const { data, route } = props;
+  const { data, route, inInfo } = props;
   const deleteMember = useDeleteTeamMember();
   const deletePatient = useDeletePatient();
   const { user } = useAuth();
 
   function handleDeleteAction() {
     if (route === "patients") {
-      if (typeof data?.id === "number") {
-        deletePatient.mutate(data.id);
-      } else {
-        console.error("Patient id is undefined or not a number");
-      }
+      deletePatient.mutate(data.id!);
       return;
     }
-    if (typeof data.id === "number") {
-      deleteMember.mutate(data.id);
-      console.log("Deleted", data.id);
-    } else {
-      console.error("Member id is undefined or not a number");
-    }
+    deleteMember.mutate(data.id!);
   }
 
-  const ROUTE = route === "patients" ? ROUTES.patients : ROUTES.team;
+  const detailRoute =
+    route === "patients"
+      ? ROUTES.patientDetail(data.id!)
+      : ROUTES.teamMemberDetail(data.id!);
+
+  const editRoute =
+    route === "patients"
+      ? ROUTES.patientEdit(data.id!)
+      : ROUTES.teamMemberEdit(data.id!);
 
   const TITLE = route === "patients" ? "Patient" : "Team member";
 
   return (
     <div className="flex justify-end gap-2 min-w-[100px]">
-      <Link href={`${ROUTE}${data.id}`}>
-        <Button variant="outline" size="sm" className="hover:cursor-pointer">
-          <Info className="h-4 w-4" />
-        </Button>
-      </Link>
+      {!inInfo && (
+        <GeneralTooltip message="View details">
+          <Link href={detailRoute}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:cursor-pointer  hover:bg-muted"
+            >
+              <Info className="h-4 w-4  hover:bg-muted" />
+            </Button>
+          </Link>
+        </GeneralTooltip>
+      )}
 
       {route !== "team" && (
-        <Link href={`${ROUTE}${data.id}/edit`}>
-          <Button variant="outline" size="sm" className="hover:cursor-pointer">
-            <Edit2 className="h-4 w-4" />
-          </Button>
-        </Link>
+        <GeneralTooltip message="Edit">
+          <Link href={editRoute}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:cursor-pointer hover:bg-secondary"
+            >
+              <Edit2 className="h-4 w-4 hover:bg-secondary" />
+            </Button>
+          </Link>
+        </GeneralTooltip>
       )}
       {route === "team" && user?.role === "manager" ? null : (
-        <ActionDialog
-          title={`Delete ${TITLE}`}
-          description={`Are you sure you want to delete ${data.firstName} ${data.lastName}?\n This action cannot be undone.`}
-          triggerLabel="Delete"
-          confirmLabel="Delete"
-          cancelLabel="Cancel"
-          onConfirm={() => {
-            handleDeleteAction();
-          }}
-        />
+        <GeneralTooltip message="Delete">
+          <ActionDialog
+            title={`Delete ${TITLE}`}
+            description={`Are you sure you want to delete ${data.firstName} ${data.lastName}?\n This action cannot be undone.`}
+            triggerLabel="Delete"
+            confirmLabel="Delete"
+            cancelLabel="Cancel"
+            onConfirm={() => {
+              handleDeleteAction();
+            }}
+          />
+        </GeneralTooltip>
       )}
     </div>
   );

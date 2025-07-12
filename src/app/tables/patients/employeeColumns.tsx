@@ -20,4 +20,8 @@ export const employeePatientsColumns: ColumnDef<Patient>[] = [
     accessorKey: "phoneNumber",
     header: "Phone",
   },
+  {
+    accessorKey: "treatment",
+    header: "Treatment",
+  },
 ];

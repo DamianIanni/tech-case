@@ -24,13 +24,14 @@ export async function getPatients(): Promise<Patient[]> {
 
   if (user.role === "employee") {
     return allPatients.map(
-      ({ id, firstName, lastName, dob, email, phoneNumber }) => ({
+      ({ id, firstName, lastName, dob, email, phoneNumber, treatment }) => ({
         id,
         firstName,
         lastName,
         dob,
         email,
         phoneNumber,
+        treatment,
       })
     );
   }

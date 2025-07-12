@@ -16,7 +16,7 @@ const createComponent = <T extends HTMLElement>(
 
 export const H3 = createComponent<HTMLHeadingElement>(
   "h3",
-  "text-2xl font-semibold tracking-tight",
+  "text-2xl font-bold tracking-tight",
   "H3"
 );
 export const Small = createComponent<HTMLParagraphElement>(
@@ -26,6 +26,6 @@ export const Small = createComponent<HTMLParagraphElement>(
 );
 export const Muted = createComponent<HTMLSpanElement>(
   "span",
-  "text-sm text-muted-foreground",
+  "text-sm font-semibold text-muted-foreground",
   "Muted"
 );
