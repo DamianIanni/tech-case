@@ -3,12 +3,6 @@
 import { AppSidebar } from "@/components/nav/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { PageHeader } from "@/components/nav/pageHeader";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-} from "@/components/ui/breadcrumb";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default async function DashboardLayout({
@@ -16,12 +10,6 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Fetch del user, si querés
-  // const user = await getCurrentUser();
-
-  // Fetch de pacientes si sos manager, admin, etc.
-  // const patients = await fetchPatientsForUser(user);
-
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -29,9 +17,7 @@ export default async function DashboardLayout({
         <header className=" flex h-10 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-10">
           <div className="flex items-center gap-2 px-2">
             <SidebarTrigger className="-ml-1 cursor-pointer" />
-            {/* <Breadcrumb> */}
             <PageHeader />
-            {/* </Breadcrumb> */}
           </div>
         </header>
         <main className="flex flex-grow p-2 ">

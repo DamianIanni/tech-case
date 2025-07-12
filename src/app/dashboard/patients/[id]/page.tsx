@@ -5,11 +5,11 @@ import EntityInfo from "@/components/feedback/entityInfo";
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function PatientInfoPage(props: Props) {
-  const { params } = await props;
+  const params = await props.params;
   const patient: Patient | null = await getPatientById(Number(params.id));
 
   return (

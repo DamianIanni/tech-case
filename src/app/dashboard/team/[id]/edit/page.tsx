@@ -6,12 +6,12 @@ import { notFound } from "next/navigation";
 import { getUserById } from "@/app/api/nonSimulatedAPI/userMethods";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function EditMemberPage(props: Props) {
   const { params } = props;
-  const id = Number(params.id);
+  const id = Number((await params).id);
   const member = await getUserById(id);
 
   if (!member) return notFound();

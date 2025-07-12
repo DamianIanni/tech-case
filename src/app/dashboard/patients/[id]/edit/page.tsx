@@ -6,11 +6,11 @@ import { notFound } from "next/navigation";
 import { getPatientById } from "@/app/api/nonSimulatedAPI/methods";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export default async function EditPatientPage(props: Props) {
-  const { params } = props;
+  const params = await props.params;
   const id = Number(params.id);
   const patient = await getPatientById(id);
 
