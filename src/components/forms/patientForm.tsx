@@ -1,19 +1,18 @@
 "use client";
 
-import React from "react";
 import { Button } from "@/components/ui/button";
-
 import { patientSchema, PatientFormValues } from "@/lib/schemas/patientSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useCreatePatient, useUpdatePatient } from "@/hooks/patient/usePatient";
 import Calendar22 from "../calendars/calendar-22";
+import Calendar32 from "../calendars/calendar-32";
 import { Patient } from "@/types/patient";
 import { useRouter } from "next/navigation";
 import { Form } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { TextField } from "./fields/textField";
-import { OverlayLoader } from "../loaders/loader";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type PatientFormProps = {
   mode?: "create" | "edit";
@@ -25,6 +24,8 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
   const createPatient = useCreatePatient();
   const updatePatient = useUpdatePatient();
   const router = useRouter();
+  const isMobile = useIsMobile();
+
   const form = useForm<PatientFormValues>({
     resolver: zodResolver(patientSchema),
     defaultValues: {
@@ -36,6 +37,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
       dob: data?.dob || "",
     },
   });
+
   const isSubmitting = form.formState.isSubmitting;
 
   async function onSubmit(values: PatientFormValues) {
@@ -123,8 +125,12 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
               />
             </div>
 
-            <div className="flex w-sm">
-              <Calendar22 control={form.control} disabled={isSubmitting} />
+            <div className="flex w-full">
+              {isMobile ? (
+                <Calendar32 control={form.control} disabled={isSubmitting} />
+              ) : (
+                <Calendar22 control={form.control} disabled={isSubmitting} />
+              )}
             </div>
           </div>
 
@@ -143,7 +149,6 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
           </div>
         </form>
       </Form>
-      {isSubmitting && <OverlayLoader />}
     </div>
   );
 }

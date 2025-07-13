@@ -6,6 +6,8 @@ import {
   CreditCard,
   LogOut,
   Settings,
+  SunIcon,
+  MoonIcon,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -25,6 +27,8 @@ import {
 } from "@/components/ui/sidebar";
 import { Button } from "../ui/button";
 import { useAuth } from "../providers/AuthProvider";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "next-themes";
 
 export function NavUser({
   user,
@@ -39,6 +43,7 @@ export function NavUser({
   const { isMobile } = useSidebar();
   const { logout } = useAuth();
   const router = useRouter();
+  const { theme, setTheme } = useTheme();
 
   async function handleLogout() {
     try {
@@ -113,6 +118,14 @@ export function NavUser({
               >
                 <Bell />
                 Notifications
+              </Button>
+              <Button
+                variant={"ghost"}
+                className=" hover:bg-cover w-full flex justify-start hover:cursor-pointer "
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+                Theme
               </Button>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

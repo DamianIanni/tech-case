@@ -23,21 +23,24 @@ export async function getPatients(): Promise<Patient[]> {
   if (!user) throw new Error("Unauthorized");
 
   if (user.role === "employee") {
-    return allPatients.map(
-      ({ id, firstName, lastName, dob, email, phoneNumber, treatment }) => ({
-        id,
-        firstName,
-        lastName,
-        dob,
-        email,
-        phoneNumber,
-        treatment,
-      })
-    );
+    const patientsEmployee: Partial<Patient> = allPatients
+      .reverse()
+      .map(
+        ({ id, firstName, lastName, dob, email, phoneNumber, treatment }) => ({
+          id,
+          firstName,
+          lastName,
+          dob,
+          email,
+          phoneNumber,
+          treatment,
+        })
+      );
+    return patientsEmployee as Patient[];
   }
 
   // if (user.role === "admin") {
-  return allPatients;
+  return [...allPatients].reverse();
   // }
 
   // if (user.role === "manager") {

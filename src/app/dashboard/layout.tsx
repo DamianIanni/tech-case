@@ -21,7 +21,9 @@ export default async function DashboardLayout({
           </div>
         </header>
         <main className="flex flex-grow p-2 ">
-          <div className="w-full h-full rounded-xl bg-white">{children}</div>
+          <div className="w-full h-full rounded-xl bg-background">
+            {children}
+          </div>
         </main>
       </div>
     </SidebarProvider>

@@ -2,10 +2,9 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { Patient } from "@/types/patient";
+import { TableCellFallback } from "@/components/tables/cellFallback";
 
-import Actions from "@/components/tables/actions";
-
-export const adminPatientsColumns: ColumnDef<Patient>[] = [
+export const employeePatientsColumns: ColumnDef<Patient>[] = [
   {
     header: "Full name",
     accessorFn: (row) => `${row.firstName} ${row.lastName}`,
@@ -25,19 +24,10 @@ export const adminPatientsColumns: ColumnDef<Patient>[] = [
   {
     accessorKey: "treatment",
     header: "Treatment",
-  },
-  {
-    id: "actions",
-    header: () => <div className="text-right min-w-[100px]"></div>,
-    cell: ({ row }) => {
-      const patient = row.original;
+    cell: ({ getValue }) => {
+      const treatment = getValue() as string | undefined | null;
 
-      return <Actions data={patient} route="patients" />;
+      <TableCellFallback value={treatment} fallback="No treatment info" />;
     },
-    size: 100,
-    minSize: 100,
-    maxSize: 100,
-    enableSorting: false,
-    enableResizing: false,
   },
 ];

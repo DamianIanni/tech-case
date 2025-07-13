@@ -12,7 +12,7 @@ export function OverlayLoader({ className }: OverlayLoaderProps) {
   return (
     <div
       className={cn(
-        "absolute inset-0 z-50 flex items-center justify-center bg-white/70 backdrop-blur-md-sm",
+        "absolute inset-0 z-50 flex items-center justify-center bg-background/70 backdrop-blur-md-sm",
         className
       )}
     >

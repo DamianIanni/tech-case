@@ -2,9 +2,9 @@
 
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
-import { managerPatientsColumns } from "@/app/tables/patients/managerColumns";
-import { adminPatientsColumns } from "@/app/tables/patients/adminColumns";
-import { employeePatientsColumns } from "@/app/tables/patients/employeeColumns";
+import { managerPatientsColumns } from "@/constants/tables/patients/managerColumns";
+import { adminPatientsColumns } from "@/constants/tables/patients/adminColumns";
+import { employeePatientsColumns } from "@/constants/tables/patients/employeeColumns";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { getPatients } from "@/app/api/nonSimulatedAPI/methods";
 

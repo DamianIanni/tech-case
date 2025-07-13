@@ -2,9 +2,9 @@
 
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
-import { managerTeamColumns } from "@/app/tables/users/managerColumns";
-import { adminTeamColumns } from "@/app/tables/users/adminColumns";
-import { employeeTeamColumns } from "@/app/tables/users/employeeColumns";
+import { managerTeamColumns } from "@/constants/tables/users/managerColumns";
+import { adminTeamColumns } from "@/constants/tables/users/adminColumns";
+import { employeeTeamColumns } from "@/constants/tables/users/employeeColumns";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
 import { getUsers } from "@/app/api/nonSimulatedAPI/userMethods";

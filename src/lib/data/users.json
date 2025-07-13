@@ -34,5 +34,32 @@
     "password": "fantino",
     "role": "manager",
     "organization": "Kastrup Clinic"
+  },
+  {
+    "id": 5,
+    "firstName": "Manuel",
+    "lastName": "Adorni",
+    "email": "manuel@aisel.com",
+    "password": "manuel123",
+    "role": "manager",
+    "organization": "Amager Hospital"
+  },
+  {
+    "id": 6,
+    "firstName": "Karina",
+    "lastName": "Milei",
+    "email": "karina@aisel.com",
+    "password": "karina123",
+    "role": "admin",
+    "organization": "Kastrup Clinic"
+  },
+  {
+    "id": 7,
+    "firstName": "Conan",
+    "lastName": "Neura",
+    "email": "conan@aisel.com",
+    "password": "conan123",
+    "role": "employee",
+    "organization": "Kastrup Clinic"
   }
 ]

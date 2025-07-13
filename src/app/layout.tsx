@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 // Providers
 import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const darkMode = true;
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className={darkMode ? "dark" : ""}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReactQueryClientProvider>
           <AuthProvider>
-            {children}
-
+            <ThemeProvider>{children}</ThemeProvider>
             <Toaster position="bottom-center" richColors />
           </AuthProvider>
         </ReactQueryClientProvider>

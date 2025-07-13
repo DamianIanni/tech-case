@@ -2,6 +2,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Patient } from "@/types/patient";
 import Actions from "@/components/tables/actions";
+import { TableCellFallback } from "@/components/tables/cellFallback";
 
 export const managerPatientsColumns: ColumnDef<Patient>[] = [
   {
@@ -23,6 +24,11 @@ export const managerPatientsColumns: ColumnDef<Patient>[] = [
   {
     accessorKey: "treatment",
     header: "Treatment",
+    cell: ({ getValue }) => {
+      const treatment = getValue() as string | undefined | null;
+
+      <TableCellFallback value={treatment} fallback="No treatment info" />;
+    },
   },
   {
     id: "actions",
