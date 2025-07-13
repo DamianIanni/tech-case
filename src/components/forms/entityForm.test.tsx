@@ -11,10 +11,6 @@ jest.mock("./memberForm", () => ({
   MemberForm: () => <div data-testid="member-form">MemberForm</div>,
 }));
 
-jest.mock("./centerForm", () => ({
-  CenterForm: () => <div data-testid="center-form">CenterForm</div>,
-}));
-
 jest.mock("./loginForm", () => ({
   LoginForm: () => <div data-testid="login-form">LoginForm</div>,
 }));
@@ -28,11 +24,6 @@ describe("EntityForm", () => {
   it("renders MemberForm when formType is 'member'", () => {
     renderWithClient(<EntityForm formType="member" />);
     expect(screen.getByTestId("member-form")).toBeInTheDocument();
-  });
-
-  it("renders CenterForm when formType is 'center'", () => {
-    renderWithClient(<EntityForm formType="center" />);
-    expect(screen.getByTestId("center-form")).toBeInTheDocument();
   });
 
   it("renders LoginForm when formType is unknown", () => {
