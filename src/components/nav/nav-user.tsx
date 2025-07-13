@@ -27,7 +27,6 @@ import {
 } from "@/components/ui/sidebar";
 import { Button } from "../ui/button";
 import { useAuth } from "../providers/AuthProvider";
-import { Switch } from "@/components/ui/switch";
 import { useTheme } from "next-themes";
 
 export function NavUser({

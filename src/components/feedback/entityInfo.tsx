@@ -6,7 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { H3, Muted, Small } from "@/components/ui/typography";
 import { User } from "@/types/user";
 import { Patient } from "@/types/patient";
 import { useAuth } from "../providers/AuthProvider";
@@ -45,16 +44,18 @@ export default function EntityInfo(props: Props) {
     <div className="w-full max-w-2xl h-full flex flex-col rounded-xl p-6 relative">
       <div className="mb-4">
         <div className="flex justify-between items-center mb-2">
-          <H3 className="mb-1 font-bold">
+          <h3 className="mb-1 text-2xl font-bold tracking-tight">
             {data.firstName} {data.lastName}
-          </H3>
+          </h3>
           <Actions
             route={isPatient ? "patients" : "team"}
             data={data!}
             inInfo
           />
         </div>
-        <Muted>ID: {data.id}</Muted>
+        <span className="text-sm font-semibold text-muted-foreground">
+          ID: {data.id}
+        </span>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -63,12 +64,12 @@ export default function EntityInfo(props: Props) {
             key={item.label}
             className="flex flex-wrap md:flex-nowrap justify-between items-center border-b pb-1 last:border-none"
           >
-            <Small className="text-muted-foreground min-w-[120px]">
+            <p className="text-muted-foreground min-w-[120px] text-sm font-medium leading-none">
               {item.label}
-            </Small>
-            <Small className="break-words font-semibold text-right w-full md:w-auto">
+            </p>
+            <p className="break-words text-right w-full md:w-auto text-sm font-medium leading-none">
               {item.value}
-            </Small>
+            </p>
           </div>
         ))}
       </div>
@@ -80,9 +81,9 @@ export default function EntityInfo(props: Props) {
             <AccordionContent>
               {data.sessions.map((session, idx) => (
                 <div key={idx} className="mb-4 space-y-1">
-                  <Small className="font-semibold text-muted-foreground">
+                  <p className=" text-muted-foreground text-sm font-medium leading-none">
                     {session.date}
-                  </Small>
+                  </p>
                   <p className="text-sm leading-5">{session.notes}</p>
                 </div>
               ))}

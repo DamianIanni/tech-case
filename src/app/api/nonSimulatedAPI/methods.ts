@@ -39,17 +39,7 @@ export async function getPatients(): Promise<Patient[]> {
     return patientsEmployee as Patient[];
   }
 
-  // if (user.role === "admin") {
   return [...allPatients].reverse();
-  // }
-
-  // if (user.role === "manager") {
-  //   return allPatients.map(({ sessions, ...rest }) => ({
-  //     ...rest,
-  //     sessionsCompleted: sessions.length,
-  //     treatment: rest.treatment,
-  //   }));
-  // }
 }
 
 export async function createPatient(

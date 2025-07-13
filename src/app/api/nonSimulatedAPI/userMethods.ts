@@ -4,7 +4,6 @@ import { User } from "@/types/user";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { readUsers, writeUsers } from "@/lib/data/store";
 // import { Redirect } from "next";
-import { redirect } from "next/dist/server/api-utils";
 
 const WAIT = 200;
 function wait(ms: number) {
@@ -69,5 +68,3 @@ export async function deleteUser(id: number): Promise<User> {
   await writeUsers(users);
   return removed;
 }
-
-// src/lib/api/centers.ts
