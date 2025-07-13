@@ -11,10 +11,10 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const payload = await verifyJWT(token); // tu función que devuelve el usuario mock
+  const payload = await verifyJWT(token);
   if (!payload) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }
 
-  return NextResponse.json(payload); // esto es tu "user"
+  return NextResponse.json(payload);
 }

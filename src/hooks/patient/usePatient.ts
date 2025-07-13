@@ -7,7 +7,7 @@ import {
   createPatient,
   updatePatient,
   deletePatient,
-} from "@/app/api/nonSimulatedAPI/methods";
+} from "@/app/api/simulatedAPI/patientMethods";
 
 export function useCreatePatient() {
   return useMutation({

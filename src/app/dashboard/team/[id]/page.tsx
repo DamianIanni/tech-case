@@ -1,7 +1,7 @@
 "use server";
 
 import { User } from "@/types/user";
-import { getUserById } from "@/app/api/nonSimulatedAPI/userMethods";
+import { getUserById } from "@/app/api/simulatedAPI/userMethods";
 import EntityInfo from "@/components/feedback/entityInfo";
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 

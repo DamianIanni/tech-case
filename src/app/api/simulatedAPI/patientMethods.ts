@@ -1,5 +1,8 @@
 "use server";
 
+// This file simulates patient management methods in the backend.
+// It includes functions to get, create, update, and delete patients.
+
 import { Patient } from "@/types/patient";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
@@ -12,7 +15,7 @@ function wait(ms: number) {
 
 export async function getPatientById(id: number): Promise<Patient | null> {
   const patients = await readPatients();
-  return patients.find((p) => p.id === id) || null;
+  return patients.find((p: Partial<Patient>) => p.id === id) || null;
 }
 
 export async function getPatients(): Promise<Patient[]> {
@@ -23,10 +26,18 @@ export async function getPatients(): Promise<Patient[]> {
   if (!user) throw new Error("Unauthorized");
 
   if (user.role === "employee") {
-    const patientsEmployee: Partial<Patient> = allPatients
+    const patientsEmployee: Partial<Patient>[] = allPatients
       .reverse()
       .map(
-        ({ id, firstName, lastName, dob, email, phoneNumber, treatment }) => ({
+        ({
+          id,
+          firstName,
+          lastName,
+          dob,
+          email,
+          phoneNumber,
+          treatment,
+        }: Patient) => ({
           id,
           firstName,
           lastName,
@@ -82,7 +93,7 @@ export async function updatePatient(
   }
 
   const patients = await readPatients();
-  const index = patients.findIndex((p) => p.id === id);
+  const index = patients.findIndex((p: Partial<Patient>) => p.id === id);
   if (index === -1) throw new Error("Patient not found");
 
   patients[index] = { ...patients[index], ...updated };
@@ -98,7 +109,7 @@ export async function deletePatient(id: number): Promise<Patient> {
   }
 
   const patients = await readPatients();
-  const index = patients.findIndex((p) => p.id === id);
+  const index = patients.findIndex((p: Partial<Patient>) => p.id === id);
   if (index === -1) throw new Error("Patient not found");
 
   const removed = patients[index];

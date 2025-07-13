@@ -3,7 +3,7 @@
 import { EntityForm } from "@/components/forms/entityForm";
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { notFound } from "next/navigation";
-import { getPatientById } from "@/app/api/nonSimulatedAPI/methods";
+import { getPatientById } from "@/app/api/simulatedAPI/patientMethods";
 
 type Props = {
   params: Promise<{ id: string }>;

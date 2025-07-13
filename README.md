@@ -1,18 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 # Tech Case Frontend
 
@@ -47,7 +33,7 @@ The app will be available at [http://localhost:3000](http://localhost:3000).
 
 ### 4. Simulated Backend
 
-No backend setup is required. All API calls are simulated using local mocks and utilities. You can find mock API logic in `src/app/api/nonSimulatedAPI/` and related files.
+No backend setup is required. All API calls are simulated using local mocks and utilities. You can find mock API logic in `src/app/api/simulatedAPI/` and related files.
 
 ### 5. Running Tests
 

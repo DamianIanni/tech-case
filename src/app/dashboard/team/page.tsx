@@ -7,7 +7,7 @@ import { adminTeamColumns } from "@/constants/tables/users/adminColumns";
 import { employeeTeamColumns } from "@/constants/tables/users/employeeColumns";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
-import { getUsers } from "@/app/api/nonSimulatedAPI/userMethods";
+import { getUsers } from "@/app/api/simulatedAPI/userMethods";
 
 export default async function PatientsPage() {
   const user = await getUserFromCookies();

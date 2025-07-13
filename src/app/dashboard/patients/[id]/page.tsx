@@ -1,6 +1,6 @@
 "use server";
 import { Patient } from "@/types/patient";
-import { getPatientById } from "@/app/api/nonSimulatedAPI/methods";
+import { getPatientById } from "@/app/api/simulatedAPI/patientMethods";
 import EntityInfo from "@/components/feedback/entityInfo";
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 
