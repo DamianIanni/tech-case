@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // src/lib/data/store.ts
+"use server";
 import fs from "fs/promises";
 import path from "path";
 

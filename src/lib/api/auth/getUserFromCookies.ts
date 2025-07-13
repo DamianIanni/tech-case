@@ -1,7 +1,8 @@
+"use server";
 import { cookies } from "next/headers";
 import { verifyJWT } from "@/lib/api/jwtUtil";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export async function getUserFromCookies() {
   try {
