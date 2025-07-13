@@ -340,7 +340,7 @@
     "lastName": "mori",
     "email": "mori@gmail.com",
     "phoneNumber": "44455454455",
-    "treatment": "",
+    "treatment": "moderation",
     "dob": "2010-07-12T03:00:00.000Z",
     "sessions": [
       {

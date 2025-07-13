@@ -47,6 +47,7 @@ export async function getPatients(): Promise<Patient[]> {
           treatment,
         })
       );
+
     return patientsEmployee as Patient[];
   }
 

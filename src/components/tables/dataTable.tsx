@@ -52,13 +52,13 @@ export function DataTable<TData, TValue>({
       <div className="px-2 py-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <Input
           placeholder="Filter..."
-          value={table.getState().columnFilters[0]?.value || ""}
+          value={String(table.getState().columnFilters[0]?.value ?? "")}
           onChange={(e) =>
             table.setColumnFilters([{ id: "email", value: e.target.value }])
           }
           className="max-w-xs"
         />
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm text-muted-foreground px-4">
           {table.getFilteredRowModel().rows.length} items
         </div>
       </div>
@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
                 <TableHead
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
-                  className="min-w-[100px] font-semibold"
+                  className="min-w-[100px] text-md font-semibold "
                 >
                   {flexRender(
                     header.column.columnDef.header,

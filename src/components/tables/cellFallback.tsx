@@ -15,8 +15,16 @@ export function TableCellFallback({
   const display = value?.trim() ? value : fallback;
 
   return (
-    <span className={cn("text-sm text-muted-foreground", className)}>
-      {display}
-    </span>
+    <div>
+      {value ? (
+        <span className={cn("text-sm font-semibold", className)}>
+          {display}
+        </span>
+      ) : (
+        <span className={cn("text-sm text-muted-foreground", className)}>
+          {display}
+        </span>
+      )}
+    </div>
   );
 }

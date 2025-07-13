@@ -3,14 +3,17 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { User } from "@/types/user";
 import Actions from "@/components/tables/actions";
+import { TableCellFallback } from "@/components/tables/cellFallback";
 
 export const adminTeamColumns: ColumnDef<User>[] = [
   {
     header: "Full name",
     accessorFn: (row) => `${row.firstName} ${row.lastName}`,
-    cell: ({ getValue }) => (
-      <span className="font-medium">{getValue() as string}</span>
-    ),
+    cell: ({ getValue }) => {
+      const treatment = getValue() as string | undefined | null;
+
+      return <TableCellFallback value={treatment} fallback="No info" />;
+    },
     id: "fullName",
   },
   { accessorKey: "email", header: "Email" },
