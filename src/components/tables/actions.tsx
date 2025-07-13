@@ -55,6 +55,7 @@ export default function Actions(props: ActionsProps): React.ReactElement {
               <Button
                 variant="ghost"
                 size="sm"
+                aria-label="View details"
                 className="hover:cursor-pointer  hover:bg-muted"
               >
                 <Info className="h-4 w-4  hover:bg-muted" />
@@ -71,6 +72,7 @@ export default function Actions(props: ActionsProps): React.ReactElement {
               <Button
                 variant="ghost"
                 size="sm"
+                aria-label="Edit"
                 className="hover:cursor-pointer hover:bg-secondary"
               >
                 <Edit2 className="h-4 w-4 hover:bg-secondary" />
@@ -87,6 +89,9 @@ export default function Actions(props: ActionsProps): React.ReactElement {
             triggerLabel="Delete"
             confirmLabel="Delete"
             cancelLabel="Cancel"
+            triggerProps={{
+              "aria-label": "Delete",
+            }}
             onConfirm={() => {
               handleDeleteAction();
             }}

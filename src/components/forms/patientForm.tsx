@@ -102,7 +102,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                   control={form.control}
                   name="email"
                   label="Email"
-                  type="email"
+                  // type="email"
                   disabled={isSubmitting}
                 />
               </div>
@@ -140,11 +140,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting
-                ? "Saving..."
-                : mode === "edit"
-                ? "Save changes"
-                : "Create"}
+              {mode === "edit" ? "Save changes" : "Create"}
             </Button>
           </div>
         </form>

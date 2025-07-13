@@ -112,9 +112,10 @@ export function LoginForm({
               >
                 <TextField
                   control={form.control}
-                  type="email"
+                  // type="email"
                   name="email"
                   label="Email"
+                  disabled={isLoginPending}
                 />
                 <FormField
                   control={form.control}

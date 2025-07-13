@@ -23,6 +23,7 @@ type ActionDialogProps = {
   confirmLabel?: string;
   cancelLabel?: string;
   children?: React.ReactNode;
+  triggerProps?: React.ComponentProps<typeof Button>;
 };
 
 export function ActionDialog(props: ActionDialogProps) {
@@ -38,9 +39,9 @@ export function ActionDialog(props: ActionDialogProps) {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          //   variant="outline"
           size="sm"
           className="hover:bg-red-500 hover:text-white p-2 cursor-pointer"
+          {...props.triggerProps}
         >
           <Trash2 className="h-4 w-4" />
         </Button>
