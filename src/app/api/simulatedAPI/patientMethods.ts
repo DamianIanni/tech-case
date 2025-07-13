@@ -1,5 +1,3 @@
-"use server";
-
 // This file simulates patient management methods in the backend.
 // It includes functions to get, create, update, and delete patients.
 
@@ -7,6 +5,8 @@ import { Patient } from "@/types/patient";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 
 import { readPatients, writePatients } from "@/lib/data/store";
+
+export const dynamic = "force-dynamic";
 
 const WAIT = 200;
 function wait(ms: number) {

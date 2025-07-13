@@ -3,10 +3,11 @@
 // This file simulates user management methods in the backend.
 // It includes functions to get, create, update, and delete users.
 
-"use server";
 import { User } from "@/types/user";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { readUsers, writeUsers } from "@/lib/data/store";
+
+export const dynamic = "force-dynamic";
 
 const WAIT = 200;
 function wait(ms: number) {

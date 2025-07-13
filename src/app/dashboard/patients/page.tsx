@@ -1,5 +1,3 @@
-"use server";
-
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
 import { managerPatientsColumns } from "@/constants/tables/patients/managerColumns";
@@ -7,6 +5,8 @@ import { adminPatientsColumns } from "@/constants/tables/patients/adminColumns";
 import { employeePatientsColumns } from "@/constants/tables/patients/employeeColumns";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
 import { getPatients } from "@/app/api/simulatedAPI/patientMethods";
+
+export const dynamic = "force-dynamic";
 
 export default async function PatientsPage() {
   const user = await getUserFromCookies();

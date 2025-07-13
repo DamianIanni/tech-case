@@ -1,8 +1,10 @@
-"use server";
+// "use server";
 
 import { EntityForm } from "@/components/forms/entityForm";
 import { redirect } from "next/navigation";
 import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
+
+export const dynamic = "force-dynamic";
 
 export default async function LoginPage() {
   const user = await getUserFromCookies();
