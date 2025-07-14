@@ -4,10 +4,17 @@ import EntityInfo from "./entityInfo";
 // import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { renderWithClient } from "@/lib/test-utils";
 
-// Simula el usuario autenticado como admin
 jest.mock("../providers/AuthProvider", () => ({
   useAuth: () => ({
     user: { role: "admin" },
+  }),
+}));
+
+jest.mock("next/navigation", () => ({
+  useRouter: () => ({
+    replace: jest.fn(),
+    push: jest.fn(),
+    refresh: jest.fn(),
   }),
 }));
 
