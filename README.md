@@ -86,6 +86,15 @@ All write operations (create, edit, delete) work correctly in the development en
 
 - Implement a real backend to support data persistence in production.
 - Add user authentication and role-based access with real API integration.
+- Extend the **Team** section:
+  - Only admins will be able to delete team members.
+  - Admins will be able to invite new team members via email.
+- Add functionality to manage **Centers**:
+  - Each user will be associated with a specific center.
+  - Based on the selected center and user role, corresponding patients and team members will be fetched.
+- Expand the **Profile** section:
+  - Add fully functional settings for billing, account management, and notifications.
+- Include a **Registration flow** for new users (currently login-only).
 
 ---
 
