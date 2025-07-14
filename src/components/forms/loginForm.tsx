@@ -1,3 +1,12 @@
+/**
+ * Login Form Component
+ *
+ * This component provides a comprehensive login interface with multiple authentication options.
+ * It includes social login buttons (Apple, Google), email/password form with validation,
+ * loading states, error handling, and navigation upon successful authentication.
+ * Uses React Hook Form with Zod validation for form management.
+ */
+
 "use client";
 
 import React from "react";
@@ -33,8 +42,11 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  // Get authentication functions and state from auth context
   const { login, isLoginPending, isErrorLogin } = useAuth();
   const router = useRouter();
+
+  // Initialize form with validation schema and default values
   const form = useForm<LoginSchemaType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -43,16 +55,25 @@ export function LoginForm({
     },
   });
 
+  // Error message configuration for invalid credentials
   const invalidCredentials = {
     title: "Unable to login",
     description: "Please check your credentials and try again.",
     data: ["Check your email", "Check your password"],
   };
 
+  /**
+   * Navigates user to dashboard after successful login
+   */
   function navigateToDashboard() {
     router.replace("/dashboard");
   }
 
+  /**
+   * Handles form submission for email/password login
+   *
+   * @param values - Form values containing email and password
+   */
   async function onSubmit(values: LoginSchemaType) {
     const res = await login(values);
     if (res) {
@@ -70,6 +91,7 @@ export function LoginForm({
         </CardHeader>
         <CardContent>
           <div className="grid gap-4">
+            {/* Social login buttons section */}
             <div className="flex flex-col gap-4">
               <Button
                 variant="outline"
@@ -105,6 +127,7 @@ export function LoginForm({
               </div>
             </div>
 
+            {/* Email/password login form */}
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -149,18 +172,17 @@ export function LoginForm({
                     </FormItem>
                   )}
                 />
-                {
-                  isLoginPending ? (
-                    <ButtonLoading text={"Loading"} />
-                  ) : (
-                    <Button type="submit" className="w-full">
-                      Login
-                    </Button>
-                  )
-                  // : <ButtonLoading text={'Loadiing'}/>
-                }
+                {/* Submit button with loading state */}
+                {isLoginPending ? (
+                  <ButtonLoading text={"Loading"} />
+                ) : (
+                  <Button type="submit" className="w-full">
+                    Login
+                  </Button>
+                )}
               </form>
             </Form>
+            {/* Error message display for failed login attempts */}
             {isErrorLogin && (
               <AlertMessage
                 title={invalidCredentials.title}

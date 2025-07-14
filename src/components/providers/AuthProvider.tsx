@@ -1,3 +1,11 @@
+/**
+ * Authentication Provider Component
+ *
+ * This component provides authentication context and functionality throughout the application.
+ * It manages user authentication state, login/logout operations, and provides authentication
+ * status to child components. Uses React Query for server state management and caching.
+ */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
@@ -12,6 +20,7 @@ import {
 } from "@/lib/api/auth/userActions";
 import { getCurrentUser } from "@/lib/api/auth/userActions";
 
+// Type definition for the authentication context
 type AuthContextType = {
   user: User | null | undefined;
   isAuthenticated: boolean;
@@ -23,6 +32,7 @@ type AuthContextType = {
   isSuccessLogout: boolean;
 };
 
+// Create authentication context with undefined default value
 export const AuthContext = createContext<AuthContextType | undefined>(
   undefined
 );
@@ -30,12 +40,14 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 export function AuthProvider({ children }: { children: ReactNode }) {
   const queryClient = useQueryClient();
 
+  // Query to get current user information
   const { data: user, isLoading } = useQuery({
     queryKey: ["me"],
     queryFn: getCurrentUser,
     retry: false,
   });
 
+  // Mutation for handling user login
   const {
     mutateAsync: loginMutate,
     isError: isErrorLogin,
@@ -47,6 +59,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
   });
 
+  /**
+   * Login function that handles user authentication
+   *
+   * @param credentials - User email and password
+   * @returns Promise<boolean> - True if login successful, false otherwise
+   */
   const login = async (credentials: {
     email: string;
     password: string;
@@ -60,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  // Mutation for handling user logout
   const {
     mutateAsync: logoutMutate,
     isError: isErrorLogout,
@@ -70,11 +89,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["me"] }),
   });
 
+  /**
+   * Logout function that handles user sign out
+   * Clears authentication state and invalidates user queries
+   */
   const logout = async () => {
     await logoutMutate();
   };
 
-  if (isLoading) return null; // loading state while fetching user data
+  // Show loading state while fetching user data
+  if (isLoading) return null;
 
   return (
     <AuthContext.Provider
@@ -94,6 +118,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Custom hook to access authentication context
+ * Must be used within an AuthProvider component
+ *
+ * @returns AuthContextType - Authentication context with user data and methods
+ * @throws Error if used outside of AuthProvider
+ */
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) throw new Error("useAuth must be used within an AuthProvider");

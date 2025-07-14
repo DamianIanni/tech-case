@@ -1,3 +1,10 @@
+/**
+ * @file usePatient.ts
+ * @summary This file contains custom React Query hooks for managing patient data.
+ * It provides hooks for creating, updating, and deleting patient records,
+ * with integrated toast feedback for success and error states.
+ */
+
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
@@ -9,6 +16,12 @@ import {
   deletePatient,
 } from "@/app/api/simulatedAPI/patientMethods";
 
+/**
+ * useCreatePatient hook.
+ * A custom hook that provides a mutation for creating a new patient record.
+ * It shows a success toast on successful creation and an error toast if the creation fails.
+ * @returns {object} A mutation object from `@tanstack/react-query`.
+ */
 export function useCreatePatient() {
   return useMutation({
     mutationFn: createPatient,
@@ -29,6 +42,12 @@ export function useCreatePatient() {
   });
 }
 
+/**
+ * useUpdatePatient hook.
+ * A custom hook that provides a mutation for updating an existing patient's information.
+ * It displays a success toast upon a successful update and an error toast if the update fails.
+ * @returns {object} A mutation object from `@tanstack/react-query`.
+ */
 export function useUpdatePatient() {
   return useMutation({
     mutationFn: ({ id, updated }: { id: number; updated: Partial<Patient> }) =>
@@ -50,6 +69,12 @@ export function useUpdatePatient() {
   });
 }
 
+/**
+ * useDeletePatient hook.
+ * A custom hook that provides a mutation for deleting a patient record.
+ * It shows an info toast on successful deletion and an error toast if the deletion fails.
+ * @returns {object} A mutation object from `@tanstack/react-query`.
+ */
 export function useDeletePatient() {
   return useMutation({
     mutationFn: (id: number) => deletePatient(id),

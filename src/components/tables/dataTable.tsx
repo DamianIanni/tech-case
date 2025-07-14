@@ -1,3 +1,10 @@
+/**
+ * @file DataTable.tsx
+ * @summary This file provides a generic DataTable component built with TanStack Table.
+ * It offers features such as sorting, filtering, and pagination for displaying tabular data,
+ * making it a versatile component for various data presentation needs.
+ */
+
 "use client";
 
 import {
@@ -28,12 +35,24 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
+/**
+ * DataTable component.
+ * A generic and reusable table component that leverages TanStack Table for advanced features
+ * like sorting, filtering, and pagination. It dynamically renders columns and rows based on
+ * the provided `columns` and `data` props.
+ */
 export function DataTable<TData, TValue>({
   columns,
   data,
-}: DataTableProps<TData, TValue>) {
+}: DataTableProps<TData, TValue>): React.ReactElement {
+  // State to manage the sorting configuration of the table.
   const [sorting, setSorting] = React.useState<SortingState>([]);
 
+  /**
+   * Initializes the TanStack Table instance.
+   * Configures the table with data, columns, sorting state, and various model accessors
+   * for core functionality, sorting, filtering, and pagination.
+   */
   const table = useReactTable({
     data,
     columns,
@@ -41,15 +60,16 @@ export function DataTable<TData, TValue>({
       sorting,
     },
     onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
+    getCoreRowModel: getCoreRowModel(), // Provides access to the fundamental row model.
+    getSortedRowModel: getSortedRowModel(), // Enables sorting of rows.
+    getFilteredRowModel: getFilteredRowModel(), // Enables filtering of rows.
+    getPaginationRowModel: getPaginationRowModel(), // Enables pagination of rows.
   });
 
   return (
     <div className="w-full h-full flex flex-col overflow-x-auto rounded-xl bg-sidebar ">
       <div className="px-2 py-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        {/* Input field for global filtering. Currently filters by 'email' column. */}
         <Input
           placeholder="Filter..."
           value={String(table.getState().columnFilters[0]?.value ?? "")}
@@ -58,21 +78,25 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-xs"
         />
+        {/* Displays the count of filtered items. */}
         <div className="text-sm text-muted-foreground px-4">
           {table.getFilteredRowModel().rows.length} items
         </div>
       </div>
 
+      {/* Main table structure */}
       <Table className="w-full min-w-[700px]">
         <TableHeader>
+          {/* Renders table headers based on column definitions, enabling sorting on click. */}
           {table.getHeaderGroups().map((hg) => (
             <TableRow key={hg.id} className="bg-muted">
               {hg.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  onClick={header.column.getToggleSortingHandler()}
+                  onClick={header.column.getToggleSortingHandler()} // Toggles sorting for the column.
                   className="min-w-[100px] text-md font-semibold "
                 >
+                  {/* Renders the header content. */}
                   {flexRender(
                     header.column.columnDef.header,
                     header.getContext()
@@ -84,9 +108,11 @@ export function DataTable<TData, TValue>({
         </TableHeader>
 
         <TableBody>
+          {/* Conditionally renders table rows if data is available, otherwise displays "No results." */}
           {table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id} className="even:bg-muted/40">
+                {/* Renders cells for each visible row. */}
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id} className="min-w-[120px] h-13">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -107,12 +133,15 @@ export function DataTable<TData, TValue>({
         </TableBody>
       </Table>
 
+      {/* Pagination controls */}
       <div className="mt-auto flex flex-col gap-2 md:flex-row md:items-center md:justify-between px-2 py-4">
+        {/* Displays current page number and total page count. */}
         <div className="text-sm text-muted-foreground">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
         <div className="flex gap-2">
+          {/* Button to navigate to the previous page. */}
           <Button
             className="hover:cursor-pointer"
             size="sm"
@@ -122,6 +151,7 @@ export function DataTable<TData, TValue>({
           >
             Previous
           </Button>
+          {/* Button to navigate to the next page. */}
           <Button
             className="hover:cursor-pointer"
             size="sm"

@@ -1,10 +1,15 @@
-## Getting Started
-
 # Tech Case Frontend
+
+# Deployment
+
+The project is deployed and accessible here:
+🔗 https://tech-case-xbk8.vercel.app/
+
+The deployed version runs on Vercel, using the latest build from the master branch.
 
 This project is a Next.js + React + Tailwind + Shadcn UI application for patient management. The backend is simulated; all data interactions are handled locally or via mock APIs.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -55,6 +60,18 @@ npm test
 ### 7. Customization
 
 You can modify UI components, forms, and hooks to fit your needs. All logic is frontend-only and easy to extend.
+
+---
+
+### 8. Note on Data Persistence
+
+This project uses local .json files to simulate a database.
+All write operations (create, edit, delete) work correctly in the development environment. However, in production, the file system is read-only, so changes will not be persisted.
+
+### Future Improvements
+
+- Implement a real backend to support data persistence in production.
+- Add user authentication and role-based access with real API integration.
 
 ---
 

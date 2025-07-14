@@ -1,3 +1,10 @@
+/**
+ * @file PatientForm.tsx
+ * @summary This file defines the PatientForm component, a reusable form for creating and editing patient information.
+ * It integrates with React Hook Form for form management and Zod for validation, handling data submission
+ * to either create a new patient or update an existing one via custom hooks.
+ */
+
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -19,6 +26,14 @@ type PatientFormProps = {
   data?: Partial<Patient>;
 };
 
+/**
+ * PatientForm component.
+ * A versatile form component used for both adding new patient records and editing existing ones.
+ * It dynamically adjusts its behavior and display based on the 'mode' prop.
+ *
+ * @param {PatientFormProps} props - The props for the component.
+ * @returns {React.ReactElement} The rendered form component.
+ */
 export function PatientForm(props: PatientFormProps): React.ReactElement {
   const { mode, data } = props;
   const createPatient = useCreatePatient();
@@ -26,8 +41,12 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
   const router = useRouter();
   const isMobile = useIsMobile();
 
+  /**
+   * Initializes the form with React Hook Form.
+   * Configures form validation using Zod and sets default values based on the provided 'data' prop (for edit mode).
+   */
   const form = useForm<PatientFormValues>({
-    resolver: zodResolver(patientSchema),
+    resolver: zodResolver(patientSchema), // Integrates Zod for schema validation.
     defaultValues: {
       firstName: data?.firstName || "",
       lastName: data?.lastName || "",
@@ -38,8 +57,14 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
     },
   });
 
-  const isSubmitting = form.formState.isSubmitting;
+  const isSubmitting = form.formState.isSubmitting; // Boolean indicating if the form is currently being submitted.
 
+  /**
+   * Handles the form submission logic.
+   * Depending on the 'mode' prop, it either calls the createPatient or updatePatient mutation.
+   * After a successful operation, it redirects the user to the patients dashboard.
+   * @param {PatientFormValues} values - The form values submitted by the user.
+   */
   async function onSubmit(values: PatientFormValues) {
     if (mode === "edit" && data?.id) {
       await updatePatient.mutateAsync({
@@ -49,11 +74,11 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
     } else {
       await createPatient.mutateAsync({
         ...values,
-        sessions: [],
-        sessionsCompleted: 0,
+        sessions: [], // Initialize sessions as an empty array for new patients.
+        sessionsCompleted: 0, // Initialize sessions completed count to zero for new patients.
       });
     }
-    router.replace("/dashboard/patients");
+    router.replace("/dashboard/patients"); // Redirects to the patients list page.
   }
 
   return (
@@ -71,6 +96,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
           ? "Update the patient's information below."
           : "Fill out the form below to register a new patient."}
       </p>
+      {/* Form component wrapping the native form for context provision */}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -79,6 +105,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
+                {/* Text field for the patient's first name */}
                 <TextField
                   control={form.control}
                   name="firstName"
@@ -87,6 +114,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                 />
               </div>
               <div className="flex-1">
+                {/* Text field for the patient's last name */}
                 <TextField
                   control={form.control}
                   name="lastName"
@@ -98,15 +126,17 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
+                {/* Text field for the patient's email address */}
                 <TextField
                   control={form.control}
                   name="email"
                   label="Email"
-                  // type="email"
+                  // type="email" // This can be uncommented to enforce email input type
                   disabled={isSubmitting}
                 />
               </div>
               <div className="flex-1">
+                {/* Text field for the patient's phone number */}
                 <TextField
                   control={form.control}
                   name="phoneNumber"
@@ -117,6 +147,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
             </div>
 
             <div className="flex-1">
+              {/* Text field for the patient's treatment */}
               <TextField
                 control={form.control}
                 name="treatment"
@@ -126,6 +157,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
             </div>
 
             <div className="flex w-full">
+              {/* Conditionally renders calendar component based on device type */}
               {isMobile ? (
                 <Calendar32 control={form.control} disabled={isSubmitting} />
               ) : (
@@ -135,6 +167,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
           </div>
 
           <div className="flex justify-end">
+            {/* Submit button for the form */}
             <Button
               className="hover:cursor-pointer"
               type="submit"
