@@ -366,5 +366,2213 @@
     ],
     "sessionsCompleted": 3,
     "id": 1752455287788
+  },
+  {
+    "id": 1752538323001,
+    "firstName": "Liam",
+    "lastName": "King",
+    "email": "liam.king@example.com",
+    "phoneNumber": "1234567890",
+    "dob": "1987-11-20T03:00:00.000Z",
+    "treatment": "Depression - CBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Initial assessment, discussed symptoms."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced cognitive restructuring."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Homework review, mood tracking."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Behavioral activation techniques practiced."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported slight mood improvement."
+      }
+    ]
+  },
+  {
+    "id": 1752538323002,
+    "firstName": "Olivia",
+    "lastName": "Young",
+    "email": "olivia.young@example.com",
+    "phoneNumber": "1234567891",
+    "dob": "1994-02-12T03:00:00.000Z",
+    "treatment": "Anxiety Disorder - Mindfulness-Based Stress Reduction",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to mindfulness concepts."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced breathing exercises."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Body scan meditation introduced."
+      }
+    ]
+  },
+  {
+    "id": 1752538323003,
+    "firstName": "William",
+    "lastName": "Lee",
+    "email": "william.lee@example.com",
+    "phoneNumber": "1234567892",
+    "dob": "1978-07-03T03:00:00.000Z",
+    "treatment": "Obsessive-Compulsive Disorder - ERP",
+    "sessionsCompleted": 7,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Hierarchy building for exposure."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "First exposure session, high anxiety."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Exposure repetition, anxiety reduction noted."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Continued exposures, challenging rituals."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "In-vivo exposure to feared situation."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Patient tolerating discomfort better."
+      },
+      {
+        "date": "2025-02-12",
+        "notes": "Obsessions frequency decreasing."
+      }
+    ]
+  },
+  {
+    "id": 1752538323004,
+    "firstName": "Ava",
+    "lastName": "Wright",
+    "email": "ava.wright@example.com",
+    "phoneNumber": "1234567893",
+    "dob": "1991-09-18T03:00:00.000Z",
+    "treatment": "Eating Disorder - FBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Family session, meal support plan discussion."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Parental strategies for mealtime challenges."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient resistant to weight gain, family support reinforced."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Some progress in food intake reported."
+      }
+    ]
+  },
+  {
+    "id": 1752538323005,
+    "firstName": "James",
+    "lastName": "Scott",
+    "email": "james.scott@example.com",
+    "phoneNumber": "1234567894",
+    "dob": "1983-05-01T03:00:00.000Z",
+    "treatment": "Trauma - EMDR",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Client history and target identification."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Preparation phase, safe place visualization."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Desensitization of first target memory."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Continued desensitization, SUDs reducing."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Installation of positive cognition."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Body scan and closure."
+      }
+    ]
+  },
+  {
+    "id": 1752538323006,
+    "firstName": "Sophia",
+    "lastName": "Green",
+    "email": "sophia.green@example.com",
+    "phoneNumber": "1234567895",
+    "dob": "1997-08-25T03:00:00.000Z",
+    "treatment": "Social Anxiety - Exposure Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified feared social situations."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced in-session exposure to conversation."
+      }
+    ]
+  },
+  {
+    "id": 1752538323007,
+    "firstName": "Lucas",
+    "lastName": "Baker",
+    "email": "lucas.baker@example.com",
+    "phoneNumber": "1234567896",
+    "dob": "1980-03-14T03:00:00.000Z",
+    "treatment": "Substance Use Disorder - CBT",
+    "sessionsCompleted": 8,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Triggers for substance use identified."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Coping skills for cravings discussed."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Relapse prevention strategies."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient maintaining sobriety."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Discussed social support systems."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Problem-solving skills applied to high-risk situations."
+      },
+      {
+        "date": "2025-02-12",
+        "notes": "Emotional regulation techniques."
+      },
+      {
+        "date": "2025-02-19",
+        "notes": "Patient reported improved life satisfaction."
+      }
+    ]
+  },
+  {
+    "id": 1752538323008,
+    "firstName": "Isabella",
+    "lastName": "Adams",
+    "email": "isabella.adams@example.com",
+    "phoneNumber": "1234567897",
+    "dob": "1992-12-05T03:00:00.000Z",
+    "treatment": "Grief Counseling",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored feelings of loss and sadness."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Discussed stages of grief."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Memories of loved one shared."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient finding ways to honor memory."
+      }
+    ]
+  },
+  {
+    "id": 1752538323009,
+    "firstName": "Mason",
+    "lastName": "Nelson",
+    "email": "mason.nelson@example.com",
+    "phoneNumber": "1234567898",
+    "dob": "1975-04-29T03:00:00.000Z",
+    "treatment": "Chronic Pain Management - CBT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed pain impact on daily life."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced relaxation techniques."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Activity pacing strategies implemented."
+      }
+    ]
+  },
+  {
+    "id": 1752538323010,
+    "firstName": "Harper",
+    "lastName": "Carter",
+    "email": "harper.carter@example.com",
+    "phoneNumber": "1234567899",
+    "dob": "2000-01-10T03:00:00.000Z",
+    "treatment": "ADHD - Coaching",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed organizational challenges."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced planning tools."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Time management strategies practiced."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported improved focus on tasks."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Developed personalized reward system."
+      }
+    ]
+  },
+  {
+    "id": 1752538323011,
+    "firstName": "Evelyn",
+    "lastName": "Mitchell",
+    "email": "evelyn.mitchell@example.com",
+    "phoneNumber": "1234567900",
+    "dob": "1989-06-22T03:00:00.000Z",
+    "treatment": "Body Dysmorphic Disorder - CBT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified repetitive behaviors and thoughts."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged distorted body image thoughts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Reduced mirror checking, anxiety increased then decreased."
+      }
+    ]
+  },
+  {
+    "id": 1752538323012,
+    "firstName": "Daniel",
+    "lastName": "Perez",
+    "email": "daniel.perez@example.com",
+    "phoneNumber": "1234567901",
+    "dob": "1995-10-03T03:00:00.000Z",
+    "treatment": "Agoraphobia - Exposure Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Hierarchy of feared situations created."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "In-vivo exposure to crowded place."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient managed panic symptoms during exposure."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Increased time outside home reported."
+      }
+    ]
+  },
+  {
+    "id": 1752538323013,
+    "firstName": "Abigail",
+    "lastName": "Clark",
+    "email": "abigail.clark@example.com",
+    "phoneNumber": "1234567902",
+    "dob": "1984-04-16T03:00:00.000Z",
+    "treatment": "Insomnia - CBT-I",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Sleep hygiene reviewed, sleep diary started."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Stimulus control instructions given."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Sleep restriction implemented, initial resistance."
+      }
+    ]
+  },
+  {
+    "id": 1752538323014,
+    "firstName": "Jackson",
+    "lastName": "Lewis",
+    "email": "jackson.lewis@example.com",
+    "phoneNumber": "1234567903",
+    "dob": "1990-11-29T03:00:00.000Z",
+    "treatment": "Eating Disorder - CBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed eating patterns and thoughts."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced regular eating schedule."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Challenged food rules and body checking."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reduced binge eating episodes."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Explored underlying emotional triggers."
+      }
+    ]
+  },
+  {
+    "id": 1752538323015,
+    "firstName": "Elizabeth",
+    "lastName": "Young",
+    "email": "elizabeth.young@example.com",
+    "phoneNumber": "1234567904",
+    "dob": "1972-01-07T03:00:00.000Z",
+    "treatment": "Couples Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Initial assessment of relationship dynamics."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Communication patterns discussed."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Active listening skills practiced."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Conflict resolution strategies introduced."
+      }
+    ]
+  },
+  {
+    "id": 1752538323016,
+    "firstName": "Aiden",
+    "lastName": "Hall",
+    "email": "aiden.hall@example.com",
+    "phoneNumber": "1234567905",
+    "dob": "1998-09-02T03:00:00.000Z",
+    "treatment": "Adjustment Disorder - Supportive Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed recent life stressors."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Coping mechanisms explored."
+      }
+    ]
+  },
+  {
+    "id": 1752538323017,
+    "firstName": "Sofia",
+    "lastName": "White",
+    "email": "sofia.white@example.com",
+    "phoneNumber": "1234567906",
+    "dob": "1986-03-24T03:00:00.000Z",
+    "treatment": "Perinatal Depression - CBT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed mood and sleep difficulties postpartum."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced self-care strategies."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Support network identified and strengthened."
+      }
+    ]
+  },
+  {
+    "id": 1752538323018,
+    "firstName": "Joseph",
+    "lastName": "Allen",
+    "email": "joseph.allen@example.com",
+    "phoneNumber": "1234567907",
+    "dob": "1993-07-17T03:00:00.000Z",
+    "treatment": "Anger Management - CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified triggers for anger."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Relaxation techniques practiced."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Cognitive restructuring for angry thoughts."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Improved communication strategies."
+      }
+    ]
+  },
+  {
+    "id": 1752538323019,
+    "firstName": "Chloe",
+    "lastName": "Harris",
+    "email": "chloe.harris@example.com",
+    "phoneNumber": "1234567908",
+    "dob": "2001-02-28T03:00:00.000Z",
+    "treatment": "Eating Disorder - DBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced mindfulness skills for urges."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Distress tolerance skills applied to food-related anxiety."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Emotional regulation strategies for difficult feelings."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Interpersonal effectiveness for boundary setting."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported less impulsive eating."
+      }
+    ]
+  },
+  {
+    "id": 1752538323020,
+    "firstName": "Samuel",
+    "lastName": "Moore",
+    "email": "samuel.moore@example.com",
+    "phoneNumber": "1234567909",
+    "dob": "1970-05-19T03:00:00.000Z",
+    "treatment": "Gambling Addiction - CBT",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed gambling patterns and consequences."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Identified triggers and high-risk situations."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Developed coping strategies for urges."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Financial management strategies discussed."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient engaged in alternative activities."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Relapse prevention plan established."
+      }
+    ]
+  },
+  {
+    "id": 1752538323021,
+    "firstName": "Lily",
+    "lastName": "Jackson",
+    "email": "lily.jackson@example.com",
+    "phoneNumber": "1234567910",
+    "dob": "1996-08-08T03:00:00.000Z",
+    "treatment": "Panic Disorder - ERP",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Psychoeducation on panic cycle."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Interoceptive exposure to dizziness."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient reported less fear of panic attacks."
+      }
+    ]
+  },
+  {
+    "id": 1752538323022,
+    "firstName": "David",
+    "lastName": "Miller",
+    "email": "david.miller@example.com",
+    "phoneNumber": "1234567911",
+    "dob": "1981-04-04T03:00:00.000Z",
+    "treatment": "PTSD - Trauma-Focused CBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed trauma history and symptoms."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Psychoeducation on trauma response."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Cognitive processing of traumatic memories."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Narrative exposure to traumatic event."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported decreased intrusive thoughts."
+      }
+    ]
+  },
+  {
+    "id": 1752538323023,
+    "firstName": "Zoe",
+    "lastName": "Davis",
+    "email": "zoe.davis@example.com",
+    "phoneNumber": "1234567912",
+    "dob": "1999-03-11T03:00:00.000Z",
+    "treatment": "Self-Esteem Issues - CBT",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified negative core beliefs."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged self-critical thoughts."
+      }
+    ]
+  },
+  {
+    "id": 1752538323024,
+    "firstName": "Leo",
+    "lastName": "Martinez",
+    "email": "leo.martinez@example.com",
+    "phoneNumber": "1234567913",
+    "dob": "1985-12-09T03:00:00.000Z",
+    "treatment": "Borderline Personality Disorder - DBT",
+    "sessionsCompleted": 7,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Crisis intervention, distress tolerance skills reviewed."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Mindfulness practice for emotional regulation."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Interpersonal effectiveness skills for relationships."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Emotional regulation strategies for intense feelings."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient applying skills in daily life."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Reduced self-harm urges reported."
+      },
+      {
+        "date": "2025-02-12",
+        "notes": "Improved communication with family."
+      }
+    ]
+  },
+  {
+    "id": 1752538323025,
+    "firstName": "Stella",
+    "lastName": "Anderson",
+    "email": "stella.anderson@example.com",
+    "phoneNumber": "1234567914",
+    "dob": "1994-06-01T03:00:00.000Z",
+    "treatment": "Specific Phobia - Exposure Therapy",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Fear hierarchy for dog phobia."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Imaginal exposure to dog sounds."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "In-vivo exposure to small dog, anxiety decreased significantly."
+      }
+    ]
+  },
+  {
+    "id": 1752538323026,
+    "firstName": "Michael",
+    "lastName": "Garcia",
+    "email": "michael.garcia@example.com",
+    "phoneNumber": "1234567915",
+    "dob": "1973-10-21T03:00:00.000Z",
+    "treatment": "Anger Management - DBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified triggers for anger episodes."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Distress tolerance skills for intense anger."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Emotional regulation for managing anger."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Improved communication in conflict situations."
+      }
+    ]
+  },
+  {
+    "id": 1752538323027,
+    "firstName": "Aria",
+    "lastName": "Rodriguez",
+    "email": "aria.rodriguez@example.com",
+    "phoneNumber": "1234567916",
+    "dob": "1997-01-13T03:00:00.000Z",
+    "treatment": "Depression - Interpersonal Therapy",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified interpersonal problem areas."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Role-played communication strategies."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Discussed grief and loss in relationships."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient developing new social connections."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Mood improved as relationships strengthened."
+      }
+    ]
+  },
+  {
+    "id": 1752538323028,
+    "firstName": "Gabriel",
+    "lastName": "Wilson",
+    "email": "gabriel.wilson@example.com",
+    "phoneNumber": "1234567917",
+    "dob": "1988-11-06T03:00:00.000Z",
+    "treatment": "Social Anxiety - CBT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified negative thoughts about social situations."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Cognitive restructuring applied to social fears."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Small social exposure task completed."
+      }
+    ]
+  },
+  {
+    "id": 1752538323029,
+    "firstName": "Hannah",
+    "lastName": "Martinez",
+    "email": "hannah.martinez@example.com",
+    "phoneNumber": "1234567918",
+    "dob": "1995-04-18T03:00:00.000Z",
+    "treatment": "OCD - ERP",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed OCD symptoms and rituals."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Hierarchy building for exposure and response prevention."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "First exposure to contamination, resisted washing."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Continued exposures, distress habituation observed."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Reduced time spent on rituals reported."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Patient coping better with intrusive thoughts."
+      }
+    ]
+  },
+  {
+    "id": 1752538323030,
+    "firstName": "Ryan",
+    "lastName": "Hernandez",
+    "email": "ryan.hernandez@example.com",
+    "phoneNumber": "1234567919",
+    "dob": "1983-09-29T03:00:00.000Z",
+    "treatment": "Couples Therapy",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Initial couples assessment."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Communication exercises, I-statements."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Conflict resolution strategies."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Discussed shared goals and values."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Partners reported improved intimacy."
+      }
+    ]
+  },
+  {
+    "id": 1752538323031,
+    "firstName": "Victoria",
+    "lastName": "Lopez",
+    "email": "victoria.lopez@example.com",
+    "phoneNumber": "1234567920",
+    "dob": "1992-05-14T03:00:00.000Z",
+    "treatment": "Generalized Anxiety Disorder - CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Worry tree technique introduced."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged catastrophic thinking."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Mindfulness for present moment focus."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported less time spent worrying."
+      }
+    ]
+  },
+  {
+    "id": 1752538323032,
+    "firstName": "Nathan",
+    "lastName": "Gonzalez",
+    "email": "nathan.gonzalez@example.com",
+    "phoneNumber": "1234567921",
+    "dob": "1979-02-23T03:00:00.000Z",
+    "treatment": "Alcohol Use Disorder - MI",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored pros and cons of drinking."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Discussed personal values and goals."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Developed a commitment to change plan."
+      }
+    ]
+  },
+  {
+    "id": 1752538323033,
+    "firstName": "Sarah",
+    "lastName": "Perez",
+    "email": "sarah.perez@example.com",
+    "phoneNumber": "1234567922",
+    "dob": "1990-10-07T03:00:00.000Z",
+    "treatment": "Postpartum Depression - CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Assessed depressive symptoms and infant care."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced behavioral activation for energy."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Challenged self-blaming thoughts."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Connected with local support groups."
+      }
+    ]
+  },
+  {
+    "id": 1752538323034,
+    "firstName": "Christian",
+    "lastName": "King",
+    "email": "christian.king@example.com",
+    "phoneNumber": "1234567923",
+    "dob": "1984-07-26T03:00:00.000Z",
+    "treatment": "Bipolar I Disorder - Mood Stabilization",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Medication adherence reviewed."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Sleep hygiene and routine emphasized."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Early warning signs of mood shifts identified."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Coping skills for manic/depressive episodes."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Family psychoeducation provided."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Mood charting and self-monitoring."
+      }
+    ]
+  },
+  {
+    "id": 1752538323035,
+    "firstName": "Hannah",
+    "lastName": "Young",
+    "email": "hannah.young@example.com",
+    "phoneNumber": "1234567924",
+    "dob": "1998-03-09T03:00:00.000Z",
+    "treatment": "PTSD - Prolonged Exposure",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Psychoeducation on trauma and treatment."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Breathing retraining for anxiety."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Imaginal exposure to traumatic memory, distress rating high."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "In-vivo exposure to avoidance situations."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported reduced avoidance and intrusive thoughts."
+      }
+    ]
+  },
+  {
+    "id": 1752538323036,
+    "firstName": "Andrew",
+    "lastName": "Scott",
+    "email": "andrew.scott@example.com",
+    "phoneNumber": "1234567925",
+    "dob": "1976-12-12T03:00:00.000Z",
+    "treatment": "Eating Disorder - Supportive Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed current eating habits and concerns."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Explored feelings related to food and body image."
+      }
+    ]
+  },
+  {
+    "id": 1752538323037,
+    "firstName": "Grace",
+    "lastName": "Green",
+    "email": "grace.green@example.com",
+    "phoneNumber": "1234567926",
+    "dob": "1991-06-03T03:00:00.000Z",
+    "treatment": "ADHD - Medication Management",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Initial consultation for medication options."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Medication effectiveness and side effects reviewed."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Dose adjustment, patient reported improved focus."
+      }
+    ]
+  },
+  {
+    "id": 1752538323038,
+    "firstName": "Joshua",
+    "lastName": "Baker",
+    "email": "joshua.baker@example.com",
+    "phoneNumber": "1234567927",
+    "dob": "1989-08-01T03:00:00.000Z",
+    "treatment": "Social Anxiety - Group Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to group, shared social fears."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced social skills in a safe environment."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Received feedback from peers, challenging negative beliefs."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient initiating more conversations in group."
+      }
+    ]
+  },
+  {
+    "id": 1752538323039,
+    "firstName": "Ella",
+    "lastName": "Adams",
+    "email": "ella.adams@example.com",
+    "phoneNumber": "1234567928",
+    "dob": "1996-02-05T03:00:00.000Z",
+    "treatment": "Self-Harm - DBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Crisis plan developed, distress tolerance skills."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Mindfulness for emotional awareness."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Emotional regulation for intense urges."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Interpersonal effectiveness for asking for help."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported reduced self-harm incidents."
+      }
+    ]
+  },
+  {
+    "id": 1752538323040,
+    "firstName": "Noah",
+    "lastName": "Nelson",
+    "email": "noah.nelson@example.com",
+    "phoneNumber": "1234567929",
+    "dob": "1987-11-17T03:00:00.000Z",
+    "treatment": "Chronic Illness Adjustment - Supportive Therapy",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed emotional impact of chronic illness."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Coping strategies for pain and fatigue."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient connecting with support groups."
+      }
+    ]
+  },
+  {
+    "id": 1752538323041,
+    "firstName": "Mia",
+    "lastName": "Carter",
+    "email": "mia.carter@example.com",
+    "phoneNumber": "1234567930",
+    "dob": "2000-09-04T03:00:00.000Z",
+    "treatment": "Body Image Issues - CBT",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified triggers for negative body thoughts."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged appearance-related assumptions."
+      }
+    ]
+  },
+  {
+    "id": 1752538323042,
+    "firstName": "Ethan",
+    "lastName": "Mitchell",
+    "email": "ethan.mitchell@example.com",
+    "phoneNumber": "1234567931",
+    "dob": "1993-01-28T03:00:00.000Z",
+    "treatment": "Sexual Trauma - TF-CBT",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Building safety and trust, psychoeducation."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Relaxation and affect regulation skills."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Cognitive processing of distorted thoughts."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Trauma narrative development."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "In-vivo exposure to avoidance behaviors."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Patient reported reduced shame and guilt."
+      }
+    ]
+  },
+  {
+    "id": 1752538323043,
+    "firstName": "Amelia",
+    "lastName": "Perez",
+    "email": "amelia.perez@example.com",
+    "phoneNumber": "1234567932",
+    "dob": "1982-04-04T03:00:00.000Z",
+    "treatment": "Grief - Compassion-Focused Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced concept of self-compassion."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced compassionate imagery."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient showing more kindness to self during grief."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Reduced self-criticism related to loss."
+      }
+    ]
+  },
+  {
+    "id": 1752538323044,
+    "firstName": "Oliver",
+    "lastName": "Clark",
+    "email": "oliver.clark@example.com",
+    "phoneNumber": "1234567933",
+    "dob": "1975-07-20T03:00:00.000Z",
+    "treatment": "OCD - ACT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed values and committed action."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Defusion techniques for obsessive thoughts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient willing to experience discomfort for values."
+      }
+    ]
+  },
+  {
+    "id": 1752538323045,
+    "firstName": "Ava",
+    "lastName": "Lewis",
+    "email": "ava.lewis@example.com",
+    "phoneNumber": "1234567934",
+    "dob": "1990-12-08T03:00:00.000Z",
+    "treatment": "Depression - Acceptance and Commitment Therapy",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored personal values."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Mindfulness exercises for defusion."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Committed action towards valued living."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient engaging in more meaningful activities."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Reduced avoidance of difficult emotions."
+      }
+    ]
+  },
+  {
+    "id": 1752538323046,
+    "firstName": "Jackson",
+    "lastName": "Young",
+    "email": "jackson.young@example.com",
+    "phoneNumber": "1234567935",
+    "dob": "1970-03-16T03:00:00.000Z",
+    "treatment": "Substance Use - CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified triggers for relapse."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Developed coping skills for cravings."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Practiced refusal skills."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient maintaining sobriety successfully."
+      }
+    ]
+  },
+  {
+    "id": 1752538323047,
+    "firstName": "Evelyn",
+    "lastName": "Hall",
+    "email": "evelyn.hall@example.com",
+    "phoneNumber": "1234567936",
+    "dob": "1999-05-23T03:00:00.000Z",
+    "treatment": "Anxiety - Relaxation Training",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced diaphragmatic breathing."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced progressive muscle relaxation."
+      }
+    ]
+  },
+  {
+    "id": 1752538323048,
+    "firstName": "Alexander",
+    "lastName": "White",
+    "email": "alexander.white@example.com",
+    "phoneNumber": "1234567937",
+    "dob": "1986-07-02T03:00:00.000Z",
+    "treatment": "Depression - Interpersonal Therapy",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Focused on role disputes with partner."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Explored communication breakdowns."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient initiated more positive interactions."
+      }
+    ]
+  },
+  {
+    "id": 1752538323049,
+    "firstName": "Sophia",
+    "lastName": "Allen",
+    "email": "sophia.allen@example.com",
+    "phoneNumber": "1234567938",
+    "dob": "1994-01-14T03:00:00.000Z",
+    "treatment": "Panic Disorder - CBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed triggers and physical symptoms of panic."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Cognitive restructuring of catastrophic thoughts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Interoceptive exposure to heart racing."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient less fearful of panic attacks."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Reduced avoidance behaviors, returned to activities."
+      }
+    ]
+  },
+  {
+    "id": 1752538323050,
+    "firstName": "Liam",
+    "lastName": "Harris",
+    "email": "liam.harris@example.com",
+    "phoneNumber": "1234567939",
+    "dob": "1980-06-27T03:00:00.000Z",
+    "treatment": "PTSD - Narrative Exposure Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to life timeline concept."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Recounting positive memories to build resilience."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Processing traumatic memories in narrative form."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported reduced distress when recalling trauma."
+      }
+    ]
+  },
+  {
+    "id": 1752538323051,
+    "firstName": "Charlotte",
+    "lastName": "Moore",
+    "email": "charlotte.moore@example.com",
+    "phoneNumber": "1234567940",
+    "dob": "1991-09-01T03:00:00.000Z",
+    "treatment": "Eating Disorder - CBT-E",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Initial assessment, formulation of symptoms."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced regular eating pattern."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Challenged body checking and avoidance."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Addressed over-evaluation of shape and weight."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported less restrictive eating."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Improved relationship with food and body."
+      }
+    ]
+  },
+  {
+    "id": 1752538323052,
+    "firstName": "Benjamin",
+    "lastName": "Jackson",
+    "email": "benjamin.jackson@example.com",
+    "phoneNumber": "1234567941",
+    "dob": "1977-04-10T03:00:00.000Z",
+    "treatment": "Substance Use - 12-Step Facilitation",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced 12-step philosophy and concepts."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Patient connected with local AA/NA meetings."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Discussed sponsorship and spiritual growth."
+      }
+    ]
+  },
+  {
+    "id": 1752538323053,
+    "firstName": "Chloe",
+    "lastName": "Miller",
+    "email": "chloe.miller@example.com",
+    "phoneNumber": "1234567942",
+    "dob": "2000-11-25T03:00:00.000Z",
+    "treatment": "Social Anxiety - Group CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced to group, shared common fears."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Role-played social situations within group."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Practiced eye contact and vocal modulation."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient engaging more in discussions."
+      }
+    ]
+  },
+  {
+    "id": 1752538323054,
+    "firstName": "Noah",
+    "lastName": "Davis",
+    "email": "noah.davis@example.com",
+    "phoneNumber": "1234567943",
+    "dob": "1985-05-13T03:00:00.000Z",
+    "treatment": "Depression - Behavioral Activation",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Activity monitoring started."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Identified valued activities, scheduling."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient engaging in more pleasurable activities."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Increased sense of accomplishment reported."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Mood improved, less withdrawal from social life."
+      }
+    ]
+  },
+  {
+    "id": 1752538323055,
+    "firstName": "Mia",
+    "lastName": "Martinez",
+    "email": "mia.martinez@example.com",
+    "phoneNumber": "1234567944",
+    "dob": "1997-08-07T03:00:00.000Z",
+    "treatment": "Body Dysmorphia - ERP",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified rituals and avoidance behaviors."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Reduced mirror checking and camouflaging."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient coping better with exposure to perceived flaws."
+      }
+    ]
+  },
+  {
+    "id": 1752538323056,
+    "firstName": "Leo",
+    "lastName": "Anderson",
+    "email": "leo.anderson@example.com",
+    "phoneNumber": "1234567945",
+    "dob": "1983-02-19T03:00:00.000Z",
+    "treatment": "Chronic Pain - ACT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced acceptance of pain."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Mindfulness for pain sensation."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Committed action towards valued life despite pain."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient engaging in activities previously avoided due to pain."
+      }
+    ]
+  },
+  {
+    "id": 1752538323057,
+    "firstName": "Stella",
+    "lastName": "Garcia",
+    "email": "stella.garcia@example.com",
+    "phoneNumber": "1234567946",
+    "dob": "1990-07-06T03:00:00.000Z",
+    "treatment": "Perfectionism - CBT",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified perfectionistic tendencies."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged 'all or nothing' thinking."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Practiced accepting imperfections."
+      }
+    ]
+  },
+  {
+    "id": 1752538323058,
+    "firstName": "Michael",
+    "lastName": "Rodriguez",
+    "email": "michael.rodriguez@example.com",
+    "phoneNumber": "1234567947",
+    "dob": "1972-12-11T03:00:00.000Z",
+    "treatment": "Anger Management - Exposure Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified situations provoking intense anger."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Imaginal exposure to past anger outbursts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "In-vivo exposure to frustrating situations."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported better control over anger."
+      }
+    ]
+  },
+  {
+    "id": 1752538323059,
+    "firstName": "Aria",
+    "lastName": "Wilson",
+    "email": "aria.wilson@example.com",
+    "phoneNumber": "1234567948",
+    "dob": "1996-03-05T03:00:00.000Z",
+    "treatment": "Eating Disorder - Family Therapy",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Family system assessment, communication patterns."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Parental roles in recovery process clarified."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Discussed boundaries and emotional expression."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Family engaging in collaborative problem-solving."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Improved family cohesion reported."
+      }
+    ]
+  },
+  {
+    "id": 1752538323060,
+    "firstName": "Gabriel",
+    "lastName": "Martinez",
+    "email": "gabriel.martinez@example.com",
+    "phoneNumber": "1234567949",
+    "dob": "1988-10-18T03:00:00.000Z",
+    "treatment": "PTSD - Eye Movement Desensitization and Reprocessing (EMDR)",
+    "sessionsCompleted": 6,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Client history and target identification for EMDR."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Preparation phase: safe place and resources."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Desensitization of first traumatic memory."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Continued reprocessing, distress levels decreasing."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Installation of positive cognition about self."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Body scan and closure for the session."
+      }
+    ]
+  },
+  {
+    "id": 1752538323061,
+    "firstName": "Hannah",
+    "lastName": "Hernandez",
+    "email": "hannah.hernandez@example.com",
+    "phoneNumber": "1234567950",
+    "dob": "1993-01-30T03:00:00.000Z",
+    "treatment": "GAD - Mindfulness-Based Cognitive Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to mindfulness for anxiety."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced mindful breathing and body scan."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Awareness of thoughts without judgment."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported increased ability to disengage from worry."
+      }
+    ]
+  },
+  {
+    "id": 1752538323062,
+    "firstName": "Ryan",
+    "lastName": "Lopez",
+    "email": "ryan.lopez@example.com",
+    "phoneNumber": "1234567951",
+    "dob": "1981-06-16T03:00:00.000Z",
+    "treatment": "Alcohol Addiction - Relapse Prevention",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified high-risk situations for relapse."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Developed concrete coping strategies for triggers."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient strengthened support network."
+      }
+    ]
+  },
+  {
+    "id": 1752538323063,
+    "firstName": "Victoria",
+    "lastName": "Gonzalez",
+    "email": "victoria.gonzalez@example.com",
+    "phoneNumber": "1234567952",
+    "dob": "1994-09-09T03:00:00.000Z",
+    "treatment": "Self-Esteem - ACT",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored values related to self-worth."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced defusion from self-critical thoughts."
+      }
+    ]
+  },
+  {
+    "id": 1752538323064,
+    "firstName": "Nathan",
+    "lastName": "Perez",
+    "email": "nathan.perez@example.com",
+    "phoneNumber": "1234567953",
+    "dob": "1978-02-04T03:00:00.000Z",
+    "treatment": "Depression - Schema Therapy",
+    "sessionsCompleted": 7,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified early maladaptive schemas."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Emotional experiencing of schema origin."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Schema re-parenting techniques."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Challenging schema-driven behaviors."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient exploring healthier coping modes."
+      },
+      {
+        "date": "2025-02-05",
+        "notes": "Reduced impact of self-sacrificing schema."
+      },
+      {
+        "date": "2025-02-12",
+        "notes": "Increased emotional expression and vulnerability."
+      }
+    ]
+  },
+  {
+    "id": 1752538323065,
+    "firstName": "Sarah",
+    "lastName": "King",
+    "email": "sarah.king@example.com",
+    "phoneNumber": "1234567954",
+    "dob": "1991-07-28T03:00:00.000Z",
+    "treatment": "PTSD - Somatic Experiencing",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced concept of 'felt sense'."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Tracking bodily sensations related to trauma."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Titration of traumatic material, discharge of energy."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported less body tension and hypervigilance."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Increased sense of regulation and safety."
+      }
+    ]
+  },
+  {
+    "id": 1752538323066,
+    "firstName": "Christian",
+    "lastName": "Young",
+    "email": "christian.young@example.com",
+    "phoneNumber": "1234567955",
+    "dob": "1983-04-02T03:00:00.000Z",
+    "treatment": "Anxiety - Biofeedback",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to physiological responses to anxiety."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced diaphragmatic breathing with feedback."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Reduced heart rate variability during stressors."
+      }
+    ]
+  },
+  {
+    "id": 1752538323067,
+    "firstName": "Hannah",
+    "lastName": "Scott",
+    "email": "hannah.scott@example.com",
+    "phoneNumber": "1234567956",
+    "dob": "1998-11-19T03:00:00.000Z",
+    "treatment": "Depression - Psychodynamic Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored early life experiences and relationships."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Identified recurring patterns in relationships."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient gaining insight into unconscious conflicts."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Reported shift in self-perception and mood."
+      }
+    ]
+  },
+  {
+    "id": 1752538323068,
+    "firstName": "Andrew",
+    "lastName": "Green",
+    "email": "andrew.green@example.com",
+    "phoneNumber": "1234567957",
+    "dob": "1976-05-07T03:00:00.000Z",
+    "treatment": "Schizophrenia - CBTp",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Engagement in therapy, psychoeducation on symptoms."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Coping strategies for auditory hallucinations."
+      }
+    ]
+  },
+  {
+    "id": 1752538323069,
+    "firstName": "Grace",
+    "lastName": "Baker",
+    "email": "grace.baker@example.com",
+    "phoneNumber": "1234567958",
+    "dob": "1991-08-11T03:00:00.000Z",
+    "treatment": "ADHD - Skills Training",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduced organizational strategies."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced task prioritization and breaking down tasks."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Improved initiation and completion of assignments."
+      }
+    ]
+  },
+  {
+    "id": 1752538323070,
+    "firstName": "Joshua",
+    "lastName": "Adams",
+    "email": "joshua.adams@example.com",
+    "phoneNumber": "1234567959",
+    "dob": "1989-03-22T03:00:00.000Z",
+    "treatment": "Social Anxiety - Acceptance and Commitment Therapy",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored values related to social connection."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Defusion from self-critical social thoughts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Committed action towards engaging in social activities."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Patient reported increased willingness to be vulnerable."
+      }
+    ]
+  },
+  {
+    "id": 1752538323071,
+    "firstName": "Ella",
+    "lastName": "Nelson",
+    "email": "ella.nelson@example.com",
+    "phoneNumber": "1234567960",
+    "dob": "1996-10-15T03:00:00.000Z",
+    "treatment": "Self-Harm - Emotional Regulation Skills",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified emotions preceding self-harm urges."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Introduced distress tolerance skills for intense emotions."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient practicing opposite action for urges."
+      }
+    ]
+  },
+  {
+    "id": 1752538323072,
+    "firstName": "Noah",
+    "lastName": "Carter",
+    "email": "noah.carter@example.com",
+    "phoneNumber": "1234567961",
+    "dob": "1987-03-01T03:00:00.000Z",
+    "treatment": "Grief - Art Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Explored emotions through creative expression."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Patient found solace in symbolic representation of loss."
+      }
+    ]
+  },
+  {
+    "id": 1752538323073,
+    "firstName": "Mia",
+    "lastName": "Mitchell",
+    "email": "mia.mitchell@example.com",
+    "phoneNumber": "1234567962",
+    "dob": "2000-08-09T03:00:00.000Z",
+    "treatment": "Anxiety - Applied Relaxation",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Baseline anxiety levels assessed."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Practiced rapid relaxation in various situations."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Patient reported quick reduction in anxiety symptoms."
+      }
+    ]
+  },
+  {
+    "id": 1752538323074,
+    "firstName": "Ethan",
+    "lastName": "Perez",
+    "email": "ethan.perez@example.com",
+    "phoneNumber": "1234567963",
+    "dob": "1993-02-14T03:00:00.000Z",
+    "treatment": "Sexual Addiction - CBT",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified triggers and patterns of compulsive behavior."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Coping skills for urges and cravings."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Addressed underlying emotional needs."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Developed healthy sexual expression and relationships."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient maintaining abstinence from compulsive behaviors."
+      }
+    ]
+  },
+  {
+    "id": 1752538323075,
+    "firstName": "Amelia",
+    "lastName": "Clark",
+    "email": "amelia.clark@example.com",
+    "phoneNumber": "1234567964",
+    "dob": "1982-07-21T03:00:00.000Z",
+    "treatment": "Depression - Solution-Focused Brief Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified preferred future and miracle question."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Highlighted past successes and strengths."
+      }
+    ]
+  },
+  {
+    "id": 1752538323076,
+    "firstName": "Oliver",
+    "lastName": "Lewis",
+    "email": "oliver.lewis@example.com",
+    "phoneNumber": "1234567965",
+    "dob": "1975-11-03T03:00:00.000Z",
+    "treatment": "Schizophrenia - Family Psychoeducation",
+    "sessionsCompleted": 3,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Provided education on schizophrenia symptoms and treatment."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Discussed communication and problem-solving within family."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Family reported increased understanding and support."
+      }
+    ]
+  },
+  {
+    "id": 1752538323077,
+    "firstName": "Ava",
+    "lastName": "Young",
+    "email": "ava.young@example.com",
+    "phoneNumber": "1234567966",
+    "dob": "1990-09-06T03:00:00.000Z",
+    "treatment": "Parenting Stress - CBT",
+    "sessionsCompleted": 4,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Identified sources of parenting stress."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Challenged unhelpful parenting thoughts."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Introduced positive reinforcement strategies."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Parents reported reduced stress and improved child behavior."
+      }
+    ]
+  },
+  {
+    "id": 1752538323078,
+    "firstName": "Jackson",
+    "lastName": "Hall",
+    "email": "jackson.hall@example.com",
+    "phoneNumber": "1234567967",
+    "dob": "1970-01-10T03:00:00.000Z",
+    "treatment": "Gambling Disorder - Group Therapy",
+    "sessionsCompleted": 5,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Introduction to group, shared experiences."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Discussed triggers and coping strategies."
+      },
+      {
+        "date": "2025-01-15",
+        "notes": "Peer support for maintaining abstinence."
+      },
+      {
+        "date": "2025-01-22",
+        "notes": "Explored underlying issues contributing to gambling."
+      },
+      {
+        "date": "2025-01-29",
+        "notes": "Patient reported less isolation and more hope."
+      }
+    ]
+  },
+  {
+    "id": 1752538323079,
+    "firstName": "Elizabeth",
+    "lastName": "White",
+    "email": "elizabeth.white@example.com",
+    "phoneNumber": "1234567968",
+    "dob": "1999-04-26T03:00:00.000Z",
+    "treatment": "Anorexia - Supportive Therapy",
+    "sessionsCompleted": 2,
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "Discussed concerns about eating and weight."
+      },
+      {
+        "date": "2025-01-08",
+        "notes": "Explored feelings of anxiety around food."
+      }
+    ]
   }
 ]

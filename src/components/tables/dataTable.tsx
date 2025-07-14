@@ -33,7 +33,7 @@ import React from "react";
 
 const ROW_HEIGHT_PX = 52;
 
-function useDynamicPageSize(defaultSize = 12) {
+function useDynamicPageSize(defaultSize = 10) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [pageSize, setPageSize] = React.useState(defaultSize);
 
@@ -107,7 +107,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="w-full h-full flex flex-col overflow-x-auto rounded-xl bg-sidebar ">
-      <div className="px-2 py-8 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <div className="px-2 py-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         {/* Input field for global filtering. Currently filters by 'email' column. */}
         <Input
           placeholder="Filter..."
