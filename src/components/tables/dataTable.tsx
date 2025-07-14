@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /**
  * @file DataTable.tsx
  * @summary This file provides a generic DataTable component built with TanStack Table.
@@ -30,6 +31,32 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React from "react";
 
+const ROW_HEIGHT_PX = 52;
+
+function useDynamicPageSize(defaultSize = 12) {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [pageSize, setPageSize] = React.useState(defaultSize);
+
+  React.useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    function updateSize() {
+      const height = el?.clientHeight;
+      const rows = Math.floor(height! / ROW_HEIGHT_PX);
+      setPageSize(rows > 0 ? rows : defaultSize);
+    }
+
+    const resizeObserver = new ResizeObserver(updateSize);
+    resizeObserver.observe(el);
+    updateSize();
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  return { pageSize, containerRef };
+}
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -47,6 +74,7 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>): React.ReactElement {
   // State to manage the sorting configuration of the table.
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const { pageSize, containerRef } = useDynamicPageSize();
 
   /**
    * Initializes the TanStack Table instance.
@@ -55,8 +83,12 @@ export function DataTable<TData, TValue>({
    */
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
-    pageSize: 15,
+    pageSize,
   });
+
+  React.useEffect(() => {
+    setPagination((prev) => ({ ...prev, pageSize }));
+  }, [pageSize]);
 
   const table = useReactTable({
     data,
@@ -92,53 +124,63 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* Main table structure */}
-      <Table className="w-full min-w-[700px]">
-        <TableHeader>
-          {/* Renders table headers based on column definitions, enabling sorting on click. */}
-          {table.getHeaderGroups().map((hg) => (
-            <TableRow key={hg.id} className="bg-muted">
-              {hg.headers.map((header) => (
-                <TableHead
-                  key={header.id}
-                  onClick={header.column.getToggleSortingHandler()} // Toggles sorting for the column.
-                  className="min-w-[100px] text-md font-semibold "
-                >
-                  {/* Renders the header content. */}
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext()
-                  )}
-                </TableHead>
-              ))}
-            </TableRow>
-          ))}
-        </TableHeader>
 
-        <TableBody>
-          {/* Conditionally renders table rows if data is available, otherwise displays "No results." */}
-          {table.getRowModel().rows.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow key={row.id} className="even:bg-muted/40">
-                {/* Renders cells for each visible row. */}
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="min-w-[120px] h-13">
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </TableCell>
+      {/* <Table className="w-full min-w-[700px] "> */}
+      <div
+        ref={containerRef}
+        className="w-full  h-full flex flex-col overflow-x-auto  bg-sidebar"
+      >
+        <Table className="w-full min-w-[700px] ">
+          <TableHeader>
+            {/* Renders table headers based on column definitions, enabling sorting on click. */}
+            {table.getHeaderGroups().map((hg) => (
+              <TableRow key={hg.id} className="bg-muted">
+                {hg.headers.map((header) => (
+                  <TableHead
+                    key={header.id}
+                    onClick={header.column.getToggleSortingHandler()} // Toggles sorting for the column.
+                    className="min-w-[100px] text-md font-semibold "
+                  >
+                    {/* Renders the header content. */}
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                  </TableHead>
                 ))}
               </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className="h-24 text-center text-muted-foreground"
-              >
-                No results.
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+            ))}
+          </TableHeader>
+
+          <TableBody>
+            {/* Conditionally renders table rows if data is available, otherwise displays "No results." */}
+            {table.getRowModel().rows.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id} className="even:bg-muted/40">
+                  {/* Renders cells for each visible row. */}
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id} className="min-w-[120px] h-13">
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell
+                  colSpan={columns.length}
+                  className="h-24 text-center text-muted-foreground"
+                >
+                  No results.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </div>
 
       {/* Pagination controls */}
       <div className="mt-auto flex flex-col gap-2 md:flex-row md:items-center md:justify-between px-2 py-4">
