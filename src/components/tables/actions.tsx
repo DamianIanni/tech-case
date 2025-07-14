@@ -122,6 +122,7 @@ import { Patient } from "@/types/patient";
 import { ROUTES } from "@/constants/routes";
 import { useAuth } from "../providers/AuthProvider";
 import { GeneralTooltip } from "../feedback/generalTooltip";
+import { useRouter } from "next/navigation";
 
 /**
  * @typedef {("patients" | "team")} Route - Defines the possible routes for actions.
@@ -153,17 +154,29 @@ export default function Actions(props: ActionsProps): React.ReactElement {
   const deleteMember = useDeleteTeamMember();
   const deletePatient = useDeletePatient();
   const { user } = useAuth();
+  const router = useRouter();
 
   /**
    * Handles the delete action based on the current route.
    * Calls the appropriate mutation (deletePatient or deleteMember) with the entity's ID.
    */
+
+  function navigation(route?: string) {
+    if (route) {
+      router.replace("/dashboard/patients");
+    } else {
+      router.replace("/dashboard/team");
+    }
+  }
+
   function handleDeleteAction() {
     if (route === "patients") {
       deletePatient.mutate(data.id!);
+      navigation(route);
       return;
     }
     deleteMember.mutate(data.id!);
+    navigation();
   }
 
   // Constructs the detail route dynamically based on the `route` prop.

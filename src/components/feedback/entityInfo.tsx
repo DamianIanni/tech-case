@@ -19,6 +19,13 @@ export default function EntityInfo(props: Props) {
   const { data } = props;
   const { user } = useAuth();
 
+  if (!data) {
+    return (
+      <div className="text-center text-muted-foreground py-10">
+        No entity data available.
+      </div>
+    );
+  }
   const isPatient = "treatment" in data;
   const canSeeSessions = user?.role === "admin" || user?.role === "manager";
 

@@ -400,30 +400,6 @@
     ]
   },
   {
-    "id": 1752538323002,
-    "firstName": "Olivia",
-    "lastName": "Young",
-    "email": "olivia.young@example.com",
-    "phoneNumber": "1234567891",
-    "dob": "1994-02-12T03:00:00.000Z",
-    "treatment": "Anxiety Disorder - Mindfulness-Based Stress Reduction",
-    "sessionsCompleted": 3,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Introduction to mindfulness concepts."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Practiced breathing exercises."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Body scan meditation introduced."
-      }
-    ]
-  },
-  {
     "id": 1752538323003,
     "firstName": "William",
     "lastName": "Lee",
@@ -1660,34 +1636,6 @@
     ]
   },
   {
-    "id": 1752538323046,
-    "firstName": "Jackson",
-    "lastName": "Young",
-    "email": "jackson.young@example.com",
-    "phoneNumber": "1234567935",
-    "dob": "1970-03-16T03:00:00.000Z",
-    "treatment": "Substance Use - CBT",
-    "sessionsCompleted": 4,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Identified triggers for relapse."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Developed coping skills for cravings."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Practiced refusal skills."
-      },
-      {
-        "date": "2025-01-22",
-        "notes": "Patient maintaining sobriety successfully."
-      }
-    ]
-  },
-  {
     "id": 1752538323047,
     "firstName": "Evelyn",
     "lastName": "Hall",
@@ -1704,30 +1652,6 @@
       {
         "date": "2025-01-08",
         "notes": "Practiced progressive muscle relaxation."
-      }
-    ]
-  },
-  {
-    "id": 1752538323048,
-    "firstName": "Alexander",
-    "lastName": "White",
-    "email": "alexander.white@example.com",
-    "phoneNumber": "1234567937",
-    "dob": "1986-07-02T03:00:00.000Z",
-    "treatment": "Depression - Interpersonal Therapy",
-    "sessionsCompleted": 3,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Focused on role disputes with partner."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Explored communication breakdowns."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Patient initiated more positive interactions."
       }
     ]
   },
@@ -1936,34 +1860,6 @@
     ]
   },
   {
-    "id": 1752538323056,
-    "firstName": "Leo",
-    "lastName": "Anderson",
-    "email": "leo.anderson@example.com",
-    "phoneNumber": "1234567945",
-    "dob": "1983-02-19T03:00:00.000Z",
-    "treatment": "Chronic Pain - ACT",
-    "sessionsCompleted": 4,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Introduced acceptance of pain."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Mindfulness for pain sensation."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Committed action towards valued life despite pain."
-      },
-      {
-        "date": "2025-01-22",
-        "notes": "Patient engaging in activities previously avoided due to pain."
-      }
-    ]
-  },
-  {
     "id": 1752538323057,
     "firstName": "Stella",
     "lastName": "Garcia",
@@ -2136,26 +2032,6 @@
     ]
   },
   {
-    "id": 1752538323063,
-    "firstName": "Victoria",
-    "lastName": "Gonzalez",
-    "email": "victoria.gonzalez@example.com",
-    "phoneNumber": "1234567952",
-    "dob": "1994-09-09T03:00:00.000Z",
-    "treatment": "Self-Esteem - ACT",
-    "sessionsCompleted": 2,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Explored values related to self-worth."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Practiced defusion from self-critical thoughts."
-      }
-    ]
-  },
-  {
     "id": 1752538323064,
     "firstName": "Nathan",
     "lastName": "Perez",
@@ -2196,38 +2072,6 @@
     ]
   },
   {
-    "id": 1752538323065,
-    "firstName": "Sarah",
-    "lastName": "King",
-    "email": "sarah.king@example.com",
-    "phoneNumber": "1234567954",
-    "dob": "1991-07-28T03:00:00.000Z",
-    "treatment": "PTSD - Somatic Experiencing",
-    "sessionsCompleted": 5,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Introduced concept of 'felt sense'."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Tracking bodily sensations related to trauma."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Titration of traumatic material, discharge of energy."
-      },
-      {
-        "date": "2025-01-22",
-        "notes": "Patient reported less body tension and hypervigilance."
-      },
-      {
-        "date": "2025-01-29",
-        "notes": "Increased sense of regulation and safety."
-      }
-    ]
-  },
-  {
     "id": 1752538323066,
     "firstName": "Christian",
     "lastName": "Young",
@@ -2248,54 +2092,6 @@
       {
         "date": "2025-01-15",
         "notes": "Reduced heart rate variability during stressors."
-      }
-    ]
-  },
-  {
-    "id": 1752538323067,
-    "firstName": "Hannah",
-    "lastName": "Scott",
-    "email": "hannah.scott@example.com",
-    "phoneNumber": "1234567956",
-    "dob": "1998-11-19T03:00:00.000Z",
-    "treatment": "Depression - Psychodynamic Therapy",
-    "sessionsCompleted": 4,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Explored early life experiences and relationships."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Identified recurring patterns in relationships."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Patient gaining insight into unconscious conflicts."
-      },
-      {
-        "date": "2025-01-22",
-        "notes": "Reported shift in self-perception and mood."
-      }
-    ]
-  },
-  {
-    "id": 1752538323068,
-    "firstName": "Andrew",
-    "lastName": "Green",
-    "email": "andrew.green@example.com",
-    "phoneNumber": "1234567957",
-    "dob": "1976-05-07T03:00:00.000Z",
-    "treatment": "Schizophrenia - CBTp",
-    "sessionsCompleted": 2,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Engagement in therapy, psychoeducation on symptoms."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Coping strategies for auditory hallucinations."
       }
     ]
   },
@@ -2372,50 +2168,6 @@
       {
         "date": "2025-01-15",
         "notes": "Patient practicing opposite action for urges."
-      }
-    ]
-  },
-  {
-    "id": 1752538323072,
-    "firstName": "Noah",
-    "lastName": "Carter",
-    "email": "noah.carter@example.com",
-    "phoneNumber": "1234567961",
-    "dob": "1987-03-01T03:00:00.000Z",
-    "treatment": "Grief - Art Therapy",
-    "sessionsCompleted": 2,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Explored emotions through creative expression."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Patient found solace in symbolic representation of loss."
-      }
-    ]
-  },
-  {
-    "id": 1752538323073,
-    "firstName": "Mia",
-    "lastName": "Mitchell",
-    "email": "mia.mitchell@example.com",
-    "phoneNumber": "1234567962",
-    "dob": "2000-08-09T03:00:00.000Z",
-    "treatment": "Anxiety - Applied Relaxation",
-    "sessionsCompleted": 3,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Baseline anxiety levels assessed."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Practiced rapid relaxation in various situations."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Patient reported quick reduction in anxiety symptoms."
       }
     ]
   },
