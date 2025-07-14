@@ -36,6 +36,20 @@ npm run dev
 
 The app will be available at [http://localhost:3000](http://localhost:3000).
 
+### Credentials:
+
+    emai: admin@aisel.com,
+    password: admin123,
+    role: "admin",
+
+    email: employee@aisel.com,
+    password: employee123,
+    role: employee,
+
+    email: "manager@aisel.com",
+    password: "manager123",
+    role: "manager",
+
 ### 4. Simulated Backend
 
 No backend setup is required. All API calls are simulated using local mocks and utilities. You can find mock API logic in `src/app/api/simulatedAPI/` and related files.
