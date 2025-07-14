@@ -53,17 +53,24 @@ export function DataTable<TData, TValue>({
    * Configures the table with data, columns, sorting state, and various model accessors
    * for core functionality, sorting, filtering, and pagination.
    */
+  const [pagination, setPagination] = React.useState({
+    pageIndex: 0,
+    pageSize: 15,
+  });
+
   const table = useReactTable({
     data,
     columns,
     state: {
       sorting,
+      pagination,
     },
     onSortingChange: setSorting,
-    getCoreRowModel: getCoreRowModel(), // Provides access to the fundamental row model.
-    getSortedRowModel: getSortedRowModel(), // Enables sorting of rows.
-    getFilteredRowModel: getFilteredRowModel(), // Enables filtering of rows.
-    getPaginationRowModel: getPaginationRowModel(), // Enables pagination of rows.
+    onPaginationChange: setPagination,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   return (
