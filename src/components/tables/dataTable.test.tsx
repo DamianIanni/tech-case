@@ -6,6 +6,14 @@ import { ColumnDef } from "@tanstack/react-table";
 
 type TestData = { email: string; name: string };
 
+beforeAll(() => {
+  global.ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+});
+
 const mockColumns: ColumnDef<TestData>[] = [
   {
     accessorKey: "name",
