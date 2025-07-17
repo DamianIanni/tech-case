@@ -123,7 +123,7 @@ export function NavUser({
                 className=" hover:bg-cover w-full flex justify-start hover:cursor-pointer "
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+                {theme === "dark" ? <MoonIcon /> : <SunIcon />}
                 Theme
               </Button>
             </DropdownMenuGroup>

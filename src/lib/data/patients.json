@@ -24,38 +24,6 @@
     ]
   },
   {
-    "id": 3,
-    "firstName": "Isabella",
-    "lastName": "Bennett",
-    "email": "isabella.bennett@example.com",
-    "phoneNumber": "+1-555-0003",
-    "dob": "1990-06-11",
-    "treatment": "Dialectical Behavior Therapy for Borderline Personality Disorder",
-    "sessionsCompleted": 5,
-    "sessions": [
-      {
-        "date": "2025-06-02",
-        "notes": "Crisis situation involving impulsive behavior. Applied distress tolerance techniques."
-      },
-      {
-        "date": "2025-06-09",
-        "notes": "Patient used mindfulness skills in triggering situation."
-      },
-      {
-        "date": "2025-06-16",
-        "notes": "Interpersonal effectiveness module initiated."
-      },
-      {
-        "date": "2025-06-23",
-        "notes": "Discussed emotional regulation; improved mood tracking."
-      },
-      {
-        "date": "2025-06-30",
-        "notes": "Less reactivity to perceived rejection reported."
-      }
-    ]
-  },
-  {
     "id": 4,
     "firstName": "Noah",
     "lastName": "Ward",
@@ -124,30 +92,6 @@
       {
         "date": "2025-03-22",
         "notes": "Reported improved sleep and mood after alcohol reduction."
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "firstName": "Ava",
-    "lastName": "Scott",
-    "email": "ava.scott@example.com",
-    "phoneNumber": "+1-555-0007",
-    "dob": "1995-03-30",
-    "treatment": "Obsessive-Compulsive Disorder - ERP",
-    "sessionsCompleted": 3,
-    "sessions": [
-      {
-        "date": "2025-06-01",
-        "notes": "Compulsions tracked; started hierarchy building."
-      },
-      {
-        "date": "2025-06-08",
-        "notes": "Exposed to contamination trigger without washing. Anxiety reduced to 3/10."
-      },
-      {
-        "date": "2025-06-15",
-        "notes": "Continued exposures. Intrusive thoughts decreased in frequency."
       }
     ]
   },
@@ -788,26 +732,6 @@
     ]
   },
   {
-    "id": 1752538323016,
-    "firstName": "Aiden",
-    "lastName": "Hall",
-    "email": "aiden.hall@example.com",
-    "phoneNumber": "1234567905",
-    "dob": "1998-09-02T03:00:00.000Z",
-    "treatment": "Adjustment Disorder - Supportive Therapy",
-    "sessionsCompleted": 2,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Discussed recent life stressors."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Coping mechanisms explored."
-      }
-    ]
-  },
-  {
     "id": 1752538323017,
     "firstName": "Sofia",
     "lastName": "White",
@@ -1436,38 +1360,6 @@
       {
         "date": "2025-01-22",
         "notes": "Patient initiating more conversations in group."
-      }
-    ]
-  },
-  {
-    "id": 1752538323039,
-    "firstName": "Ella",
-    "lastName": "Adams",
-    "email": "ella.adams@example.com",
-    "phoneNumber": "1234567928",
-    "dob": "1996-02-05T03:00:00.000Z",
-    "treatment": "Self-Harm - DBT",
-    "sessionsCompleted": 5,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Crisis plan developed, distress tolerance skills."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Mindfulness for emotional awareness."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Emotional regulation for intense urges."
-      },
-      {
-        "date": "2025-01-22",
-        "notes": "Interpersonal effectiveness for asking for help."
-      },
-      {
-        "date": "2025-01-29",
-        "notes": "Patient reported reduced self-harm incidents."
       }
     ]
   },
@@ -2224,30 +2116,6 @@
     ]
   },
   {
-    "id": 1752538323076,
-    "firstName": "Oliver",
-    "lastName": "Lewis",
-    "email": "oliver.lewis@example.com",
-    "phoneNumber": "1234567965",
-    "dob": "1975-11-03T03:00:00.000Z",
-    "treatment": "Schizophrenia - Family Psychoeducation",
-    "sessionsCompleted": 3,
-    "sessions": [
-      {
-        "date": "2025-01-01",
-        "notes": "Provided education on schizophrenia symptoms and treatment."
-      },
-      {
-        "date": "2025-01-08",
-        "notes": "Discussed communication and problem-solving within family."
-      },
-      {
-        "date": "2025-01-15",
-        "notes": "Family reported increased understanding and support."
-      }
-    ]
-  },
-  {
     "id": 1752538323077,
     "firstName": "Ava",
     "lastName": "Young",
@@ -2326,5 +2194,37 @@
         "notes": "Explored feelings of anxiety around food."
       }
     ]
+  },
+  {
+    "firstName": "Musclo",
+    "lastName": "japones",
+    "email": "japo@ne.com",
+    "phoneNumber": "+45 454548825",
+    "treatment": "Anime",
+    "dob": "2009-07-21T03:00:00.000Z",
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "notes"
+      }
+    ],
+    "sessionsCompleted": 3,
+    "id": 1752709126265
+  },
+  {
+    "firstName": "Tronco",
+    "lastName": "Inca",
+    "email": "inca@mail.com",
+    "phoneNumber": "45 21218456",
+    "treatment": "Coreo",
+    "dob": "2004-07-14T03:00:00.000Z",
+    "sessions": [
+      {
+        "date": "2025-01-01",
+        "notes": "notes"
+      }
+    ],
+    "sessionsCompleted": 3,
+    "id": 1752742074087
   }
 ]

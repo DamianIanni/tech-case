@@ -7,14 +7,17 @@
 
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, UseQueryResult, useQuery } from "@tanstack/react-query";
 import { ToastFeedback } from "@/components/feedback/toastFeedback";
 import { User } from "@/types/user";
 import {
   createUser,
   updateUser,
   deleteUser,
+  getUserById,
+  getUsers,
 } from "@/app/api/simulatedAPI/userMethods";
+import { useInvalidateQuery } from "../useInvalidateQuery";
 
 /**
  * useCreateMember hook.
@@ -22,10 +25,13 @@ import {
  * It shows a success toast on successful invitation and an error toast if the invitation fails.
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
+
 export function useCreateMember() {
+  const invalidate = useInvalidateQuery(["allUsers"]);
   return useMutation({
     mutationFn: createUser,
     onSuccess: (data: Partial<User>) => {
+      invalidate();
       ToastFeedback({
         type: "success",
         title: "Team member invited",
@@ -49,10 +55,15 @@ export function useCreateMember() {
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
 export function useUpdateTeamMember() {
+  const invalidate = useInvalidateQuery(["user"]);
+  const invalidateAll = useInvalidateQuery(["allUsers"]);
+
   return useMutation({
     mutationFn: ({ id, updated }: { id: number; updated: Partial<User> }) =>
       updateUser(id, updated),
     onSuccess: (data: Partial<User>) => {
+      invalidate();
+      invalidateAll();
       ToastFeedback({
         type: "success",
         title: "Team member updated",
@@ -76,9 +87,11 @@ export function useUpdateTeamMember() {
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
 export function useDeleteTeamMember() {
+  const invalidateAll = useInvalidateQuery(["allUsers"]);
   return useMutation({
     mutationFn: (id: number) => deleteUser(id),
     onSuccess: () => {
+      invalidateAll();
       ToastFeedback({
         type: "info",
         title: "Deleted",
@@ -92,5 +105,25 @@ export function useDeleteTeamMember() {
         description: "Please try again later.",
       });
     },
+  });
+}
+
+export function useGetSingleUser(userId: number): UseQueryResult<User, Error> {
+  return useQuery<User, Error>({
+    queryKey: ["user", userId],
+    queryFn: () => getUserById(userId),
+    enabled: !!userId,
+    refetchOnMount: true,
+    staleTime: 30_000,
+    refetchOnWindowFocus: false,
+  });
+}
+
+export function useGetUsers(): UseQueryResult<User[], Error> {
+  return useQuery<User[], Error>({
+    queryKey: ["allUsers"],
+    queryFn: () => getUsers(),
+    staleTime: 60_000,
+    refetchOnWindowFocus: false,
   });
 }

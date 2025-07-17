@@ -6,28 +6,28 @@
  * the user's role (admin, manager, or employee) to ensure appropriate access
  * control and functionality.
  */
+"use client";
 
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
 import { managerPatientsColumns } from "@/constants/tables/patients/managerColumns";
 import { adminPatientsColumns } from "@/constants/tables/patients/adminColumns";
 import { employeePatientsColumns } from "@/constants/tables/patients/employeeColumns";
-import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
-import { getPatients } from "@/app/api/simulatedAPI/patientMethods";
+import { useAuth } from "@/components/providers/AuthProvider";
+import { useGetPatients } from "@/hooks/patient/usePatient";
+import { AlertMessage } from "@/components/feedback/AlertMessage";
+import { TableSkeleton } from "@/components/skeletons/tableSkeleton";
+import { Button } from "@/components/ui/button";
 
-// Force dynamic rendering to ensure fresh data on each request
-export const dynamic = "force-dynamic";
-
-export const metadata = {
-  title: "Patients - Patient Management System",
-  description:
-    "View and manage your list of patients with role-based access controls.",
-};
-
-export default async function PatientsPage() {
-  const user = await getUserFromCookies();
-
-  const patients = await getPatients();
+export default function PatientsPage() {
+  const { user } = useAuth();
+  const {
+    data: patients,
+    isPending,
+    isError,
+    refetch,
+    isFetching,
+  } = useGetPatients();
 
   /**
    * Determines which table columns to display based on user role
@@ -48,11 +48,20 @@ export default async function PatientsPage() {
 
   return (
     <DashboardPageWrapper>
-      {user ? (
-        // Render data table with role-appropriate columns and patient data
+      {(isPending || isFetching) && <TableSkeleton />}
+      {isError && (
+        <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
+          <AlertMessage
+            title="Error loading list of patients"
+            description={`CODE: 3010 - Report this to Aisel team.`}
+          />
+          <div className="mt-4 flex justify-end">
+            <Button onClick={() => refetch()}>Try Again</Button>
+          </div>
+        </div>
+      )}
+      {!isPending && !isFetching && !isError && patients && (
         <DataTable columns={whichColumns()} data={patients} />
-      ) : (
-        <h1>loading..</h1>
       )}
     </DashboardPageWrapper>
   );

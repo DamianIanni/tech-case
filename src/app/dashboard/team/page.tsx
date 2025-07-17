@@ -7,29 +7,28 @@
  * control for team management operations.
  */
 
+"use client";
+
 import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import { DataTable } from "@/components/tables/dataTable";
 import { managerTeamColumns } from "@/constants/tables/users/managerColumns";
 import { adminTeamColumns } from "@/constants/tables/users/adminColumns";
 import { employeeTeamColumns } from "@/constants/tables/users/employeeColumns";
-import { getUserFromCookies } from "@/lib/api/auth/getUserFromCookies";
+import { TableSkeleton } from "@/components/skeletons/tableSkeleton";
+import { useAuth } from "@/components/providers/AuthProvider";
+import { AlertMessage } from "@/components/feedback/AlertMessage";
+import { Button } from "@/components/ui/button";
+import { useGetUsers } from "@/hooks/team/useTeam";
 
-import { getUsers } from "@/app/api/simulatedAPI/userMethods";
-
-export const metadata = {
-  title: "Team - Patient Management System",
-  description:
-    "Manage your team members and their roles with role-based access controls.",
-};
-
-export const dynamic = "force-dynamic";
-
-export default async function TeamPage() {
-  // Get current user information for role-based access control
-  const user = await getUserFromCookies();
-
-  // Fetch all team members data
-  const users = await getUsers();
+export default function TeamPage() {
+  const { user } = useAuth();
+  const {
+    data: patients,
+    isPending,
+    isError,
+    refetch,
+    isFetching,
+  } = useGetUsers();
 
   /**
    * Determines which table columns to display based on user role
@@ -50,11 +49,20 @@ export default async function TeamPage() {
 
   return (
     <DashboardPageWrapper>
-      {user ? (
-        // Render data table with role-appropriate columns and team member data
-        <DataTable columns={whichColumns()} data={users} />
-      ) : (
-        <h1>loading</h1>
+      {(isPending || isFetching) && <TableSkeleton />}
+      {isError && (
+        <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
+          <AlertMessage
+            title="Error loading list of patients"
+            description={`CODE: 3010 - Report this to Aisel team.`}
+          />
+          <div className="mt-4 flex justify-end">
+            <Button onClick={() => refetch()}>Try Again</Button>
+          </div>
+        </div>
+      )}
+      {!isPending && !isFetching && !isError && patients && (
+        <DataTable columns={whichColumns()} data={patients} />
       )}
     </DashboardPageWrapper>
   );

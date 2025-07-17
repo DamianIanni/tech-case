@@ -8,12 +8,13 @@ import { readPatients, writePatients } from "@/lib/data/store";
 
 export const dynamic = "force-dynamic";
 
-const WAIT = 200;
+const WAIT = 2000;
 function wait(ms: number) {
   return new Promise((res) => setTimeout(res, ms));
 }
 
-export async function getPatientById(id: number): Promise<Patient | null> {
+export async function getPatientById(id: number): Promise<Patient> {
+  await wait(WAIT);
   const patients = await readPatients();
   return patients.find((p: Partial<Patient>) => p.id === id) || null;
 }

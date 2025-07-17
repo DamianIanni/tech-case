@@ -34,21 +34,27 @@ Start the development server:
 npm run dev
 ```
 
+To simulate the real behavior of the app as it would run in production (e.g. proper routing, loading states, and performance optimizations), you can run the project in production mode locally:
+
+```bash
+npm run preview
+```
+
 The app will be available at [http://localhost:3000](http://localhost:3000).
 
 ### Credentials:
 
-    emai: admin@aisel.com,
-    password: admin123,
-    role: "admin",
+emai: admin@aisel.com,
+password: admin123,
+role: admin,
 
-    email: employee@aisel.com,
-    password: employee123,
-    role: employee,
+email: employee@aisel.com,
+password: employee123,
+role: employee,
 
-    email: "manager@aisel.com",
-    password: "manager123",
-    role: "manager",
+email: manager@aisel.com,
+password: manager123",
+role: manager,
 
 ### 4. Simulated Backend
 

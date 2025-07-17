@@ -46,7 +46,7 @@ export default function RootLayout({
         <ReactQueryClientProvider>
           <AuthProvider>
             <ThemeProvider>{children}</ThemeProvider>
-            <Toaster position="bottom-center" richColors />
+            <Toaster position="bottom-center" richColors expand={true} />
           </AuthProvider>
         </ReactQueryClientProvider>
       </body>

@@ -38,6 +38,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
   const { mode, data } = props;
   const createPatient = useCreatePatient();
   const updatePatient = useUpdatePatient();
+  const isPending = createPatient.isPending || updatePatient.isPending; // Boolean indicating if the form is currently being submitted.
   const router = useRouter();
   const isMobile = useIsMobile();
 
@@ -57,7 +58,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
     },
   });
 
-  const isSubmitting = form.formState.isSubmitting; // Boolean indicating if the form is currently being submitted.
+  // const isSubmitting = form.formState.isSubmitting; // Boolean indicating if the form is currently being submitted.
 
   /**
    * Handles the form submission logic.
@@ -103,14 +104,14 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
           className="flex flex-col flex-grow justify-between gap-6"
         >
           <div className="space-y-6">
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 {/* Text field for the patient's first name */}
                 <TextField
                   control={form.control}
                   name="firstName"
                   label="First name"
-                  disabled={isSubmitting}
+                  disabled={isPending}
                 />
               </div>
               <div className="flex-1">
@@ -119,12 +120,12 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                   control={form.control}
                   name="lastName"
                   label="Last name"
-                  disabled={isSubmitting}
+                  disabled={isPending}
                 />
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-1">
                 {/* Text field for the patient's email address */}
                 <TextField
@@ -132,7 +133,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                   name="email"
                   label="Email"
                   // type="email" // This can be uncommented to enforce email input type
-                  disabled={isSubmitting}
+                  disabled={isPending}
                 />
               </div>
               <div className="flex-1">
@@ -141,7 +142,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                   control={form.control}
                   name="phoneNumber"
                   label="Phone number"
-                  disabled={isSubmitting}
+                  disabled={isPending}
                 />
               </div>
             </div>
@@ -152,16 +153,16 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
                 control={form.control}
                 name="treatment"
                 label="Treatment"
-                disabled={isSubmitting}
+                disabled={isPending}
               />
             </div>
 
             <div className="flex w-full">
               {/* Conditionally renders calendar component based on device type */}
               {isMobile ? (
-                <Calendar32 control={form.control} disabled={isSubmitting} />
+                <Calendar32 control={form.control} disabled={isPending} />
               ) : (
-                <Calendar22 control={form.control} disabled={isSubmitting} />
+                <Calendar22 control={form.control} disabled={isPending} />
               )}
             </div>
           </div>
@@ -171,7 +172,7 @@ export function PatientForm(props: PatientFormProps): React.ReactElement {
             <Button
               className="hover:cursor-pointer"
               type="submit"
-              disabled={isSubmitting}
+              disabled={isPending}
             >
               {mode === "edit" ? "Save changes" : "Create"}
             </Button>

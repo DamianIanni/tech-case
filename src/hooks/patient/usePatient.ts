@@ -7,14 +7,17 @@
 
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery, UseQueryResult } from "@tanstack/react-query";
 import { ToastFeedback } from "@/components/feedback/toastFeedback";
 import { Patient } from "@/types/patient";
 import {
   createPatient,
   updatePatient,
   deletePatient,
+  getPatients,
+  getPatientById,
 } from "@/app/api/simulatedAPI/patientMethods";
+import { useInvalidateQuery } from "../useInvalidateQuery";
 
 /**
  * useCreatePatient hook.
@@ -23,9 +26,11 @@ import {
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
 export function useCreatePatient() {
+  const invalidate = useInvalidateQuery(["allPatient"]);
   return useMutation({
     mutationFn: createPatient,
     onSuccess: (data: Partial<Patient>) => {
+      invalidate();
       ToastFeedback({
         type: "success",
         title: "Patient created",
@@ -49,10 +54,15 @@ export function useCreatePatient() {
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
 export function useUpdatePatient() {
+  const invalidate = useInvalidateQuery(["patient"]);
+  const invalidateAll = useInvalidateQuery(["allPatient"]);
+
   return useMutation({
     mutationFn: ({ id, updated }: { id: number; updated: Partial<Patient> }) =>
       updatePatient(id, updated),
     onSuccess: (data: Partial<Patient>) => {
+      invalidate();
+      invalidateAll();
       ToastFeedback({
         type: "success",
         title: "Patient updated",
@@ -76,9 +86,11 @@ export function useUpdatePatient() {
  * @returns {object} A mutation object from `@tanstack/react-query`.
  */
 export function useDeletePatient() {
+  const invalidate = useInvalidateQuery(["allPatient"]);
   return useMutation({
     mutationFn: (id: number) => deletePatient(id),
     onSuccess: () => {
+      invalidate();
       ToastFeedback({
         type: "info",
         title: "Patient Deleted",
@@ -92,5 +104,27 @@ export function useDeletePatient() {
         description: "Please try again later.",
       });
     },
+  });
+}
+
+export function useGetSinglePatient(
+  patientId: number
+): UseQueryResult<Patient, Error> {
+  return useQuery<Patient, Error>({
+    queryKey: ["patient", patientId],
+    queryFn: () => getPatientById(patientId),
+    enabled: !!patientId,
+    refetchOnMount: true,
+    staleTime: 30_000,
+    refetchOnWindowFocus: false,
+  });
+}
+
+export function useGetPatients(): UseQueryResult<Patient[], Error> {
+  return useQuery<Patient[], Error>({
+    queryKey: ["allPatient"],
+    queryFn: () => getPatients(),
+    staleTime: 60_000,
+    refetchOnWindowFocus: false,
   });
 }

@@ -9,12 +9,13 @@ import { readUsers, writeUsers } from "@/lib/data/store";
 
 export const dynamic = "force-dynamic";
 
-const WAIT = 200;
+const WAIT = 2000;
 function wait(ms: number) {
   return new Promise((res) => setTimeout(res, ms));
 }
 
-export async function getUserById(id: number): Promise<User | null> {
+export async function getUserById(id: number): Promise<User> {
+  await wait(WAIT);
   const users = await readUsers();
   return users.find((u: Partial<User>) => u.id === id) || null;
 }
