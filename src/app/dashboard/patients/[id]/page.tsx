@@ -7,10 +7,12 @@ import DashboardPageWrapper from "@/components/wrappers/dashboardPageWrapper";
 import EntityInfo from "@/components/feedback/entityInfo";
 import { Button } from "@/components/ui/button";
 import { AlertMessage } from "@/components/feedback/AlertMessage";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 export default function PatientInfoPage() {
   const params = useParams();
   const id = Number(params.id);
+  const { isDeleting } = useDeleteState();
 
   const {
     data: patient,
@@ -22,7 +24,7 @@ export default function PatientInfoPage() {
 
   return (
     <DashboardPageWrapper>
-      {(isPending || isFetching) && <EntityInfoSkeleton />}
+      {(isPending || isFetching || isDeleting) && <EntityInfoSkeleton />}
 
       {isError && (
         <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
@@ -36,7 +38,7 @@ export default function PatientInfoPage() {
         </div>
       )}
 
-      {!isPending && !isFetching && !isError && patient && (
+      {!isPending && !isDeleting && !isFetching && !isError && patient && (
         <EntityInfo data={patient} />
       )}
     </DashboardPageWrapper>

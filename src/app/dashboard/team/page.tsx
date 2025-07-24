@@ -19,9 +19,11 @@ import { useAuth } from "@/components/providers/AuthProvider";
 import { AlertMessage } from "@/components/feedback/AlertMessage";
 import { Button } from "@/components/ui/button";
 import { useGetUsers } from "@/hooks/team/useTeam";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 export default function TeamPage() {
   const { user } = useAuth();
+  const { isDeleting } = useDeleteState();
   const {
     data: patients,
     isPending,
@@ -49,7 +51,7 @@ export default function TeamPage() {
 
   return (
     <DashboardPageWrapper>
-      {(isPending || isFetching) && <TableSkeleton />}
+      {(isPending || isFetching || isDeleting) && <TableSkeleton />}
       {isError && (
         <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
           <AlertMessage
@@ -61,7 +63,7 @@ export default function TeamPage() {
           </div>
         </div>
       )}
-      {!isPending && !isFetching && !isError && patients && (
+      {!isPending && !isFetching && !isDeleting && !isError && patients && (
         <DataTable columns={whichColumns()} data={patients} />
       )}
     </DashboardPageWrapper>

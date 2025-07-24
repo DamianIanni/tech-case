@@ -18,6 +18,7 @@ import {
   getUsers,
 } from "@/app/api/simulatedAPI/userMethods";
 import { useInvalidateQuery } from "../useInvalidateQuery";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 /**
  * useCreateMember hook.
@@ -88,9 +89,12 @@ export function useUpdateTeamMember() {
  */
 export function useDeleteTeamMember() {
   const invalidateAll = useInvalidateQuery(["allUsers"]);
+  const { setIsDeleting } = useDeleteState();
+
   return useMutation({
     mutationFn: (id: number) => deleteUser(id),
     onSuccess: () => {
+      setIsDeleting(false);
       invalidateAll();
       ToastFeedback({
         type: "info",
@@ -99,6 +103,8 @@ export function useDeleteTeamMember() {
       });
     },
     onError: () => {
+      setIsDeleting(false);
+
       ToastFeedback({
         type: "error",
         title: "Failed to delete team member",

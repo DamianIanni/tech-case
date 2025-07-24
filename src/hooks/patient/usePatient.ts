@@ -18,6 +18,7 @@ import {
   getPatientById,
 } from "@/app/api/simulatedAPI/patientMethods";
 import { useInvalidateQuery } from "../useInvalidateQuery";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 /**
  * useCreatePatient hook.
@@ -87,9 +88,11 @@ export function useUpdatePatient() {
  */
 export function useDeletePatient() {
   const invalidate = useInvalidateQuery(["allPatient"]);
+  const { setIsDeleting } = useDeleteState();
   return useMutation({
     mutationFn: (id: number) => deletePatient(id),
     onSuccess: () => {
+      setIsDeleting(false);
       invalidate();
       ToastFeedback({
         type: "info",
@@ -98,6 +101,7 @@ export function useDeletePatient() {
       });
     },
     onError: () => {
+      setIsDeleting(false);
       ToastFeedback({
         type: "error",
         title: "Failed to delete patient",

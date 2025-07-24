@@ -37,28 +37,19 @@
   },
   {
     "id": 5,
-    "firstName": "Manuel",
-    "lastName": "Adorni",
-    "email": "manuel@aisel.com",
-    "password": "manuel123",
+    "firstName": "Malena",
+    "lastName": "Galamarini",
+    "email": "galamarini@personal.com",
+    "password": "galamarini",
     "role": "manager",
-    "organization": "Amager Hospital"
-  },
-  {
-    "id": 6,
-    "firstName": "Karina",
-    "lastName": "Milei",
-    "email": "karina@aisel.com",
-    "password": "karina123",
-    "role": "admin",
     "organization": "Kastrup Clinic"
   },
   {
-    "id": 7,
+    "id": 4,
     "firstName": "Conan",
-    "lastName": "Neura",
-    "email": "conan@aisel.com",
-    "password": "conan123",
+    "lastName": "Milei",
+    "email": "conan@personal.com",
+    "password": "conan",
     "role": "employee",
     "organization": "Kastrup Clinic"
   }

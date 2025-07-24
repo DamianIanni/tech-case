@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ContextProvider } from "@/components/providers/ContextProvider";
 
 export const createTestQueryClient = () =>
   new QueryClient({
@@ -18,7 +19,7 @@ export function renderWithClient(ui: React.ReactElement) {
   return render(
     <QueryClientProvider client={testQueryClient}>
       {/* <AuthProvider></AuthProvider> */}
-      {ui}
+      <ContextProvider>{ui}</ContextProvider>
     </QueryClientProvider>
   );
 }

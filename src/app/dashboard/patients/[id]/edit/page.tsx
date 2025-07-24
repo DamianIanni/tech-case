@@ -8,10 +8,12 @@ import { useGetSinglePatient } from "@/hooks/patient/usePatient";
 import { PatientFormSkeleton } from "@/components/skeletons/patientFormSkeleton";
 import { Button } from "@/components/ui/button";
 import { AlertMessage } from "@/components/feedback/AlertMessage";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 export default function EditPatientPage() {
   const params = useParams();
   const id = Number(params.id);
+  const { isDeleting } = useDeleteState();
   const {
     data: patient,
     isPending,
@@ -22,7 +24,7 @@ export default function EditPatientPage() {
 
   return (
     <DashboardPageWrapper>
-      {(isPending || isFetching) && <PatientFormSkeleton />}
+      {(isPending || isFetching || isDeleting) && <PatientFormSkeleton />}
 
       {isError && (
         <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
@@ -38,7 +40,7 @@ export default function EditPatientPage() {
         </div>
       )}
 
-      {!isPending && !isFetching && !isError && patient && (
+      {!isPending && !isFetching && !isDeleting && !isError && patient && (
         <EntityForm formType="patient" mode={"edit"} data={patient} />
       )}
     </DashboardPageWrapper>

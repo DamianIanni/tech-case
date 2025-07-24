@@ -18,9 +18,11 @@ import { useGetPatients } from "@/hooks/patient/usePatient";
 import { AlertMessage } from "@/components/feedback/AlertMessage";
 import { TableSkeleton } from "@/components/skeletons/tableSkeleton";
 import { Button } from "@/components/ui/button";
+import { useDeleteState } from "@/components/providers/ContextProvider";
 
 export default function PatientsPage() {
   const { user } = useAuth();
+  const { isDeleting } = useDeleteState();
   const {
     data: patients,
     isPending,
@@ -48,7 +50,7 @@ export default function PatientsPage() {
 
   return (
     <DashboardPageWrapper>
-      {(isPending || isFetching) && <TableSkeleton />}
+      {(isPending || isFetching || isDeleting) && <TableSkeleton />}
       {isError && (
         <div className="w-full max-w-2xl flex flex-col items-center justify-center mx-auto mt-10">
           <AlertMessage
@@ -60,7 +62,7 @@ export default function PatientsPage() {
           </div>
         </div>
       )}
-      {!isPending && !isFetching && !isError && patients && (
+      {!isPending && !isDeleting && !isFetching && !isError && patients && (
         <DataTable columns={whichColumns()} data={patients} />
       )}
     </DashboardPageWrapper>

@@ -14,6 +14,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { ReactQueryClientProvider } from "@/components/providers/ReactQueryClientProvider";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ContextProvider } from "@/components/providers/ContextProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,8 +46,10 @@ export default function RootLayout({
       >
         <ReactQueryClientProvider>
           <AuthProvider>
-            <ThemeProvider>{children}</ThemeProvider>
-            <Toaster position="bottom-center" richColors expand={true} />
+            <ContextProvider>
+              <ThemeProvider>{children}</ThemeProvider>
+              <Toaster position="bottom-center" richColors expand={true} />
+            </ContextProvider>
           </AuthProvider>
         </ReactQueryClientProvider>
       </body>

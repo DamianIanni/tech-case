@@ -19,6 +19,7 @@ import { ROUTES } from "@/constants/routes";
 import { useAuth } from "../providers/AuthProvider";
 import { GeneralTooltip } from "../feedback/generalTooltip";
 import { useRouter } from "next/navigation";
+import { useDeleteState } from "../providers/ContextProvider";
 
 /**
  * @typedef {("patients" | "team")} Route - Defines the possible routes for actions.
@@ -45,6 +46,7 @@ export default function Actions(props: ActionsProps): React.ReactElement {
   const deletePatient = useDeletePatient();
   const { user } = useAuth();
   const router = useRouter();
+  const { setIsDeleting } = useDeleteState();
 
   /**
    * Handles the delete action based on the current route.
@@ -60,6 +62,7 @@ export default function Actions(props: ActionsProps): React.ReactElement {
   }
 
   function handleDeleteAction() {
+    setIsDeleting(true);
     if (route === "patients") {
       deletePatient.mutate(data.id!);
       navigation(route);
